@@ -1,0 +1,44 @@
+# --- System & Python ---
+__pycache__/
+*.pyc
+.env
+.venv/
+.venv-backups/
+.ipynb_checkpoints/
+.DS_Store
+.cache/
+.local/
+.config/
+
+# --- Files to Ignore ---
+project.zip
+cookies.txt
+debug.txt
+ports.log
+onstart.sh
+
+# --- Recursive/Duplicate folders ---
+workspace/
+
+# --- Web & Node ---
+node_modules/
+package-lock.json
+
+# --- HEAVY DATA ---
+results/
+blade_touch_rule/
+data/
+models/
+wandb/
+ollama/
+repositories/
+tmp/
+outputs/
+
+# --- Large File Safety Net ---
+*.pt
+*.pth
+*.safetensors
+*.bin
+*.ckpt
+*.gguf
