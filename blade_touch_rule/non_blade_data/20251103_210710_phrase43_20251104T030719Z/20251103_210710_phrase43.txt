@@ -1,0 +1,19 @@
+Phrase 43 initialized at 2025-11-03 21:07:10
+Audio cue executed at 2025-11-03 21:07:07
+Audio cue duration: 2.49s
+Start command issued at 2025-11-03 21:07:10
+Recording started at 2025-11-03 21:07:10
+ 0.000s | Phrase recording started
+ 1.226s | HIT: Right scores on Left!
+Lockout active (0.130s window)
+ 1.282s | Lockout period started (0.200s window)
+ 1.430s | HIT: Simultaneous valid hits!
+ 1.473s | Phrase recording ended
+Scores -> Fencer 1: HIT, Fencer 2: HIT
+Phrase ended
+[2025-11-03 21:07:11] Interpretation -> Right Fencer: HIT, Left Fencer: HIT
+[2025-11-03 21:07:11] Awaiting manual winner selection (double hit)
+[2025-11-03 21:07:15] Manual selection winner: Left Fencer (Red Lamp)
+[2025-11-03 21:07:15] Preparing remote referee submission
+[2025-11-03 21:07:15] Uploading phrase to remote referee service
+[2025-11-03 21:07:15] FFmpeg compressed video to MP4 (0.80 MB, 18% of original)

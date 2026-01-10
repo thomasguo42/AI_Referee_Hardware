@@ -1,0 +1,55 @@
+{
+  "status": "success",
+  "processing_time_seconds": 2.0847,
+  "phrase": {
+    "start_time": 0.0,
+    "start_frame": 0,
+    "simultaneous_hit_time": 0.923,
+    "simultaneous_hit_frame": 13,
+    "blade_contacts": [],
+    "lockout_start": 0.988,
+    "declared_winner": null,
+    "fps": 15.0
+  },
+  "artifacts": {
+    "original_video": "processed_phrases/20251111_203942_phrase08_20251121T063314Z/20251111_203942_phrase08_compressed.mp4",
+    "corrected_video": "processed_phrases/20251111_203942_phrase08_20251121T063314Z/20251111_203942_phrase08_compressed_corrected.mp4",
+    "analysis_video": "processed_phrases/20251111_203942_phrase08_20251121T063314Z/20251111_203942_phrase08_compressed_corrected.mp4",
+    "excel": "processed_phrases/20251111_203942_phrase08_20251121T063314Z/20251111_203942_phrase08_compressed_corrected_keypoints.xlsx",
+    "overlay_video": "processed_phrases/20251111_203942_phrase08_20251121T063314Z/20251111_203942_phrase08_compressed_corrected_overlay.mp4",
+    "video": "processed_phrases/20251111_203942_phrase08_20251121T063314Z/20251111_203942_phrase08_compressed_corrected.mp4",
+    "signal": "processed_phrases/20251111_203942_phrase08_20251121T063314Z/20251111_203942_phrase08.txt",
+    "result_json": "processed_phrases/20251111_203942_phrase08_20251121T063314Z/analysis_result.json"
+  },
+  "inputs": {
+    "video": "processed_phrases/20251111_203942_phrase08_20251121T063314Z/20251111_203942_phrase08_compressed_corrected.mp4",
+    "signal": "processed_phrases/20251111_203942_phrase08_20251121T063314Z/20251111_203942_phrase08.txt"
+  },
+  "winner": "right",
+  "reason": "Right has right-of-way (only left paused at 1.00s)",
+  "video_angle": "middle",
+  "frames_analyzed": 23,
+  "normalisation_constant": 150.92874145507812,
+  "left_pauses": [
+    {
+      "start_frame": 10,
+      "end_frame": 15,
+      "start_time": 0.6666666666666666,
+      "end_time": 1.0,
+      "duration": 0.3333333333333333
+    }
+  ],
+  "right_pauses": [],
+  "blade_analysis": null,
+  "blade_details": null,
+  "speed_comparison": null,
+  "natural_language_reason": "The right fencer gained right-of-way through an uninterrupted lunge.",
+  "lunge_detected": {
+    "left": false,
+    "right": false
+  },
+  "artifact_dir": "processed_phrases/20251111_203942_phrase08_20251121T063314Z",
+  "wall_time_seconds": 2.5541,
+  "left_arm_extensions": [],
+  "right_arm_extensions": []
+}

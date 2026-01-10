@@ -1,0 +1,70 @@
+{
+  "status": "success",
+  "processing_time_seconds": 1.7032,
+  "phrase": {
+    "start_time": 0.0,
+    "start_frame": 0,
+    "simultaneous_hit_time": 0.936,
+    "simultaneous_hit_frame": 14,
+    "blade_contacts": [],
+    "lockout_start": 0.806,
+    "declared_winner": null,
+    "fps": 15.0
+  },
+  "artifacts": {
+    "original_video": "processed_phrases/20251106_210036_phrase74_20251121T062543Z/20251106_210036_phrase74_compressed.mp4",
+    "corrected_video": "processed_phrases/20251106_210036_phrase74_20251121T062543Z/20251106_210036_phrase74_compressed_corrected.mp4",
+    "analysis_video": "processed_phrases/20251106_210036_phrase74_20251121T062543Z/20251106_210036_phrase74_compressed_corrected.mp4",
+    "excel": "processed_phrases/20251106_210036_phrase74_20251121T062543Z/20251106_210036_phrase74_compressed_corrected_keypoints.xlsx",
+    "overlay_video": "processed_phrases/20251106_210036_phrase74_20251121T062543Z/20251106_210036_phrase74_compressed_corrected_overlay.mp4",
+    "video": "processed_phrases/20251106_210036_phrase74_20251121T062543Z/20251106_210036_phrase74_compressed_corrected.mp4",
+    "signal": "processed_phrases/20251106_210036_phrase74_20251121T062543Z/20251106_210036_phrase74.txt",
+    "result_json": "processed_phrases/20251106_210036_phrase74_20251121T062543Z/analysis_result.json"
+  },
+  "inputs": {
+    "video": "processed_phrases/20251106_210036_phrase74_20251121T062543Z/20251106_210036_phrase74_compressed_corrected.mp4",
+    "signal": "processed_phrases/20251106_210036_phrase74_20251121T062543Z/20251106_210036_phrase74.txt"
+  },
+  "winner": "right",
+  "reason": "No pauses/blade contacts. Arm extensions simultaneous (0.73s vs 0.73s). Right faster (speed: 0.140 vs 0.134)",
+  "video_angle": "middle",
+  "frames_analyzed": 14,
+  "normalisation_constant": 166.96563720703125,
+  "left_pauses": [],
+  "right_pauses": [],
+  "blade_analysis": null,
+  "blade_details": null,
+  "speed_comparison": {
+    "left_speed": 0.1336842557767212,
+    "left_accel": 0.06545392633697214,
+    "right_speed": 0.14043233439752079,
+    "right_accel": 0.06039479595622826
+  },
+  "natural_language_reason": "The right-hand fencer initiated a continuous attack with a lunge, and since there were no blade contacts or pauses from either side, their faster execution earned them right-of-way.",
+  "lunge_detected": {
+    "left": false,
+    "right": false
+  },
+  "artifact_dir": "processed_phrases/20251106_210036_phrase74_20251121T062543Z",
+  "wall_time_seconds": 2.0484,
+  "left_arm_extensions": [
+    {
+      "start_frame": 11,
+      "end_frame": 13,
+      "start_time": 0.7333333333333333,
+      "end_time": 0.8666666666666667,
+      "duration": 0.13333333333333333,
+      "avg_distance": 0.8230166988803788
+    }
+  ],
+  "right_arm_extensions": [
+    {
+      "start_frame": 11,
+      "end_frame": 13,
+      "start_time": 0.7333333333333333,
+      "end_time": 0.8666666666666667,
+      "duration": 0.13333333333333333,
+      "avg_distance": 0.7616778081367598
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "status": "success",
+  "processing_time_seconds": 1.804,
+  "phrase": {
+    "start_time": 0.001,
+    "start_frame": 0,
+    "simultaneous_hit_time": 0.926,
+    "simultaneous_hit_frame": 13,
+    "blade_contacts": [
+      {
+        "time": 1.108,
+        "frame": 16
+      }
+    ],
+    "lockout_start": 0.991,
+    "declared_winner": null,
+    "fps": 15.0
+  },
+  "artifacts": {
+    "original_video": "processed_phrases/20251106_205843_phrase69_20251121T062524Z/20251106_205843_phrase69_compressed.mp4",
+    "corrected_video": "processed_phrases/20251106_205843_phrase69_20251121T062524Z/20251106_205843_phrase69_compressed_corrected.mp4",
+    "analysis_video": "processed_phrases/20251106_205843_phrase69_20251121T062524Z/20251106_205843_phrase69_compressed_corrected.mp4",
+    "excel": "processed_phrases/20251106_205843_phrase69_20251121T062524Z/20251106_205843_phrase69_compressed_corrected_keypoints.xlsx",
+    "overlay_video": "processed_phrases/20251106_205843_phrase69_20251121T062524Z/20251106_205843_phrase69_compressed_corrected_overlay.mp4",
+    "video": "processed_phrases/20251106_205843_phrase69_20251121T062524Z/20251106_205843_phrase69_compressed_corrected.mp4",
+    "signal": "processed_phrases/20251106_205843_phrase69_20251121T062524Z/20251106_205843_phrase69.txt",
+    "result_json": "processed_phrases/20251106_205843_phrase69_20251121T062524Z/analysis_result.json"
+  },
+  "inputs": {
+    "video": "processed_phrases/20251106_205843_phrase69_20251121T062524Z/20251106_205843_phrase69_compressed_corrected.mp4",
+    "signal": "processed_phrases/20251106_205843_phrase69_20251121T062524Z/20251106_205843_phrase69.txt"
+  },
+  "winner": "left",
+  "reason": "No pauses/blade contacts. Only left extended arm (at 0.93s)",
+  "video_angle": "middle",
+  "frames_analyzed": 19,
+  "normalisation_constant": 162.9093017578125,
+  "left_pauses": [],
+  "right_pauses": [],
+  "blade_analysis": null,
+  "blade_details": null,
+  "speed_comparison": null,
+  "natural_language_reason": "The fencer on the left initiated a lunge, establishing right-of-way, and was awarded the touch.",
+  "lunge_detected": {
+    "left": false,
+    "right": false
+  },
+  "artifact_dir": "processed_phrases/20251106_205843_phrase69_20251121T062524Z",
+  "wall_time_seconds": 2.2421,
+  "left_arm_extensions": [
+    {
+      "start_frame": 14,
+      "end_frame": 16,
+      "start_time": 0.9333333333333333,
+      "end_time": 1.0666666666666667,
+      "duration": 0.13333333333333333,
+      "avg_distance": 0.8015115248768434
+    }
+  ],
+  "right_arm_extensions": []
+}

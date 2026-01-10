@@ -1,0 +1,77 @@
+{
+  "status": "success",
+  "processing_time_seconds": 6.3842,
+  "phrase": {
+    "start_time": 0.0,
+    "start_frame": 0,
+    "simultaneous_hit_time": 7.122,
+    "simultaneous_hit_frame": 106,
+    "blade_contacts": [],
+    "lockout_start": 6.992,
+    "declared_winner": null,
+    "fps": 15.0
+  },
+  "artifacts": {
+    "original_video": "processed_phrases/20251111_204413_phrase24_20251121T063440Z/20251111_204413_phrase24_compressed.mp4",
+    "corrected_video": "processed_phrases/20251111_204413_phrase24_20251121T063440Z/20251111_204413_phrase24_compressed_corrected.mp4",
+    "analysis_video": "processed_phrases/20251111_204413_phrase24_20251121T063440Z/20251111_204413_phrase24_compressed_corrected.mp4",
+    "excel": "processed_phrases/20251111_204413_phrase24_20251121T063440Z/20251111_204413_phrase24_compressed_corrected_keypoints.xlsx",
+    "overlay_video": "processed_phrases/20251111_204413_phrase24_20251121T063440Z/20251111_204413_phrase24_compressed_corrected_overlay.mp4",
+    "video": "processed_phrases/20251111_204413_phrase24_20251121T063440Z/20251111_204413_phrase24_compressed_corrected.mp4",
+    "signal": "processed_phrases/20251111_204413_phrase24_20251121T063440Z/20251111_204413_phrase24.txt",
+    "result_json": "processed_phrases/20251111_204413_phrase24_20251121T063440Z/analysis_result.json"
+  },
+  "inputs": {
+    "video": "processed_phrases/20251111_204413_phrase24_20251121T063440Z/20251111_204413_phrase24_compressed_corrected.mp4",
+    "signal": "processed_phrases/20251111_204413_phrase24_20251121T063440Z/20251111_204413_phrase24.txt"
+  },
+  "winner": "right",
+  "reason": "Right has right-of-way (pause ended at 2.47s vs 7.20s)",
+  "video_angle": "middle",
+  "frames_analyzed": 109,
+  "normalisation_constant": 171.66746520996094,
+  "left_pauses": [
+    {
+      "start_frame": 22,
+      "end_frame": 44,
+      "start_time": 1.4666666666666666,
+      "end_time": 2.933333333333333,
+      "duration": 1.4666666666666666
+    },
+    {
+      "start_frame": 46,
+      "end_frame": 108,
+      "start_time": 3.066666666666667,
+      "end_time": 7.2,
+      "duration": 4.133333333333334
+    }
+  ],
+  "right_pauses": [
+    {
+      "start_frame": 10,
+      "end_frame": 21,
+      "start_time": 0.6666666666666666,
+      "end_time": 1.4,
+      "duration": 0.7333333333333333
+    },
+    {
+      "start_frame": 23,
+      "end_frame": 37,
+      "start_time": 1.5333333333333334,
+      "end_time": 2.466666666666667,
+      "duration": 0.9333333333333333
+    }
+  ],
+  "blade_analysis": null,
+  "blade_details": null,
+  "speed_comparison": null,
+  "natural_language_reason": "The fencer on the right maintained the initiative and was therefore awarded right-of-way.",
+  "lunge_detected": {
+    "left": false,
+    "right": false
+  },
+  "artifact_dir": "processed_phrases/20251111_204413_phrase24_20251121T063440Z",
+  "wall_time_seconds": 8.4041,
+  "left_arm_extensions": [],
+  "right_arm_extensions": []
+}

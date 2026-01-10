@@ -1,0 +1,156 @@
+{
+  "status": "success",
+  "processing_time_seconds": 4.7972,
+  "phrase": {
+    "start_time": 0.0,
+    "start_frame": 0,
+    "simultaneous_hit_time": 5.044,
+    "simultaneous_hit_frame": 75,
+    "blade_contacts": [
+      {
+        "time": 1.246,
+        "frame": 18
+      },
+      {
+        "time": 1.26,
+        "frame": 18
+      },
+      {
+        "time": 1.346,
+        "frame": 20
+      },
+      {
+        "time": 1.387,
+        "frame": 20
+      },
+      {
+        "time": 1.452,
+        "frame": 21
+      },
+      {
+        "time": 1.516,
+        "frame": 22
+      },
+      {
+        "time": 1.58,
+        "frame": 23
+      },
+      {
+        "time": 5.111,
+        "frame": 76
+      }
+    ],
+    "lockout_start": 4.947,
+    "declared_winner": null,
+    "fps": 15.0
+  },
+  "artifacts": {
+    "excel": "processed_phrases/20251020_210647_phrase15_20251021T020703Z/20251020_210647_phrase15_compressed_keypoints.xlsx",
+    "overlay_video": "processed_phrases/20251020_210647_phrase15_20251021T020703Z/20251020_210647_phrase15_compressed_overlay.mp4",
+    "video": "processed_phrases/20251020_210647_phrase15_20251021T020703Z/20251020_210647_phrase15_compressed.mp4",
+    "signal": "processed_phrases/20251020_210647_phrase15_20251021T020703Z/20251020_210647_phrase15.txt",
+    "result_json": "processed_phrases/20251020_210647_phrase15_20251021T020703Z/analysis_result.json"
+  },
+  "inputs": {
+    "video": "processed_phrases/20251020_210647_phrase15_20251021T020703Z/20251020_210647_phrase15_compressed.mp4",
+    "signal": "processed_phrases/20251020_210647_phrase15_20251021T020703Z/20251020_210647_phrase15.txt"
+  },
+  "winner": "left",
+  "reason": "Left has right-of-way (pause ended at 4.60s vs 5.07s). Blade contact ignored (too early)",
+  "video_angle": "right",
+  "frames_analyzed": 77,
+  "normalisation_constant": 165.38134765625,
+  "left_pauses": [
+    {
+      "start_frame": 3,
+      "end_frame": 7,
+      "start_time": 0.2,
+      "end_time": 0.4666666666666667,
+      "duration": 0.26666666666666666
+    },
+    {
+      "start_frame": 10,
+      "end_frame": 13,
+      "start_time": 0.6666666666666666,
+      "end_time": 0.8666666666666667,
+      "duration": 0.2
+    },
+    {
+      "start_frame": 22,
+      "end_frame": 31,
+      "start_time": 1.4666666666666666,
+      "end_time": 2.066666666666667,
+      "duration": 0.6
+    },
+    {
+      "start_frame": 33,
+      "end_frame": 40,
+      "start_time": 2.2,
+      "end_time": 2.6666666666666665,
+      "duration": 0.4666666666666667
+    },
+    {
+      "start_frame": 45,
+      "end_frame": 52,
+      "start_time": 3.0,
+      "end_time": 3.466666666666667,
+      "duration": 0.4666666666666667
+    },
+    {
+      "start_frame": 57,
+      "end_frame": 69,
+      "start_time": 3.8,
+      "end_time": 4.6,
+      "duration": 0.8
+    }
+  ],
+  "right_pauses": [
+    {
+      "start_frame": 9,
+      "end_frame": 12,
+      "start_time": 0.6,
+      "end_time": 0.8,
+      "duration": 0.2
+    },
+    {
+      "start_frame": 24,
+      "end_frame": 35,
+      "start_time": 1.6,
+      "end_time": 2.3333333333333335,
+      "duration": 0.7333333333333333
+    },
+    {
+      "start_frame": 37,
+      "end_frame": 56,
+      "start_time": 2.466666666666667,
+      "end_time": 3.7333333333333334,
+      "duration": 1.2666666666666666
+    },
+    {
+      "start_frame": 60,
+      "end_frame": 63,
+      "start_time": 4.0,
+      "end_time": 4.2,
+      "duration": 0.2
+    },
+    {
+      "start_frame": 69,
+      "end_frame": 76,
+      "start_time": 4.6,
+      "end_time": 5.066666666666666,
+      "duration": 0.4666666666666667
+    }
+  ],
+  "blade_analysis": "Blade contact at 1.58s ignored (>1s before last pause)",
+  "blade_details": null,
+  "speed_comparison": null,
+  "natural_language_reason": "The winner earned right-of-way because their attack resumed after the final pause, while the opponent's action was a delayed counter-attack.",
+  "artifact_dir": "processed_phrases/20251020_210647_phrase15_20251021T020703Z",
+  "wall_time_seconds": 6.2551,
+  "lunge_detected": {
+    "left": false,
+    "right": false
+  },
+  "left_arm_extensions": [],
+  "right_arm_extensions": []
+}

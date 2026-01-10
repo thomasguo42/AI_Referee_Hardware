@@ -1,0 +1,65 @@
+{
+  "status": "success",
+  "processing_time_seconds": 1.8569,
+  "phrase": {
+    "start_time": 0.0,
+    "start_frame": 0,
+    "simultaneous_hit_time": 0.993,
+    "simultaneous_hit_frame": 14,
+    "blade_contacts": [],
+    "lockout_start": 1.059,
+    "declared_winner": null,
+    "fps": 15.0
+  },
+  "artifacts": {
+    "original_video": "processed_phrases/20251111_205731_phrase37_20251121T063701Z/20251111_205731_phrase37_compressed.mp4",
+    "corrected_video": "processed_phrases/20251111_205731_phrase37_20251121T063701Z/20251111_205731_phrase37_compressed_corrected.mp4",
+    "analysis_video": "processed_phrases/20251111_205731_phrase37_20251121T063701Z/20251111_205731_phrase37_compressed_corrected.mp4",
+    "excel": "processed_phrases/20251111_205731_phrase37_20251121T063701Z/20251111_205731_phrase37_compressed_corrected_keypoints.xlsx",
+    "overlay_video": "processed_phrases/20251111_205731_phrase37_20251121T063701Z/20251111_205731_phrase37_compressed_corrected_overlay.mp4",
+    "video": "processed_phrases/20251111_205731_phrase37_20251121T063701Z/20251111_205731_phrase37_compressed_corrected.mp4",
+    "signal": "processed_phrases/20251111_205731_phrase37_20251121T063701Z/20251111_205731_phrase37.txt",
+    "result_json": "processed_phrases/20251111_205731_phrase37_20251121T063701Z/analysis_result.json"
+  },
+  "inputs": {
+    "video": "processed_phrases/20251111_205731_phrase37_20251121T063701Z/20251111_205731_phrase37_compressed_corrected.mp4",
+    "signal": "processed_phrases/20251111_205731_phrase37_20251121T063701Z/20251111_205731_phrase37.txt"
+  },
+  "winner": "right",
+  "reason": "No pauses/blade contacts. Right extended arm first (0.20s vs 0.80s)",
+  "video_angle": "middle",
+  "frames_analyzed": 18,
+  "normalisation_constant": 157.1980743408203,
+  "left_pauses": [],
+  "right_pauses": [],
+  "blade_analysis": null,
+  "blade_details": null,
+  "speed_comparison": null,
+  "natural_language_reason": "The fencer on the right has the right-of-way because they initiated a faster, continuous attack without any pauses or blade contacts.",
+  "lunge_detected": {
+    "left": false,
+    "right": false
+  },
+  "artifact_dir": "processed_phrases/20251111_205731_phrase37_20251121T063701Z",
+  "wall_time_seconds": 2.2545,
+  "left_arm_extensions": [
+    {
+      "start_frame": 12,
+      "end_frame": 17,
+      "start_time": 0.8,
+      "end_time": 1.1333333333333333,
+      "duration": 0.3333333333333333,
+      "avg_distance": 0.9296541417323295
+    }
+  ],
+  "right_arm_extensions": [
+    {
+      "start_frame": 3,
+      "end_frame": 9,
+      "start_time": 0.2,
+      "end_time": 0.6,
+      "duration": 0.4,
+      "avg_distance": 0.526256423733696
+    }
+  ]
+}

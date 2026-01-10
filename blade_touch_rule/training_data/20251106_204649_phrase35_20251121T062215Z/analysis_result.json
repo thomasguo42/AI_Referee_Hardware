@@ -1,0 +1,114 @@
+{
+  "status": "success",
+  "processing_time_seconds": 7.0933,
+  "phrase": {
+    "start_time": 0.0,
+    "start_frame": 0,
+    "simultaneous_hit_time": 7.792,
+    "simultaneous_hit_frame": 116,
+    "blade_contacts": [
+      {
+        "time": 1.427,
+        "frame": 21
+      },
+      {
+        "time": 5.062,
+        "frame": 75
+      }
+    ],
+    "lockout_start": 7.661,
+    "declared_winner": null,
+    "fps": 15.0
+  },
+  "artifacts": {
+    "original_video": "processed_phrases/20251106_204649_phrase35_20251121T062215Z/20251106_204649_phrase35_compressed.mp4",
+    "corrected_video": "processed_phrases/20251106_204649_phrase35_20251121T062215Z/20251106_204649_phrase35_compressed_corrected.mp4",
+    "analysis_video": "processed_phrases/20251106_204649_phrase35_20251121T062215Z/20251106_204649_phrase35_compressed_corrected.mp4",
+    "excel": "processed_phrases/20251106_204649_phrase35_20251121T062215Z/20251106_204649_phrase35_compressed_corrected_keypoints.xlsx",
+    "overlay_video": "processed_phrases/20251106_204649_phrase35_20251121T062215Z/20251106_204649_phrase35_compressed_corrected_overlay.mp4",
+    "video": "processed_phrases/20251106_204649_phrase35_20251121T062215Z/20251106_204649_phrase35_compressed_corrected.mp4",
+    "signal": "processed_phrases/20251106_204649_phrase35_20251121T062215Z/20251106_204649_phrase35.txt",
+    "result_json": "processed_phrases/20251106_204649_phrase35_20251121T062215Z/analysis_result.json"
+  },
+  "inputs": {
+    "video": "processed_phrases/20251106_204649_phrase35_20251121T062215Z/20251106_204649_phrase35_compressed_corrected.mp4",
+    "signal": "processed_phrases/20251106_204649_phrase35_20251121T062215Z/20251106_204649_phrase35.txt"
+  },
+  "winner": "left",
+  "reason": "Left has right-of-way (pause ended at 7.00s vs 7.47s). Blade contact ignored (too early)",
+  "video_angle": "middle",
+  "frames_analyzed": 119,
+  "normalisation_constant": 174.3448028564453,
+  "left_pauses": [
+    {
+      "start_frame": 5,
+      "end_frame": 8,
+      "start_time": 0.3333333333333333,
+      "end_time": 0.5333333333333333,
+      "duration": 0.2
+    },
+    {
+      "start_frame": 21,
+      "end_frame": 36,
+      "start_time": 1.4,
+      "end_time": 2.4,
+      "duration": 1.0
+    },
+    {
+      "start_frame": 38,
+      "end_frame": 46,
+      "start_time": 2.533333333333333,
+      "end_time": 3.066666666666667,
+      "duration": 0.5333333333333333
+    },
+    {
+      "start_frame": 49,
+      "end_frame": 55,
+      "start_time": 3.2666666666666666,
+      "end_time": 3.6666666666666665,
+      "duration": 0.4
+    },
+    {
+      "start_frame": 62,
+      "end_frame": 69,
+      "start_time": 4.133333333333334,
+      "end_time": 4.6,
+      "duration": 0.4666666666666667
+    },
+    {
+      "start_frame": 86,
+      "end_frame": 91,
+      "start_time": 5.733333333333333,
+      "end_time": 6.066666666666666,
+      "duration": 0.3333333333333333
+    },
+    {
+      "start_frame": 98,
+      "end_frame": 105,
+      "start_time": 6.533333333333333,
+      "end_time": 7.0,
+      "duration": 0.4666666666666667
+    }
+  ],
+  "right_pauses": [
+    {
+      "start_frame": 23,
+      "end_frame": 112,
+      "start_time": 1.5333333333333334,
+      "end_time": 7.466666666666667,
+      "duration": 5.933333333333334
+    }
+  ],
+  "blade_analysis": "Blade contact at 5.06s ignored (>1s before last pause)",
+  "blade_details": null,
+  "speed_comparison": null,
+  "natural_language_reason": "The winner maintained the initiative with a continuous attack, and the opponent's blade contact occurred too early to interrupt the phrase.",
+  "lunge_detected": {
+    "left": false,
+    "right": false
+  },
+  "artifact_dir": "processed_phrases/20251106_204649_phrase35_20251121T062215Z",
+  "wall_time_seconds": 9.4149,
+  "left_arm_extensions": [],
+  "right_arm_extensions": []
+}

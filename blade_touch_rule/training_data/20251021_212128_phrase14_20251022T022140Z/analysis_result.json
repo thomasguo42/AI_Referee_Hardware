@@ -1,0 +1,60 @@
+{
+  "status": "success",
+  "processing_time_seconds": 2.1675,
+  "phrase": {
+    "start_time": 0.0,
+    "start_frame": 0,
+    "simultaneous_hit_time": 1.555,
+    "simultaneous_hit_frame": 23,
+    "blade_contacts": [],
+    "lockout_start": 1.458,
+    "declared_winner": null,
+    "fps": 15.0
+  },
+  "artifacts": {
+    "excel": "processed_phrases/20251021_212128_phrase14_20251022T022140Z/20251021_212128_phrase14_compressed_keypoints.xlsx",
+    "overlay_video": "processed_phrases/20251021_212128_phrase14_20251022T022140Z/20251021_212128_phrase14_compressed_overlay.mp4",
+    "video": "processed_phrases/20251021_212128_phrase14_20251022T022140Z/20251021_212128_phrase14_compressed.mp4",
+    "signal": "processed_phrases/20251021_212128_phrase14_20251022T022140Z/20251021_212128_phrase14.txt",
+    "result_json": "processed_phrases/20251021_212128_phrase14_20251022T022140Z/analysis_result.json"
+  },
+  "inputs": {
+    "video": "processed_phrases/20251021_212128_phrase14_20251022T022140Z/20251021_212128_phrase14_compressed.mp4",
+    "signal": "processed_phrases/20251021_212128_phrase14_20251022T022140Z/20251021_212128_phrase14.txt"
+  },
+  "winner": "right",
+  "reason": "Right has right-of-way (pause ended at 1.13s vs 1.20s)",
+  "video_angle": "middle",
+  "frames_analyzed": 23,
+  "normalisation_constant": 152.7947998046875,
+  "left_pauses": [
+    {
+      "start_frame": 11,
+      "end_frame": 18,
+      "start_time": 0.7333333333333333,
+      "end_time": 1.2,
+      "duration": 0.4666666666666667
+    }
+  ],
+  "right_pauses": [
+    {
+      "start_frame": 14,
+      "end_frame": 17,
+      "start_time": 0.9333333333333333,
+      "end_time": 1.1333333333333333,
+      "duration": 0.2
+    }
+  ],
+  "blade_analysis": null,
+  "blade_details": null,
+  "speed_comparison": null,
+  "natural_language_reason": "The fencer on the right initiated a continuous, faster attack that was not met by a parry or counter-attack from the left.",
+  "artifact_dir": "processed_phrases/20251021_212128_phrase14_20251022T022140Z",
+  "wall_time_seconds": 2.7617,
+  "lunge_detected": {
+    "left": false,
+    "right": false
+  },
+  "left_arm_extensions": [],
+  "right_arm_extensions": []
+}

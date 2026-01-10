@@ -1,0 +1,70 @@
+{
+  "status": "success",
+  "processing_time_seconds": 2.1397,
+  "phrase": {
+    "start_time": 0.0,
+    "start_frame": 0,
+    "simultaneous_hit_time": 1.123,
+    "simultaneous_hit_frame": 16,
+    "blade_contacts": [],
+    "lockout_start": 1.188,
+    "declared_winner": null,
+    "fps": 15.0
+  },
+  "artifacts": {
+    "original_video": "processed_phrases/20251106_204143_phrase25_20251121T062118Z/20251106_204143_phrase25_compressed.mp4",
+    "corrected_video": "processed_phrases/20251106_204143_phrase25_20251121T062118Z/20251106_204143_phrase25_compressed_corrected.mp4",
+    "analysis_video": "processed_phrases/20251106_204143_phrase25_20251121T062118Z/20251106_204143_phrase25_compressed_corrected.mp4",
+    "excel": "processed_phrases/20251106_204143_phrase25_20251121T062118Z/20251106_204143_phrase25_compressed_corrected_keypoints.xlsx",
+    "overlay_video": "processed_phrases/20251106_204143_phrase25_20251121T062118Z/20251106_204143_phrase25_compressed_corrected_overlay.mp4",
+    "video": "processed_phrases/20251106_204143_phrase25_20251121T062118Z/20251106_204143_phrase25_compressed_corrected.mp4",
+    "signal": "processed_phrases/20251106_204143_phrase25_20251121T062118Z/20251106_204143_phrase25.txt",
+    "result_json": "processed_phrases/20251106_204143_phrase25_20251121T062118Z/analysis_result.json"
+  },
+  "inputs": {
+    "video": "processed_phrases/20251106_204143_phrase25_20251121T062118Z/20251106_204143_phrase25_compressed_corrected.mp4",
+    "signal": "processed_phrases/20251106_204143_phrase25_20251121T062118Z/20251106_204143_phrase25.txt"
+  },
+  "winner": "right",
+  "reason": "No pauses/blade contacts. Arm extensions simultaneous (1.00s vs 1.00s). Right faster (speed: 0.097 vs 0.080)",
+  "video_angle": "right",
+  "frames_analyzed": 21,
+  "normalisation_constant": 170.04859924316406,
+  "left_pauses": [],
+  "right_pauses": [],
+  "blade_analysis": null,
+  "blade_details": null,
+  "speed_comparison": {
+    "left_speed": 0.07967070288367016,
+    "left_accel": 0.04593492325199245,
+    "right_speed": 0.09737993531225142,
+    "right_accel": 0.05568581372348399
+  },
+  "natural_language_reason": "The right fencer initiated a continuous attack that was met with a simultaneous riposte, but the right fencer's faster action established priority.",
+  "lunge_detected": {
+    "left": false,
+    "right": false
+  },
+  "artifact_dir": "processed_phrases/20251106_204143_phrase25_20251121T062118Z",
+  "wall_time_seconds": 2.6144,
+  "left_arm_extensions": [
+    {
+      "start_frame": 15,
+      "end_frame": 17,
+      "start_time": 1.0,
+      "end_time": 1.1333333333333333,
+      "duration": 0.13333333333333333,
+      "avg_distance": 0.6009773474499732
+    }
+  ],
+  "right_arm_extensions": [
+    {
+      "start_frame": 15,
+      "end_frame": 20,
+      "start_time": 1.0,
+      "end_time": 1.3333333333333333,
+      "duration": 0.3333333333333333,
+      "avg_distance": 0.7818500554293534
+    }
+  ]
+}

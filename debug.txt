@@ -1,0 +1,39 @@
+Analyzing /workspace/data/training_data/20251106_211102_phrase101_20251121T062806Z...
+  [Interval 11-20] Avg Abs Vel: 0.0424
+  -> Classified as RETREAT (Avg Vel > 0.035)
+  [Interval 1-4] Avg Abs Vel: 0.0373
+  -> Classified as RETREAT (Avg Vel > 0.035)
+
+============================================================
+DEBUG RESULT
+============================================================
+{
+  "winner": "right",
+  "reason": "Right has right-of-way (pause ended at 0.27s vs 1.33s)",
+  "left_pauses": [
+    {
+      "start_frame": 11,
+      "end_frame": 20,
+      "start_time": 0.7333333333333333,
+      "end_time": 1.3333333333333333,
+      "duration": 0.6
+    }
+  ],
+  "right_pauses": [
+    {
+      "start_frame": 1,
+      "end_frame": 4,
+      "start_time": 0.06666666666666667,
+      "end_time": 0.26666666666666666,
+      "duration": 0.2
+    }
+  ],
+  "blade_analysis": null,
+  "blade_details": null,
+  "speed_comparison": null,
+  "lunge_detected": {
+    "left": false,
+    "right": false
+  }
+}
+============================================================

@@ -1,0 +1,60 @@
+{
+  "status": "success",
+  "processing_time_seconds": 4.6485,
+  "phrase": {
+    "start_time": 0.0,
+    "start_frame": 0,
+    "simultaneous_hit_time": 4.433,
+    "simultaneous_hit_frame": 66,
+    "blade_contacts": [
+      {
+        "time": 1.972,
+        "frame": 29
+      }
+    ],
+    "lockout_start": 4.303,
+    "declared_winner": null,
+    "fps": 15.0
+  },
+  "artifacts": {
+    "original_video": "processed_phrases/20251106_205549_phrase59_20251121T062442Z/20251106_205549_phrase59_compressed.mp4",
+    "corrected_video": "processed_phrases/20251106_205549_phrase59_20251121T062442Z/20251106_205549_phrase59_compressed_corrected.mp4",
+    "analysis_video": "processed_phrases/20251106_205549_phrase59_20251121T062442Z/20251106_205549_phrase59_compressed_corrected.mp4",
+    "excel": "processed_phrases/20251106_205549_phrase59_20251121T062442Z/20251106_205549_phrase59_compressed_corrected_keypoints.xlsx",
+    "overlay_video": "processed_phrases/20251106_205549_phrase59_20251121T062442Z/20251106_205549_phrase59_compressed_corrected_overlay.mp4",
+    "video": "processed_phrases/20251106_205549_phrase59_20251121T062442Z/20251106_205549_phrase59_compressed_corrected.mp4",
+    "signal": "processed_phrases/20251106_205549_phrase59_20251121T062442Z/20251106_205549_phrase59.txt",
+    "result_json": "processed_phrases/20251106_205549_phrase59_20251121T062442Z/analysis_result.json"
+  },
+  "inputs": {
+    "video": "processed_phrases/20251106_205549_phrase59_20251121T062442Z/20251106_205549_phrase59_compressed_corrected.mp4",
+    "signal": "processed_phrases/20251106_205549_phrase59_20251121T062442Z/20251106_205549_phrase59.txt"
+  },
+  "winner": "right",
+  "reason": "Right has right-of-way (only left paused at 4.47s). Blade contact ignored (too early)",
+  "video_angle": "middle",
+  "frames_analyzed": 68,
+  "normalisation_constant": 155.92999267578125,
+  "left_pauses": [
+    {
+      "start_frame": 14,
+      "end_frame": 67,
+      "start_time": 0.9333333333333333,
+      "end_time": 4.466666666666667,
+      "duration": 3.533333333333333
+    }
+  ],
+  "right_pauses": [],
+  "blade_analysis": "Blade contact at 1.97s ignored (>1s before last pause)",
+  "blade_details": null,
+  "speed_comparison": null,
+  "natural_language_reason": "The right fencer maintained the initiative with an unbroken attack, while the left fencer paused, surrendering right-of-way.",
+  "lunge_detected": {
+    "left": false,
+    "right": false
+  },
+  "artifact_dir": "processed_phrases/20251106_205549_phrase59_20251121T062442Z",
+  "wall_time_seconds": 6.0075,
+  "left_arm_extensions": [],
+  "right_arm_extensions": []
+}

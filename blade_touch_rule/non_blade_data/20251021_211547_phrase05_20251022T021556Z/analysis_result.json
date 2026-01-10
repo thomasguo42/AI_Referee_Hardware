@@ -1,0 +1,72 @@
+{
+  "status": "success",
+  "processing_time_seconds": 1.829,
+  "phrase": {
+    "start_time": 0.0,
+    "start_frame": 0,
+    "simultaneous_hit_time": 0.881,
+    "simultaneous_hit_frame": 13,
+    "blade_contacts": [
+      {
+        "time": 0.949,
+        "frame": 14
+      }
+    ],
+    "lockout_start": 0.784,
+    "declared_winner": null,
+    "fps": 15.0
+  },
+  "artifacts": {
+    "excel": "processed_phrases/20251021_211547_phrase05_20251022T021556Z/20251021_211547_phrase05_compressed_keypoints.xlsx",
+    "overlay_video": "processed_phrases/20251021_211547_phrase05_20251022T021556Z/20251021_211547_phrase05_compressed_overlay.mp4",
+    "video": "processed_phrases/20251021_211547_phrase05_20251022T021556Z/20251021_211547_phrase05_compressed.mp4",
+    "signal": "processed_phrases/20251021_211547_phrase05_20251022T021556Z/20251021_211547_phrase05.txt",
+    "result_json": "processed_phrases/20251021_211547_phrase05_20251022T021556Z/analysis_result.json"
+  },
+  "inputs": {
+    "video": "processed_phrases/20251021_211547_phrase05_20251022T021556Z/20251021_211547_phrase05_compressed.mp4",
+    "signal": "processed_phrases/20251021_211547_phrase05_20251022T021556Z/20251021_211547_phrase05.txt"
+  },
+  "winner": "right",
+  "reason": "No pauses/blade contacts. Arm extensions simultaneous (0.93s vs 0.87s). Right faster (speed: 0.111 vs 0.103)",
+  "video_angle": "middle",
+  "frames_analyzed": 21,
+  "normalisation_constant": 147.4976806640625,
+  "left_pauses": [],
+  "right_pauses": [],
+  "blade_analysis": null,
+  "blade_details": null,
+  "speed_comparison": {
+    "left_speed": 0.1028800731874756,
+    "left_accel": 0.05010790845777344,
+    "right_speed": 0.1114252936561337,
+    "right_accel": 0.05685563808932886
+  },
+  "natural_language_reason": "The right-hand fencer maintained the attack while the left-hand fencer paused, thus retaining right-of-way.",
+  "artifact_dir": "processed_phrases/20251021_211547_phrase05_20251022T021556Z",
+  "wall_time_seconds": 2.3685,
+  "lunge_detected": {
+    "left": false,
+    "right": false
+  },
+  "left_arm_extensions": [
+    {
+      "start_frame": 14,
+      "end_frame": 19,
+      "start_time": 0.9333333333333333,
+      "end_time": 1.2666666666666666,
+      "duration": 0.3333333333333333,
+      "avg_distance": 0.6266316649379754
+    }
+  ],
+  "right_arm_extensions": [
+    {
+      "start_frame": 13,
+      "end_frame": 18,
+      "start_time": 0.8666666666666667,
+      "end_time": 1.2,
+      "duration": 0.3333333333333333,
+      "avg_distance": 0.7294068054543276
+    }
+  ]
+}

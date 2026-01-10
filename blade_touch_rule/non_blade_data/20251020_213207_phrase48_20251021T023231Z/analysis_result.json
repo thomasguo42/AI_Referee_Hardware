@@ -1,0 +1,52 @@
+{
+  "status": "success",
+  "processing_time_seconds": 1.6988,
+  "phrase": {
+    "start_time": 0.0,
+    "start_frame": 0,
+    "simultaneous_hit_time": 1.189,
+    "simultaneous_hit_frame": 17,
+    "blade_contacts": [],
+    "lockout_start": 1.092,
+    "declared_winner": null,
+    "fps": 15.0
+  },
+  "artifacts": {
+    "excel": "processed_phrases/20251020_213207_phrase48_20251021T023231Z/20251020_213207_phrase48_compressed_keypoints.xlsx",
+    "overlay_video": "processed_phrases/20251020_213207_phrase48_20251021T023231Z/20251020_213207_phrase48_compressed_overlay.mp4",
+    "video": "processed_phrases/20251020_213207_phrase48_20251021T023231Z/20251020_213207_phrase48_compressed.mp4",
+    "signal": "processed_phrases/20251020_213207_phrase48_20251021T023231Z/20251020_213207_phrase48.txt",
+    "result_json": "processed_phrases/20251020_213207_phrase48_20251021T023231Z/analysis_result.json"
+  },
+  "inputs": {
+    "video": "processed_phrases/20251020_213207_phrase48_20251021T023231Z/20251020_213207_phrase48_compressed.mp4",
+    "signal": "processed_phrases/20251020_213207_phrase48_20251021T023231Z/20251020_213207_phrase48.txt"
+  },
+  "winner": "left",
+  "reason": "Left has right-of-way (only right paused at 1.27s)",
+  "video_angle": "middle",
+  "frames_analyzed": 20,
+  "normalisation_constant": 153.3926544189453,
+  "left_pauses": [],
+  "right_pauses": [
+    {
+      "start_frame": 10,
+      "end_frame": 19,
+      "start_time": 0.6666666666666666,
+      "end_time": 1.2666666666666666,
+      "duration": 0.6
+    }
+  ],
+  "blade_analysis": null,
+  "blade_details": null,
+  "speed_comparison": null,
+  "natural_language_reason": "The left fencer maintained the attack with continuous action, while the right fencer paused, relinquishing right-of-way.",
+  "artifact_dir": "processed_phrases/20251020_213207_phrase48_20251021T023231Z",
+  "wall_time_seconds": 2.2522,
+  "lunge_detected": {
+    "left": false,
+    "right": false
+  },
+  "left_arm_extensions": [],
+  "right_arm_extensions": []
+}

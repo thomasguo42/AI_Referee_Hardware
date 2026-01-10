@@ -1,0 +1,56 @@
+{
+  "status": "success",
+  "processing_time_seconds": 1.89,
+  "phrase": {
+    "start_time": 0.0,
+    "start_frame": 0,
+    "simultaneous_hit_time": 1.276,
+    "simultaneous_hit_frame": 19,
+    "blade_contacts": [],
+    "lockout_start": 1.145,
+    "declared_winner": null,
+    "fps": 15.0
+  },
+  "artifacts": {
+    "original_video": "processed_phrases/20251106_204216_phrase27_20251121T062134Z/20251106_204216_phrase27_compressed.mp4",
+    "corrected_video": "processed_phrases/20251106_204216_phrase27_20251121T062134Z/20251106_204216_phrase27_compressed_corrected.mp4",
+    "analysis_video": "processed_phrases/20251106_204216_phrase27_20251121T062134Z/20251106_204216_phrase27_compressed_corrected.mp4",
+    "excel": "processed_phrases/20251106_204216_phrase27_20251121T062134Z/20251106_204216_phrase27_compressed_corrected_keypoints.xlsx",
+    "overlay_video": "processed_phrases/20251106_204216_phrase27_20251121T062134Z/20251106_204216_phrase27_compressed_corrected_overlay.mp4",
+    "video": "processed_phrases/20251106_204216_phrase27_20251121T062134Z/20251106_204216_phrase27_compressed_corrected.mp4",
+    "signal": "processed_phrases/20251106_204216_phrase27_20251121T062134Z/20251106_204216_phrase27.txt",
+    "result_json": "processed_phrases/20251106_204216_phrase27_20251121T062134Z/analysis_result.json"
+  },
+  "inputs": {
+    "video": "processed_phrases/20251106_204216_phrase27_20251121T062134Z/20251106_204216_phrase27_compressed_corrected.mp4",
+    "signal": "processed_phrases/20251106_204216_phrase27_20251121T062134Z/20251106_204216_phrase27.txt"
+  },
+  "winner": "right",
+  "reason": "No pauses/blade contacts. Only right extended arm (at 1.00s)",
+  "video_angle": "middle",
+  "frames_analyzed": 21,
+  "normalisation_constant": 174.43959045410156,
+  "left_pauses": [],
+  "right_pauses": [],
+  "blade_analysis": null,
+  "blade_details": null,
+  "speed_comparison": null,
+  "natural_language_reason": "The fencer on the left initiated an attack with a lunge, establishing right-of-way.",
+  "lunge_detected": {
+    "left": false,
+    "right": false
+  },
+  "artifact_dir": "processed_phrases/20251106_204216_phrase27_20251121T062134Z",
+  "wall_time_seconds": 2.3566,
+  "left_arm_extensions": [],
+  "right_arm_extensions": [
+    {
+      "start_frame": 15,
+      "end_frame": 20,
+      "start_time": 1.0,
+      "end_time": 1.3333333333333333,
+      "duration": 0.3333333333333333,
+      "avg_distance": 0.7667869437114415
+    }
+  ]
+}

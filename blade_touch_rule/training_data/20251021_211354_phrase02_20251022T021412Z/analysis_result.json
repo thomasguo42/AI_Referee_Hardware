@@ -1,0 +1,53 @@
+{
+  "status": "success",
+  "processing_time_seconds": 1.7807,
+  "phrase": {
+    "start_time": 0.0,
+    "start_frame": 0,
+    "simultaneous_hit_time": 1.231,
+    "simultaneous_hit_frame": 18,
+    "blade_contacts": [],
+    "lockout_start": 1.135,
+    "declared_winner": null,
+    "fps": 15.0
+  },
+  "artifacts": {
+    "excel": "processed_phrases/20251021_211354_phrase02_20251022T021412Z/20251021_211354_phrase02_compressed_keypoints.xlsx",
+    "overlay_video": "processed_phrases/20251021_211354_phrase02_20251022T021412Z/20251021_211354_phrase02_compressed_overlay.mp4",
+    "video": "processed_phrases/20251021_211354_phrase02_20251022T021412Z/20251021_211354_phrase02_compressed.mp4",
+    "signal": "processed_phrases/20251021_211354_phrase02_20251022T021412Z/20251021_211354_phrase02.txt",
+    "result_json": "processed_phrases/20251021_211354_phrase02_20251022T021412Z/analysis_result.json"
+  },
+  "inputs": {
+    "video": "processed_phrases/20251021_211354_phrase02_20251022T021412Z/20251021_211354_phrase02_compressed.mp4",
+    "signal": "processed_phrases/20251021_211354_phrase02_20251022T021412Z/20251021_211354_phrase02.txt"
+  },
+  "winner": "left",
+  "reason": "No pauses/blade contacts. Only left extended arm (at 0.87s)",
+  "video_angle": "middle",
+  "frames_analyzed": 19,
+  "normalisation_constant": 161.22628784179688,
+  "left_pauses": [],
+  "right_pauses": [],
+  "blade_analysis": null,
+  "blade_details": null,
+  "speed_comparison": null,
+  "natural_language_reason": "The winner established right-of-way by initiating a faster attack without any preparatory pauses or blade contact.",
+  "artifact_dir": "processed_phrases/20251021_211354_phrase02_20251022T021412Z",
+  "wall_time_seconds": 2.2601,
+  "lunge_detected": {
+    "left": false,
+    "right": false
+  },
+  "left_arm_extensions": [
+    {
+      "start_frame": 13,
+      "end_frame": 17,
+      "start_time": 0.8666666666666667,
+      "end_time": 1.1333333333333333,
+      "duration": 0.26666666666666666,
+      "avg_distance": 0.7603811265235156
+    }
+  ],
+  "right_arm_extensions": []
+}

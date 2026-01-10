@@ -1,0 +1,67 @@
+{
+  "status": "success",
+  "processing_time_seconds": 1.228,
+  "phrase": {
+    "start_time": 0.0,
+    "start_frame": 0,
+    "simultaneous_hit_time": 1.501,
+    "simultaneous_hit_frame": 22,
+    "blade_contacts": [],
+    "lockout_start": 1.403,
+    "declared_winner": "Left",
+    "fps": 15.0
+  },
+  "artifacts": {
+    "excel": "processed_phrases/20251020_212301_phrase38_20251025T042313Z/20251020_212301_phrase38_compressed_keypoints.xlsx",
+    "overlay_video": "processed_phrases/20251020_212301_phrase38_20251025T042313Z/20251020_212301_phrase38_compressed_overlay.mp4",
+    "video": "processed_phrases/20251020_212301_phrase38_20251025T042313Z/20251020_212301_phrase38_compressed.mp4",
+    "signal": "processed_phrases/20251020_212301_phrase38_20251025T042313Z/20251020_212301_phrase38.txt",
+    "result_json": "processed_phrases/20251020_212301_phrase38_20251025T042313Z/analysis_result.json"
+  },
+  "inputs": {
+    "video": "processed_phrases/20251020_212301_phrase38_20251025T042313Z/20251020_212301_phrase38_compressed.mp4",
+    "signal": "processed_phrases/20251020_212301_phrase38_20251025T042313Z/20251020_212301_phrase38.txt"
+  },
+  "winner": "left",
+  "reason": "No pauses/blade contacts. Arm extensions simultaneous (1.27s vs 1.27s). Left faster (speed: 0.090 vs 0.075)",
+  "video_angle": "middle",
+  "frames_analyzed": 23,
+  "normalisation_constant": 178.316162109375,
+  "left_pauses": [],
+  "right_pauses": [],
+  "blade_analysis": null,
+  "blade_details": null,
+  "speed_comparison": {
+    "left_speed": 0.09013722587078539,
+    "left_accel": 0.05821828856341661,
+    "right_speed": 0.07547797463174054,
+    "right_accel": 0.04062825798723196
+  },
+  "natural_language_reason": "The left fencer initiated a continuous attack and was the first to arrive with a valid action, thus earning right-of-way.",
+  "lunge_detected": {
+    "left": false,
+    "right": false
+  },
+  "artifact_dir": "processed_phrases/20251020_212301_phrase38_20251025T042313Z",
+  "wall_time_seconds": 1.6938,
+  "left_arm_extensions": [
+    {
+      "start_frame": 19,
+      "end_frame": 22,
+      "start_time": 1.2666666666666666,
+      "end_time": 1.4666666666666666,
+      "duration": 0.2,
+      "avg_distance": 0.5733290597444953
+    }
+  ],
+  "right_arm_extensions": [
+    {
+      "start_frame": 19,
+      "end_frame": 22,
+      "start_time": 1.2666666666666666,
+      "end_time": 1.4666666666666666,
+      "duration": 0.2,
+      "avg_distance": 0.6449844630295136
+    }
+  ]
+}

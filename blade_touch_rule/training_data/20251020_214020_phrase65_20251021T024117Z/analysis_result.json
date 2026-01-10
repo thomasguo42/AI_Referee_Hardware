@@ -1,0 +1,189 @@
+{
+  "status": "success",
+  "processing_time_seconds": 9.1379,
+  "phrase": {
+    "start_time": 0.0,
+    "start_frame": 0,
+    "simultaneous_hit_time": 11.409,
+    "simultaneous_hit_frame": 171,
+    "blade_contacts": [
+      {
+        "time": 1.41,
+        "frame": 21
+      },
+      {
+        "time": 1.427,
+        "frame": 21
+      },
+      {
+        "time": 3.549,
+        "frame": 53
+      },
+      {
+        "time": 3.587,
+        "frame": 53
+      },
+      {
+        "time": 3.626,
+        "frame": 54
+      },
+      {
+        "time": 11.015,
+        "frame": 165
+      },
+      {
+        "time": 11.195,
+        "frame": 167
+      }
+    ],
+    "lockout_start": 11.285,
+    "declared_winner": null,
+    "fps": 15.0
+  },
+  "artifacts": {
+    "excel": "processed_phrases/20251020_214020_phrase65_20251021T024117Z/20251020_214020_phrase65_compressed_keypoints.xlsx",
+    "overlay_video": "processed_phrases/20251020_214020_phrase65_20251021T024117Z/20251020_214020_phrase65_compressed_overlay.mp4",
+    "video": "processed_phrases/20251020_214020_phrase65_20251021T024117Z/20251020_214020_phrase65_compressed.mp4",
+    "signal": "processed_phrases/20251020_214020_phrase65_20251021T024117Z/20251020_214020_phrase65.txt",
+    "result_json": "processed_phrases/20251020_214020_phrase65_20251021T024117Z/analysis_result.json"
+  },
+  "inputs": {
+    "video": "processed_phrases/20251020_214020_phrase65_20251021T024117Z/20251020_214020_phrase65_compressed.mp4",
+    "signal": "processed_phrases/20251020_214020_phrase65_20251021T024117Z/20251020_214020_phrase65.txt"
+  },
+  "winner": "left",
+  "reason": "Left has right-of-way (pause ended at 8.80s vs 11.53s). Left maintained right-of-way (logistic momentum confirmed)",
+  "video_angle": "middle",
+  "frames_analyzed": 174,
+  "normalisation_constant": 149.49412536621094,
+  "left_pauses": [
+    {
+      "start_frame": 29,
+      "end_frame": 39,
+      "start_time": 1.9333333333333333,
+      "end_time": 2.6,
+      "duration": 0.6666666666666666
+    },
+    {
+      "start_frame": 42,
+      "end_frame": 67,
+      "start_time": 2.8,
+      "end_time": 4.466666666666667,
+      "duration": 1.6666666666666667
+    },
+    {
+      "start_frame": 77,
+      "end_frame": 86,
+      "start_time": 5.133333333333334,
+      "end_time": 5.733333333333333,
+      "duration": 0.6
+    },
+    {
+      "start_frame": 100,
+      "end_frame": 107,
+      "start_time": 6.666666666666667,
+      "end_time": 7.133333333333334,
+      "duration": 0.4666666666666667
+    },
+    {
+      "start_frame": 122,
+      "end_frame": 132,
+      "start_time": 8.133333333333333,
+      "end_time": 8.8,
+      "duration": 0.6666666666666666
+    }
+  ],
+  "right_pauses": [
+    {
+      "start_frame": 16,
+      "end_frame": 28,
+      "start_time": 1.0666666666666667,
+      "end_time": 1.8666666666666667,
+      "duration": 0.8
+    },
+    {
+      "start_frame": 30,
+      "end_frame": 35,
+      "start_time": 2.0,
+      "end_time": 2.3333333333333335,
+      "duration": 0.3333333333333333
+    },
+    {
+      "start_frame": 170,
+      "end_frame": 173,
+      "start_time": 11.333333333333334,
+      "end_time": 11.533333333333333,
+      "duration": 0.2
+    }
+  ],
+  "blade_analysis": "Blade contact at 11.20s - logistic momentum vote (p_left=0.96)",
+  "blade_details": {
+    "contact_frame": 167,
+    "left_features": {
+      "front_now": 6.282453427988495,
+      "front_progress": 2.2595244562069317,
+      "front_velocity": 1.2750000076552093,
+      "back_now": 5.205214076974889,
+      "back_progress": 1.9875319668882496,
+      "back_velocity": 0.04614255412771051,
+      "front_knee_now": 6.200852545618172,
+      "front_knee_progress": 2.2894579262929673,
+      "front_knee_velocity": 1.1004030009654775,
+      "front_wrist_now": 6.51355875788372,
+      "front_wrist_progress": 2.411008316928214,
+      "front_wrist_velocity": 3.2154155141745466,
+      "stance_now": 1.0772393510136054,
+      "stance_progress": 0.27199248931868203,
+      "com_progress": 2.2622166410625355,
+      "com_velocity": 1.3523168804461072,
+      "front_height_change": -0.11434273321883204,
+      "weapon_lead": 0.23110532989522525,
+      "weapon_lead_progress": 0.1514838607212825,
+      "weapon_vs_com": 0.7097022255333565,
+      "attack_start_frame": 17,
+      "attack_lead_time": 10.0,
+      "attack_progress_rate": 0.015063496374712878,
+      "front_velocity_mean_window": 0.8407474058784059,
+      "front_velocity_peak_window": 1.7798612201978736
+    },
+    "right_features": {
+      "front_now": 8.55850301620445,
+      "front_progress": -0.6286244288829286,
+      "front_velocity": 1.1635064421668684,
+      "back_now": 9.405113089421956,
+      "back_progress": -0.7883416229069251,
+      "back_velocity": 1.243622825881605,
+      "front_knee_now": 8.606682264926055,
+      "front_knee_progress": -0.6477983049728149,
+      "front_knee_velocity": 2.0179689253521893,
+      "front_wrist_now": 8.329996375512428,
+      "front_wrist_progress": -0.6549020148211042,
+      "front_wrist_velocity": 1.4749510755419326,
+      "stance_now": -0.8466100732175068,
+      "stance_progress": 0.15971719402399653,
+      "com_progress": -0.8215872887557083,
+      "com_velocity": 1.6474536163067022,
+      "front_height_change": -0.07794369173299387,
+      "weapon_lead": 0.22850664069202153,
+      "weapon_lead_progress": -0.02627758593817564,
+      "weapon_vs_com": 0.7565598785046443,
+      "attack_start_frame": 5,
+      "attack_lead_time": 10.8,
+      "attack_progress_rate": -0.00388039770915388,
+      "front_velocity_mean_window": 1.0889855078676725,
+      "front_velocity_peak_window": 1.880781407266765
+    },
+    "logistic_available": true,
+    "rationale": "logistic momentum vote (p_left=0.96)"
+  },
+  "speed_comparison": null,
+  "natural_language_reason": "The winner earned right-of-way by initiating a blade beat during the attack.",
+  "artifact_dir": "processed_phrases/20251020_214020_phrase65_20251021T024117Z",
+  "wall_time_seconds": 12.3476,
+  "lunge_detected": {
+    "left": false,
+    "right": false
+  },
+  "left_arm_extensions": [],
+  "right_arm_extensions": []
+}

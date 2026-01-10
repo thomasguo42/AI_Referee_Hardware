@@ -1,0 +1,56 @@
+{
+  "status": "success",
+  "processing_time_seconds": 2.1235,
+  "phrase": {
+    "start_time": 0.0,
+    "start_frame": 0,
+    "simultaneous_hit_time": 1.345,
+    "simultaneous_hit_frame": 20,
+    "blade_contacts": [],
+    "lockout_start": 1.214,
+    "declared_winner": null,
+    "fps": 15.0
+  },
+  "artifacts": {
+    "original_video": "processed_phrases/20251106_205637_phrase62_20251121T062454Z/20251106_205637_phrase62_compressed.mp4",
+    "corrected_video": "processed_phrases/20251106_205637_phrase62_20251121T062454Z/20251106_205637_phrase62_compressed_corrected.mp4",
+    "analysis_video": "processed_phrases/20251106_205637_phrase62_20251121T062454Z/20251106_205637_phrase62_compressed_corrected.mp4",
+    "excel": "processed_phrases/20251106_205637_phrase62_20251121T062454Z/20251106_205637_phrase62_compressed_corrected_keypoints.xlsx",
+    "overlay_video": "processed_phrases/20251106_205637_phrase62_20251121T062454Z/20251106_205637_phrase62_compressed_corrected_overlay.mp4",
+    "video": "processed_phrases/20251106_205637_phrase62_20251121T062454Z/20251106_205637_phrase62_compressed_corrected.mp4",
+    "signal": "processed_phrases/20251106_205637_phrase62_20251121T062454Z/20251106_205637_phrase62.txt",
+    "result_json": "processed_phrases/20251106_205637_phrase62_20251121T062454Z/analysis_result.json"
+  },
+  "inputs": {
+    "video": "processed_phrases/20251106_205637_phrase62_20251121T062454Z/20251106_205637_phrase62_compressed_corrected.mp4",
+    "signal": "processed_phrases/20251106_205637_phrase62_20251121T062454Z/20251106_205637_phrase62.txt"
+  },
+  "winner": "left",
+  "reason": "No pauses/blade contacts. Only left extended arm (at 1.20s)",
+  "video_angle": "middle",
+  "frames_analyzed": 23,
+  "normalisation_constant": 158.6504364013672,
+  "left_pauses": [],
+  "right_pauses": [],
+  "blade_analysis": null,
+  "blade_details": null,
+  "speed_comparison": null,
+  "natural_language_reason": "The fencer on the left initiated a faster, continuous attack without hesitation or blade contact, thus gaining right-of-way.",
+  "lunge_detected": {
+    "left": false,
+    "right": false
+  },
+  "artifact_dir": "processed_phrases/20251106_205637_phrase62_20251121T062454Z",
+  "wall_time_seconds": 2.6422,
+  "left_arm_extensions": [
+    {
+      "start_frame": 18,
+      "end_frame": 20,
+      "start_time": 1.2,
+      "end_time": 1.3333333333333333,
+      "duration": 0.13333333333333333,
+      "avg_distance": 0.7932682173842373
+    }
+  ],
+  "right_arm_extensions": []
+}

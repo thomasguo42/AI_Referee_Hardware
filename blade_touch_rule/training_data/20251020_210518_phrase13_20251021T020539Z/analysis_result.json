@@ -1,0 +1,67 @@
+{
+  "status": "success",
+  "processing_time_seconds": 1.7891,
+  "phrase": {
+    "start_time": 0.0,
+    "start_frame": 0,
+    "simultaneous_hit_time": 1.213,
+    "simultaneous_hit_frame": 18,
+    "blade_contacts": [],
+    "lockout_start": 1.117,
+    "declared_winner": null,
+    "fps": 15.0
+  },
+  "artifacts": {
+    "excel": "processed_phrases/20251020_210518_phrase13_20251021T020539Z/20251020_210518_phrase13_compressed_keypoints.xlsx",
+    "overlay_video": "processed_phrases/20251020_210518_phrase13_20251021T020539Z/20251020_210518_phrase13_compressed_overlay.mp4",
+    "video": "processed_phrases/20251020_210518_phrase13_20251021T020539Z/20251020_210518_phrase13_compressed.mp4",
+    "signal": "processed_phrases/20251020_210518_phrase13_20251021T020539Z/20251020_210518_phrase13.txt",
+    "result_json": "processed_phrases/20251020_210518_phrase13_20251021T020539Z/analysis_result.json"
+  },
+  "inputs": {
+    "video": "processed_phrases/20251020_210518_phrase13_20251021T020539Z/20251020_210518_phrase13_compressed.mp4",
+    "signal": "processed_phrases/20251020_210518_phrase13_20251021T020539Z/20251020_210518_phrase13.txt"
+  },
+  "winner": "left",
+  "reason": "No pauses/blade contacts. Arm extensions simultaneous (0.93s vs 0.87s). Left faster (speed: 0.130 vs 0.078)",
+  "video_angle": "middle",
+  "frames_analyzed": 20,
+  "normalisation_constant": 161.6668701171875,
+  "left_pauses": [],
+  "right_pauses": [],
+  "blade_analysis": null,
+  "blade_details": null,
+  "speed_comparison": {
+    "left_speed": 0.1299368122997442,
+    "left_accel": 0.06328331824037356,
+    "right_speed": 0.07791347457837611,
+    "right_accel": 0.04613092356159849
+  },
+  "natural_language_reason": "The left fencer maintained continuous offensive action, while the right fencer paused, thus the left fencer's attack took precedence.",
+  "artifact_dir": "processed_phrases/20251020_210518_phrase13_20251021T020539Z",
+  "wall_time_seconds": 2.3231,
+  "lunge_detected": {
+    "left": false,
+    "right": false
+  },
+  "left_arm_extensions": [
+    {
+      "start_frame": 14,
+      "end_frame": 19,
+      "start_time": 0.9333333333333333,
+      "end_time": 1.2666666666666666,
+      "duration": 0.3333333333333333,
+      "avg_distance": 0.7103041324809514
+    }
+  ],
+  "right_arm_extensions": [
+    {
+      "start_frame": 13,
+      "end_frame": 16,
+      "start_time": 0.8666666666666667,
+      "end_time": 1.0666666666666667,
+      "duration": 0.2,
+      "avg_distance": 0.5902525072987118
+    }
+  ]
+}

@@ -1,0 +1,194 @@
+{
+  "status": "success",
+  "processing_time_seconds": 11.5517,
+  "phrase": {
+    "start_time": 0.0,
+    "start_frame": 0,
+    "simultaneous_hit_time": 13.071,
+    "simultaneous_hit_frame": 196,
+    "blade_contacts": [
+      {
+        "time": 1.226,
+        "frame": 18
+      },
+      {
+        "time": 1.324,
+        "frame": 19
+      },
+      {
+        "time": 1.419,
+        "frame": 21
+      },
+      {
+        "time": 1.517,
+        "frame": 22
+      },
+      {
+        "time": 1.616,
+        "frame": 24
+      },
+      {
+        "time": 3.963,
+        "frame": 59
+      },
+      {
+        "time": 4.127,
+        "frame": 61
+      },
+      {
+        "time": 12.964,
+        "frame": 194
+      }
+    ],
+    "lockout_start": 12.854,
+    "declared_winner": null,
+    "fps": 15.0
+  },
+  "artifacts": {
+    "original_video": "processed_phrases/20251106_204708_phrase36_20251121T062230Z/20251106_204708_phrase36_compressed.mp4",
+    "corrected_video": "processed_phrases/20251106_204708_phrase36_20251121T062230Z/20251106_204708_phrase36_compressed_corrected.mp4",
+    "analysis_video": "processed_phrases/20251106_204708_phrase36_20251121T062230Z/20251106_204708_phrase36_compressed_corrected.mp4",
+    "excel": "processed_phrases/20251106_204708_phrase36_20251121T062230Z/20251106_204708_phrase36_compressed_corrected_keypoints.xlsx",
+    "overlay_video": "processed_phrases/20251106_204708_phrase36_20251121T062230Z/20251106_204708_phrase36_compressed_corrected_overlay.mp4",
+    "video": "processed_phrases/20251106_204708_phrase36_20251121T062230Z/20251106_204708_phrase36_compressed_corrected.mp4",
+    "signal": "processed_phrases/20251106_204708_phrase36_20251121T062230Z/20251106_204708_phrase36.txt",
+    "result_json": "processed_phrases/20251106_204708_phrase36_20251121T062230Z/analysis_result.json"
+  },
+  "inputs": {
+    "video": "processed_phrases/20251106_204708_phrase36_20251121T062230Z/20251106_204708_phrase36_compressed_corrected.mp4",
+    "signal": "processed_phrases/20251106_204708_phrase36_20251121T062230Z/20251106_204708_phrase36.txt"
+  },
+  "winner": "left",
+  "reason": "Left has right-of-way (pause ended at 12.20s vs 13.13s). Blade contact ignored (too early)",
+  "video_angle": "middle",
+  "frames_analyzed": 198,
+  "normalisation_constant": 167.9745635986328,
+  "left_pauses": [
+    {
+      "start_frame": 29,
+      "end_frame": 34,
+      "start_time": 1.9333333333333333,
+      "end_time": 2.2666666666666666,
+      "duration": 0.3333333333333333
+    },
+    {
+      "start_frame": 39,
+      "end_frame": 74,
+      "start_time": 2.6,
+      "end_time": 4.933333333333334,
+      "duration": 2.3333333333333335
+    },
+    {
+      "start_frame": 76,
+      "end_frame": 84,
+      "start_time": 5.066666666666666,
+      "end_time": 5.6,
+      "duration": 0.5333333333333333
+    },
+    {
+      "start_frame": 87,
+      "end_frame": 94,
+      "start_time": 5.8,
+      "end_time": 6.266666666666667,
+      "duration": 0.4666666666666667
+    },
+    {
+      "start_frame": 106,
+      "end_frame": 110,
+      "start_time": 7.066666666666666,
+      "end_time": 7.333333333333333,
+      "duration": 0.26666666666666666
+    },
+    {
+      "start_frame": 112,
+      "end_frame": 115,
+      "start_time": 7.466666666666667,
+      "end_time": 7.666666666666667,
+      "duration": 0.2
+    },
+    {
+      "start_frame": 123,
+      "end_frame": 132,
+      "start_time": 8.2,
+      "end_time": 8.8,
+      "duration": 0.6
+    },
+    {
+      "start_frame": 139,
+      "end_frame": 149,
+      "start_time": 9.266666666666667,
+      "end_time": 9.933333333333334,
+      "duration": 0.6666666666666666
+    },
+    {
+      "start_frame": 165,
+      "end_frame": 173,
+      "start_time": 11.0,
+      "end_time": 11.533333333333333,
+      "duration": 0.5333333333333333
+    },
+    {
+      "start_frame": 176,
+      "end_frame": 183,
+      "start_time": 11.733333333333333,
+      "end_time": 12.2,
+      "duration": 0.4666666666666667
+    }
+  ],
+  "right_pauses": [
+    {
+      "start_frame": 2,
+      "end_frame": 6,
+      "start_time": 0.13333333333333333,
+      "end_time": 0.4,
+      "duration": 0.26666666666666666
+    },
+    {
+      "start_frame": 14,
+      "end_frame": 32,
+      "start_time": 0.9333333333333333,
+      "end_time": 2.1333333333333333,
+      "duration": 1.2
+    },
+    {
+      "start_frame": 64,
+      "end_frame": 104,
+      "start_time": 4.266666666666667,
+      "end_time": 6.933333333333334,
+      "duration": 2.6666666666666665
+    },
+    {
+      "start_frame": 106,
+      "end_frame": 158,
+      "start_time": 7.066666666666666,
+      "end_time": 10.533333333333333,
+      "duration": 3.466666666666667
+    },
+    {
+      "start_frame": 164,
+      "end_frame": 189,
+      "start_time": 10.933333333333334,
+      "end_time": 12.6,
+      "duration": 1.6666666666666667
+    },
+    {
+      "start_frame": 192,
+      "end_frame": 197,
+      "start_time": 12.8,
+      "end_time": 13.133333333333333,
+      "duration": 0.3333333333333333
+    }
+  ],
+  "blade_analysis": "Blade contact at 4.13s ignored (>1s before last pause)",
+  "blade_details": null,
+  "speed_comparison": null,
+  "natural_language_reason": "The left fencer had the right-of-way because their final pause ended before the right fencer's, and any blade contact prior to the right fencer's final pause was too early to constitute a counter-attack.",
+  "lunge_detected": {
+    "left": false,
+    "right": false
+  },
+  "artifact_dir": "processed_phrases/20251106_204708_phrase36_20251121T062230Z",
+  "wall_time_seconds": 15.3464,
+  "left_arm_extensions": [],
+  "right_arm_extensions": []
+}

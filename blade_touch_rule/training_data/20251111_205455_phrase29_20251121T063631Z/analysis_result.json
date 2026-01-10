@@ -1,0 +1,70 @@
+{
+  "status": "success",
+  "processing_time_seconds": 1.9913,
+  "phrase": {
+    "start_time": 0.0,
+    "start_frame": 0,
+    "simultaneous_hit_time": 0.923,
+    "simultaneous_hit_frame": 13,
+    "blade_contacts": [],
+    "lockout_start": 0.989,
+    "declared_winner": null,
+    "fps": 15.0
+  },
+  "artifacts": {
+    "original_video": "processed_phrases/20251111_205455_phrase29_20251121T063631Z/20251111_205455_phrase29_compressed.mp4",
+    "corrected_video": "processed_phrases/20251111_205455_phrase29_20251121T063631Z/20251111_205455_phrase29_compressed_corrected.mp4",
+    "analysis_video": "processed_phrases/20251111_205455_phrase29_20251121T063631Z/20251111_205455_phrase29_compressed_corrected.mp4",
+    "excel": "processed_phrases/20251111_205455_phrase29_20251121T063631Z/20251111_205455_phrase29_compressed_corrected_keypoints.xlsx",
+    "overlay_video": "processed_phrases/20251111_205455_phrase29_20251121T063631Z/20251111_205455_phrase29_compressed_corrected_overlay.mp4",
+    "video": "processed_phrases/20251111_205455_phrase29_20251121T063631Z/20251111_205455_phrase29_compressed_corrected.mp4",
+    "signal": "processed_phrases/20251111_205455_phrase29_20251121T063631Z/20251111_205455_phrase29.txt",
+    "result_json": "processed_phrases/20251111_205455_phrase29_20251121T063631Z/analysis_result.json"
+  },
+  "inputs": {
+    "video": "processed_phrases/20251111_205455_phrase29_20251121T063631Z/20251111_205455_phrase29_compressed_corrected.mp4",
+    "signal": "processed_phrases/20251111_205455_phrase29_20251121T063631Z/20251111_205455_phrase29.txt"
+  },
+  "winner": "right",
+  "reason": "No pauses/blade contacts. Arm extensions simultaneous (0.87s vs 0.87s). Right faster (speed: 0.110 vs 0.090)",
+  "video_angle": "middle",
+  "frames_analyzed": 19,
+  "normalisation_constant": 159.61834716796875,
+  "left_pauses": [],
+  "right_pauses": [],
+  "blade_analysis": null,
+  "blade_details": null,
+  "speed_comparison": {
+    "left_speed": 0.09014799366588738,
+    "left_accel": 0.05402915737956775,
+    "right_speed": 0.11038383414094498,
+    "right_accel": 0.05097552433972347
+  },
+  "natural_language_reason": "The right-hand fencer's attack, initiated with greater speed and without interruption, took precedence over the left-hand fencer's action.",
+  "lunge_detected": {
+    "left": false,
+    "right": false
+  },
+  "artifact_dir": "processed_phrases/20251111_205455_phrase29_20251121T063631Z",
+  "wall_time_seconds": 2.489,
+  "left_arm_extensions": [
+    {
+      "start_frame": 13,
+      "end_frame": 18,
+      "start_time": 0.8666666666666667,
+      "end_time": 1.2,
+      "duration": 0.3333333333333333,
+      "avg_distance": 1.1365234152203876
+    }
+  ],
+  "right_arm_extensions": [
+    {
+      "start_frame": 13,
+      "end_frame": 16,
+      "start_time": 0.8666666666666667,
+      "end_time": 1.0666666666666667,
+      "duration": 0.2,
+      "avg_distance": 0.6986258766821809
+    }
+  ]
+}

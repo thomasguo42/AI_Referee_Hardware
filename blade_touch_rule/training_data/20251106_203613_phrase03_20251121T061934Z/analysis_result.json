@@ -1,0 +1,55 @@
+{
+  "status": "success",
+  "processing_time_seconds": 2.493,
+  "phrase": {
+    "start_time": 0.0,
+    "start_frame": 0,
+    "simultaneous_hit_time": 1.325,
+    "simultaneous_hit_frame": 19,
+    "blade_contacts": [],
+    "lockout_start": 1.39,
+    "declared_winner": null,
+    "fps": 15.0
+  },
+  "artifacts": {
+    "original_video": "processed_phrases/20251106_203613_phrase03_20251121T061934Z/20251106_203613_phrase03_compressed.mp4",
+    "corrected_video": "processed_phrases/20251106_203613_phrase03_20251121T061934Z/20251106_203613_phrase03_compressed_corrected.mp4",
+    "analysis_video": "processed_phrases/20251106_203613_phrase03_20251121T061934Z/20251106_203613_phrase03_compressed_corrected.mp4",
+    "excel": "processed_phrases/20251106_203613_phrase03_20251121T061934Z/20251106_203613_phrase03_compressed_corrected_keypoints.xlsx",
+    "overlay_video": "processed_phrases/20251106_203613_phrase03_20251121T061934Z/20251106_203613_phrase03_compressed_corrected_overlay.mp4",
+    "video": "processed_phrases/20251106_203613_phrase03_20251121T061934Z/20251106_203613_phrase03_compressed_corrected.mp4",
+    "signal": "processed_phrases/20251106_203613_phrase03_20251121T061934Z/20251106_203613_phrase03.txt",
+    "result_json": "processed_phrases/20251106_203613_phrase03_20251121T061934Z/analysis_result.json"
+  },
+  "inputs": {
+    "video": "processed_phrases/20251106_203613_phrase03_20251121T061934Z/20251106_203613_phrase03_compressed_corrected.mp4",
+    "signal": "processed_phrases/20251106_203613_phrase03_20251121T061934Z/20251106_203613_phrase03.txt"
+  },
+  "winner": "left",
+  "reason": "Left has right-of-way (only right paused at 0.53s)",
+  "video_angle": "right",
+  "frames_analyzed": 26,
+  "normalisation_constant": 172.16171264648438,
+  "left_pauses": [],
+  "right_pauses": [
+    {
+      "start_frame": 1,
+      "end_frame": 8,
+      "start_time": 0.06666666666666667,
+      "end_time": 0.5333333333333333,
+      "duration": 0.4666666666666667
+    }
+  ],
+  "blade_analysis": null,
+  "blade_details": null,
+  "speed_comparison": null,
+  "natural_language_reason": "The fencer on the left maintained the offensive initiative without a significant pause, thus earning right-of-way over the opponent's momentary halt.",
+  "lunge_detected": {
+    "left": false,
+    "right": false
+  },
+  "artifact_dir": "processed_phrases/20251106_203613_phrase03_20251121T061934Z",
+  "wall_time_seconds": 3.1719,
+  "left_arm_extensions": [],
+  "right_arm_extensions": []
+}

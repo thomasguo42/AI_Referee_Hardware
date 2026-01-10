@@ -1,0 +1,20 @@
+Phrase 9 initialized at 2025-10-20 21:03:29
+Audio cue executed at 2025-10-20 21:03:27
+Audio cue duration: 2.50s
+Start command issued at 2025-10-20 21:03:29
+Recording started at 2025-10-20 21:03:29
+ 0.001s | Phrase recording started
+ 1.171s | Off-Target: Blade-to-blade contact.
+ 1.291s | HIT: Right scores on Left!
+Lockout active (0.130s window)
+ 1.316s | Lockout period started (0.200s window)
+ 1.537s | HIT: Simultaneous valid hits!
+ 1.580s | Phrase recording ended
+Scores -> Fencer 1: HIT, Fencer 2: HIT
+Phrase ended
+[2025-10-20 21:03:31] Interpretation -> Right Fencer: HIT, Left Fencer: HIT
+[2025-10-20 21:03:31] Awaiting manual winner selection (double hit)
+[2025-10-20 21:03:34] Manual selection winner: Left Fencer (Red Lamp)
+[2025-10-20 21:03:34] Preparing remote referee submission
+[2025-10-20 21:03:34] Uploading phrase to remote referee service
+[2025-10-20 21:03:34] FFmpeg compressed video to MP4 (0.31 MB, 6% of original)

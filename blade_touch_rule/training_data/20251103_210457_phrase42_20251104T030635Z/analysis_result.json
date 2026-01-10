@@ -1,0 +1,230 @@
+{
+  "status": "success",
+  "processing_time_seconds": 13.8471,
+  "phrase": {
+    "start_time": 0.0,
+    "start_frame": 0,
+    "simultaneous_hit_time": 16.0,
+    "simultaneous_hit_frame": 240,
+    "blade_contacts": [
+      {
+        "time": 5.307,
+        "frame": 79
+      },
+      {
+        "time": 8.671,
+        "frame": 130
+      },
+      {
+        "time": 12.986,
+        "frame": 194
+      },
+      {
+        "time": 15.465,
+        "frame": 231
+      },
+      {
+        "time": 15.63,
+        "frame": 234
+      },
+      {
+        "time": 15.793,
+        "frame": 236
+      }
+    ],
+    "lockout_start": 16.066,
+    "declared_winner": null,
+    "fps": 15.0
+  },
+  "artifacts": {
+    "original_video": "processed_phrases/20251103_210457_phrase42_20251104T030635Z/20251103_210457_phrase42_compressed.mp4",
+    "corrected_video": "processed_phrases/20251103_210457_phrase42_20251104T030635Z/20251103_210457_phrase42_compressed_corrected.mp4",
+    "analysis_video": "processed_phrases/20251103_210457_phrase42_20251104T030635Z/20251103_210457_phrase42_compressed_corrected.mp4",
+    "excel": "processed_phrases/20251103_210457_phrase42_20251104T030635Z/20251103_210457_phrase42_compressed_corrected_keypoints.xlsx",
+    "overlay_video": "processed_phrases/20251103_210457_phrase42_20251104T030635Z/20251103_210457_phrase42_compressed_corrected_overlay.mp4",
+    "video": "processed_phrases/20251103_210457_phrase42_20251104T030635Z/20251103_210457_phrase42_compressed_corrected.mp4",
+    "signal": "processed_phrases/20251103_210457_phrase42_20251104T030635Z/20251103_210457_phrase42.txt",
+    "result_json": "processed_phrases/20251103_210457_phrase42_20251104T030635Z/analysis_result.json"
+  },
+  "inputs": {
+    "video": "processed_phrases/20251103_210457_phrase42_20251104T030635Z/20251103_210457_phrase42_compressed_corrected.mp4",
+    "signal": "processed_phrases/20251103_210457_phrase42_20251104T030635Z/20251103_210457_phrase42.txt"
+  },
+  "winner": "left",
+  "reason": "Left has right-of-way (pause ended at 15.07s vs 15.67s). Left maintained right-of-way (logistic momentum confirmed)",
+  "video_angle": "middle",
+  "frames_analyzed": 245,
+  "normalisation_constant": 169.8803253173828,
+  "left_pauses": [
+    {
+      "start_frame": 23,
+      "end_frame": 52,
+      "start_time": 1.5333333333333334,
+      "end_time": 3.466666666666667,
+      "duration": 1.9333333333333333
+    },
+    {
+      "start_frame": 58,
+      "end_frame": 96,
+      "start_time": 3.8666666666666667,
+      "end_time": 6.4,
+      "duration": 2.533333333333333
+    },
+    {
+      "start_frame": 119,
+      "end_frame": 126,
+      "start_time": 7.933333333333334,
+      "end_time": 8.4,
+      "duration": 0.4666666666666667
+    },
+    {
+      "start_frame": 140,
+      "end_frame": 146,
+      "start_time": 9.333333333333334,
+      "end_time": 9.733333333333333,
+      "duration": 0.4
+    },
+    {
+      "start_frame": 160,
+      "end_frame": 163,
+      "start_time": 10.666666666666666,
+      "end_time": 10.866666666666667,
+      "duration": 0.2
+    },
+    {
+      "start_frame": 184,
+      "end_frame": 189,
+      "start_time": 12.266666666666667,
+      "end_time": 12.6,
+      "duration": 0.3333333333333333
+    },
+    {
+      "start_frame": 192,
+      "end_frame": 195,
+      "start_time": 12.8,
+      "end_time": 13.0,
+      "duration": 0.2
+    },
+    {
+      "start_frame": 221,
+      "end_frame": 226,
+      "start_time": 14.733333333333333,
+      "end_time": 15.066666666666666,
+      "duration": 0.3333333333333333
+    }
+  ],
+  "right_pauses": [
+    {
+      "start_frame": 15,
+      "end_frame": 31,
+      "start_time": 1.0,
+      "end_time": 2.066666666666667,
+      "duration": 1.0666666666666667
+    },
+    {
+      "start_frame": 48,
+      "end_frame": 51,
+      "start_time": 3.2,
+      "end_time": 3.4,
+      "duration": 0.2
+    },
+    {
+      "start_frame": 54,
+      "end_frame": 57,
+      "start_time": 3.6,
+      "end_time": 3.8,
+      "duration": 0.2
+    },
+    {
+      "start_frame": 87,
+      "end_frame": 134,
+      "start_time": 5.8,
+      "end_time": 8.933333333333334,
+      "duration": 3.1333333333333333
+    },
+    {
+      "start_frame": 138,
+      "end_frame": 215,
+      "start_time": 9.2,
+      "end_time": 14.333333333333334,
+      "duration": 5.133333333333334
+    },
+    {
+      "start_frame": 219,
+      "end_frame": 235,
+      "start_time": 14.6,
+      "end_time": 15.666666666666666,
+      "duration": 1.0666666666666667
+    }
+  ],
+  "blade_analysis": "Blade contact at 15.79s - logistic momentum vote (p_left=0.98)",
+  "blade_details": {
+    "contact_frame": 236,
+    "left_features": {
+      "front_now": 6.18507704425211,
+      "front_progress": 2.8408752607161394,
+      "front_velocity": 0.00926411873161781,
+      "back_now": 5.864572668047332,
+      "back_progress": 2.9368579619459747,
+      "back_velocity": 3.6813500643161956,
+      "front_knee_now": 6.355484373558657,
+      "front_knee_progress": 3.0235463646507674,
+      "front_knee_velocity": 1.3933148344373336,
+      "front_wrist_now": 6.99500281902624,
+      "front_wrist_progress": 3.819836908755616,
+      "front_wrist_velocity": 5.133873880978621,
+      "stance_now": 0.3205043762047781,
+      "stance_progress": -0.09598270122983532,
+      "com_progress": 3.368025002881002,
+      "com_velocity": 3.164904412240883,
+      "front_height_change": -0.025812777316148505,
+      "weapon_lead": 0.80992577477413,
+      "weapon_lead_progress": 0.9789616480394767,
+      "weapon_vs_com": 0.665588397737702,
+      "attack_start_frame": 11,
+      "attack_lead_time": 15.0,
+      "attack_progress_rate": 0.01262611226984951,
+      "front_velocity_mean_window": 0.9508772664149111,
+      "front_velocity_peak_window": 2.492964111105822
+    },
+    "right_features": {
+      "front_now": 8.217385052038138,
+      "front_progress": -0.9899384700479468,
+      "front_velocity": 0.3394418372955199,
+      "back_now": 8.754241900206022,
+      "back_progress": -0.8636377591251883,
+      "back_velocity": -0.8253634576773772,
+      "front_knee_now": 8.257260463383782,
+      "front_knee_progress": -0.8593083959017633,
+      "front_knee_velocity": 0.11262991121123278,
+      "front_wrist_now": 8.065743805709676,
+      "front_wrist_progress": -0.7404493034710278,
+      "front_wrist_velocity": -0.9859091801991515,
+      "stance_now": -0.5368568481678846,
+      "stance_progress": -0.12630071092275852,
+      "com_progress": -0.8450385991474034,
+      "com_velocity": -0.41327454620952775,
+      "front_height_change": 0.0385773928017783,
+      "weapon_lead": 0.15164124632846132,
+      "weapon_lead_progress": 0.249489166576919,
+      "weapon_vs_com": 0.4599278361618051,
+      "attack_start_frame": 4,
+      "attack_lead_time": 15.466666666666667,
+      "attack_progress_rate": -0.004266976163999771,
+      "front_velocity_mean_window": -0.7849189416557234,
+      "front_velocity_peak_window": 0.7402672187173653
+    },
+    "logistic_available": true,
+    "rationale": "logistic momentum vote (p_left=0.98)"
+  },
+  "speed_comparison": null,
+  "natural_language_reason": "The winner maintained right-of-way by initiating a blade beat after a period of inactivity, thereby taking the offensive.",
+  "lunge_detected": {
+    "left": false,
+    "right": false
+  },
+  "artifact_dir": "processed_phrases/20251103_210457_phrase42_20251104T030635Z",
+  "wall_time_seconds": 18.6317,
+  "left_arm_extensions": [],
+  "right_arm_extensions": []
+}

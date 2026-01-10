@@ -1,0 +1,16 @@
+Phrase 45 initialized at 2025-11-11 21:35:14
+Audio cue executed at 2025-11-11 21:35:12
+Audio cue duration: 2.49s
+Start command issued at 2025-11-11 21:35:14
+Recording started at 2025-11-11 21:35:14
+ 0.000s | Phrase recording started
+ 3.878s | HIT: Right scores on Left!
+Lockout active (0.130s window)
+ 3.935s | Lockout period started (0.200s window)
+ 4.065s | HIT: Simultaneous valid hits!
+ 4.173s | Phrase recording ended
+Scores -> Fencer 1: HIT, Fencer 2: HIT
+Phrase ended
+[2025-11-11 21:35:19] Interpretation -> Right Fencer: HIT, Left Fencer: HIT
+[2025-11-11 21:35:19] Awaiting manual winner selection (double hit)
+[2025-11-11 21:37:07] Confirmed result winner: Right Fencer (Green Lamp)

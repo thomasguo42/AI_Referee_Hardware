@@ -1,0 +1,64 @@
+{
+  "status": "success",
+  "processing_time_seconds": 1.8863,
+  "phrase": {
+    "start_time": 0.0,
+    "start_frame": 0,
+    "simultaneous_hit_time": 1.053,
+    "simultaneous_hit_frame": 15,
+    "blade_contacts": [],
+    "lockout_start": 1.118,
+    "declared_winner": null,
+    "fps": 15.0
+  },
+  "artifacts": {
+    "original_video": "processed_phrases/20251111_213406_phrase40_20251121T064040Z/20251111_213406_phrase40_compressed.mp4",
+    "corrected_video": "processed_phrases/20251111_213406_phrase40_20251121T064040Z/20251111_213406_phrase40_compressed_corrected.mp4",
+    "analysis_video": "processed_phrases/20251111_213406_phrase40_20251121T064040Z/20251111_213406_phrase40_compressed_corrected.mp4",
+    "excel": "processed_phrases/20251111_213406_phrase40_20251121T064040Z/20251111_213406_phrase40_compressed_corrected_keypoints.xlsx",
+    "overlay_video": "processed_phrases/20251111_213406_phrase40_20251121T064040Z/20251111_213406_phrase40_compressed_corrected_overlay.mp4",
+    "video": "processed_phrases/20251111_213406_phrase40_20251121T064040Z/20251111_213406_phrase40_compressed_corrected.mp4",
+    "signal": "processed_phrases/20251111_213406_phrase40_20251121T064040Z/20251111_213406_phrase40.txt",
+    "result_json": "processed_phrases/20251111_213406_phrase40_20251121T064040Z/analysis_result.json"
+  },
+  "inputs": {
+    "video": "processed_phrases/20251111_213406_phrase40_20251121T064040Z/20251111_213406_phrase40_compressed_corrected.mp4",
+    "signal": "processed_phrases/20251111_213406_phrase40_20251121T064040Z/20251111_213406_phrase40.txt"
+  },
+  "winner": "left",
+  "reason": "No pauses/blade contacts. Only left extended arm (at 0.80s)",
+  "video_angle": "middle",
+  "frames_analyzed": 20,
+  "normalisation_constant": 154.78843688964844,
+  "left_pauses": [],
+  "right_pauses": [],
+  "blade_analysis": null,
+  "blade_details": null,
+  "speed_comparison": null,
+  "natural_language_reason": "The right fencer initiated a clear attack that was not parried, thus earning right-of-way.",
+  "lunge_detected": {
+    "left": false,
+    "right": false
+  },
+  "artifact_dir": "processed_phrases/20251111_213406_phrase40_20251121T064040Z",
+  "wall_time_seconds": 2.297,
+  "left_arm_extensions": [
+    {
+      "start_frame": 2,
+      "end_frame": 5,
+      "start_time": 0.13333333333333333,
+      "end_time": 0.3333333333333333,
+      "duration": 0.2,
+      "avg_distance": 0.5564120297631605
+    },
+    {
+      "start_frame": 12,
+      "end_frame": 19,
+      "start_time": 0.8,
+      "end_time": 1.2666666666666666,
+      "duration": 0.4666666666666667,
+      "avg_distance": 0.766853935028551
+    }
+  ],
+  "right_arm_extensions": []
+}

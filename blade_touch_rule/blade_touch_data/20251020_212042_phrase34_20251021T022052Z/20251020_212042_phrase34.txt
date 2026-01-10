@@ -1,0 +1,26 @@
+Phrase 34 initialized at 2025-10-20 21:20:42
+Audio cue executed at 2025-10-20 21:20:40
+Audio cue duration: 2.48s
+Start command issued at 2025-10-20 21:20:42
+Recording started at 2025-10-20 21:20:42
+ 0.000s | Phrase recording started
+ 1.036s | Off-Target: Blade-to-blade contact.
+ 1.051s | Off-Target: Blade-to-blade contact.
+ 1.113s | Off-Target: Blade-to-blade contact.
+ 1.177s | Off-Target: Blade-to-blade contact.
+ 1.242s | Off-Target: Blade-to-blade contact.
+ 1.312s | Off-Target: Blade-to-blade contact.
+ 1.392s | Off-Target: Blade-to-blade contact.
+ 1.450s | HIT: Left scores on Right!
+Lockout active (0.130s window)
+ 1.511s | Lockout period started (0.200s window)
+ 1.608s | HIT: Simultaneous valid hits!
+ 1.697s | Phrase recording ended
+Scores -> Fencer 1: HIT, Fencer 2: HIT
+Phrase ended
+[2025-10-20 21:20:44] Interpretation -> Right Fencer: HIT, Left Fencer: HIT
+[2025-10-20 21:20:44] Awaiting manual winner selection (double hit)
+[2025-10-20 21:20:47] Manual selection winner: Abstain
+[2025-10-20 21:20:47] Preparing remote referee submission
+[2025-10-20 21:20:47] Uploading phrase to remote referee service
+[2025-10-20 21:20:47] FFmpeg compressed video to MP4 (0.25 MB, 7% of original)

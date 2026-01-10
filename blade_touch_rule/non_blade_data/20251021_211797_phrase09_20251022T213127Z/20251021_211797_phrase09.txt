@@ -1,0 +1,23 @@
+Phrase 9 initialized at 2025-10-21 21:17:17
+Audio cue executed at 2025-10-21 21:17:15
+Audio cue duration: 2.43s
+Start command issued at 2025-10-21 21:17:17
+Recording started at 2025-10-21 21:17:17
+ 0.000s | Phrase recording started
+ 2.587s | HIT: Right scores on Left!
+Lockout active (0.130s window)
+ 2.611s | Lockout period started (0.200s window)
+ 2.707s | HIT: Simultaneous valid hits!
+ 2.790s | Phrase recording ended
+Scores -> Fencer 1: HIT, Fencer 2: HIT
+Phrase ended
+[2025-10-21 21:17:20] Interpretation -> Right Fencer: HIT, Left Fencer: HIT
+[2025-10-21 21:17:20] Awaiting manual winner selection (double hit)
+[2025-10-21 21:17:24] Manual selection winner: Left Fencer (Red Lamp)
+[2025-10-21 21:17:24] Preparing remote referee submission
+[2025-10-21 21:17:24] Uploading phrase to remote referee service
+[2025-10-21 21:17:24] FFmpeg compressed video to MP4 (0.44 MB, 5% of original)
+[2025-10-21 21:17:42] Remote referee response saved to 20251021_211717_phrase09_result.json
+[2025-10-21 21:17:42] Remote referee status=SUCCESS, winner=right (Right has right-of-way (only left paused at 2.13s)) | Winner: Right Fencer (Green Lamp)
+[2025-10-21 21:17:42] Remote referee winner: Right Fencer (Green Lamp)
+[2025-10-21 21:17:42] Broadcast: The right fencer maintained continuous offensive action, while the left fencer paused during the exchange, thus awarding right-of-way.

@@ -1,0 +1,56 @@
+{
+  "status": "success",
+  "processing_time_seconds": 1.6566,
+  "phrase": {
+    "start_time": 0.0,
+    "start_frame": 0,
+    "simultaneous_hit_time": 0.855,
+    "simultaneous_hit_frame": 12,
+    "blade_contacts": [],
+    "lockout_start": 0.921,
+    "declared_winner": null,
+    "fps": 15.0
+  },
+  "artifacts": {
+    "original_video": "processed_phrases/20251111_213211_phrase33_20251121T064004Z/20251111_213211_phrase33_compressed.mp4",
+    "corrected_video": "processed_phrases/20251111_213211_phrase33_20251121T064004Z/20251111_213211_phrase33_compressed_corrected.mp4",
+    "analysis_video": "processed_phrases/20251111_213211_phrase33_20251121T064004Z/20251111_213211_phrase33_compressed_corrected.mp4",
+    "excel": "processed_phrases/20251111_213211_phrase33_20251121T064004Z/20251111_213211_phrase33_compressed_corrected_keypoints.xlsx",
+    "overlay_video": "processed_phrases/20251111_213211_phrase33_20251121T064004Z/20251111_213211_phrase33_compressed_corrected_overlay.mp4",
+    "video": "processed_phrases/20251111_213211_phrase33_20251121T064004Z/20251111_213211_phrase33_compressed_corrected.mp4",
+    "signal": "processed_phrases/20251111_213211_phrase33_20251121T064004Z/20251111_213211_phrase33.txt",
+    "result_json": "processed_phrases/20251111_213211_phrase33_20251121T064004Z/analysis_result.json"
+  },
+  "inputs": {
+    "video": "processed_phrases/20251111_213211_phrase33_20251121T064004Z/20251111_213211_phrase33_compressed_corrected.mp4",
+    "signal": "processed_phrases/20251111_213211_phrase33_20251121T064004Z/20251111_213211_phrase33.txt"
+  },
+  "winner": "left",
+  "reason": "No pauses/blade contacts. Only left extended arm (at 0.60s)",
+  "video_angle": "middle",
+  "frames_analyzed": 17,
+  "normalisation_constant": 152.547607421875,
+  "left_pauses": [],
+  "right_pauses": [],
+  "blade_analysis": null,
+  "blade_details": null,
+  "speed_comparison": null,
+  "natural_language_reason": "The fencer on the right initiated a continuous attack that was faster than the opponent's action, thus earning right-of-way.",
+  "lunge_detected": {
+    "left": false,
+    "right": false
+  },
+  "artifact_dir": "processed_phrases/20251111_213211_phrase33_20251121T064004Z",
+  "wall_time_seconds": 2.0831,
+  "left_arm_extensions": [
+    {
+      "start_frame": 9,
+      "end_frame": 15,
+      "start_time": 0.6,
+      "end_time": 1.0,
+      "duration": 0.4,
+      "avg_distance": 0.8044786144409202
+    }
+  ],
+  "right_arm_extensions": []
+}

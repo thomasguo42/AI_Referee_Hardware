@@ -1,0 +1,120 @@
+{
+  "status": "success",
+  "processing_time_seconds": 6.4271,
+  "phrase": {
+    "start_time": 0.0,
+    "start_frame": 0,
+    "simultaneous_hit_time": 6.928,
+    "simultaneous_hit_frame": 103,
+    "blade_contacts": [
+      {
+        "time": 1.294,
+        "frame": 19
+      },
+      {
+        "time": 1.387,
+        "frame": 20
+      },
+      {
+        "time": 1.558,
+        "frame": 23
+      },
+      {
+        "time": 1.652,
+        "frame": 24
+      },
+      {
+        "time": 1.751,
+        "frame": 26
+      },
+      {
+        "time": 1.852,
+        "frame": 27
+      },
+      {
+        "time": 3.177,
+        "frame": 47
+      }
+    ],
+    "lockout_start": 6.797,
+    "declared_winner": null,
+    "fps": 15.0
+  },
+  "artifacts": {
+    "original_video": "processed_phrases/20251103_210311_phrase40_20251104T030348Z/20251103_210311_phrase40_compressed.mp4",
+    "corrected_video": "processed_phrases/20251103_210311_phrase40_20251104T030348Z/20251103_210311_phrase40_compressed_corrected.mp4",
+    "analysis_video": "processed_phrases/20251103_210311_phrase40_20251104T030348Z/20251103_210311_phrase40_compressed_corrected.mp4",
+    "excel": "processed_phrases/20251103_210311_phrase40_20251104T030348Z/20251103_210311_phrase40_compressed_corrected_keypoints.xlsx",
+    "overlay_video": "processed_phrases/20251103_210311_phrase40_20251104T030348Z/20251103_210311_phrase40_compressed_corrected_overlay.mp4",
+    "video": "processed_phrases/20251103_210311_phrase40_20251104T030348Z/20251103_210311_phrase40_compressed_corrected.mp4",
+    "signal": "processed_phrases/20251103_210311_phrase40_20251104T030348Z/20251103_210311_phrase40.txt",
+    "result_json": "processed_phrases/20251103_210311_phrase40_20251104T030348Z/analysis_result.json"
+  },
+  "inputs": {
+    "video": "processed_phrases/20251103_210311_phrase40_20251104T030348Z/20251103_210311_phrase40_compressed_corrected.mp4",
+    "signal": "processed_phrases/20251103_210311_phrase40_20251104T030348Z/20251103_210311_phrase40.txt"
+  },
+  "winner": "left",
+  "reason": "Left has right-of-way (pause ended at 5.20s vs 6.60s). Blade contact ignored (too early)",
+  "video_angle": "middle",
+  "frames_analyzed": 105,
+  "normalisation_constant": 166.94363403320312,
+  "left_pauses": [
+    {
+      "start_frame": 22,
+      "end_frame": 33,
+      "start_time": 1.4666666666666666,
+      "end_time": 2.2,
+      "duration": 0.7333333333333333
+    },
+    {
+      "start_frame": 35,
+      "end_frame": 41,
+      "start_time": 2.3333333333333335,
+      "end_time": 2.7333333333333334,
+      "duration": 0.4
+    },
+    {
+      "start_frame": 45,
+      "end_frame": 58,
+      "start_time": 3.0,
+      "end_time": 3.8666666666666667,
+      "duration": 0.8666666666666667
+    },
+    {
+      "start_frame": 63,
+      "end_frame": 78,
+      "start_time": 4.2,
+      "end_time": 5.2,
+      "duration": 1.0
+    }
+  ],
+  "right_pauses": [
+    {
+      "start_frame": 15,
+      "end_frame": 25,
+      "start_time": 1.0,
+      "end_time": 1.6666666666666667,
+      "duration": 0.6666666666666666
+    },
+    {
+      "start_frame": 27,
+      "end_frame": 99,
+      "start_time": 1.8,
+      "end_time": 6.6,
+      "duration": 4.8
+    }
+  ],
+  "blade_analysis": "Blade contact at 3.18s ignored (>1s before last pause)",
+  "blade_details": null,
+  "speed_comparison": null,
+  "natural_language_reason": "The winner established right-of-way by initiating an attack and maintaining continuous offensive action after the opponent's pause ended.",
+  "lunge_detected": {
+    "left": false,
+    "right": false
+  },
+  "artifact_dir": "processed_phrases/20251103_210311_phrase40_20251104T030348Z",
+  "wall_time_seconds": 8.4445,
+  "left_arm_extensions": [],
+  "right_arm_extensions": []
+}

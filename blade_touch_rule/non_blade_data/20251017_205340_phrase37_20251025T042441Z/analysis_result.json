@@ -1,0 +1,70 @@
+{
+  "status": "success",
+  "processing_time_seconds": 2.9346,
+  "phrase": {
+    "start_time": 0.001,
+    "start_frame": 0,
+    "simultaneous_hit_time": 8.147,
+    "simultaneous_hit_frame": 122,
+    "blade_contacts": [
+      {
+        "time": 6.569,
+        "frame": 98
+      },
+      {
+        "time": 8.221,
+        "frame": 123
+      },
+      {
+        "time": 8.566,
+        "frame": 128
+      }
+    ],
+    "lockout_start": 8.05,
+    "declared_winner": "Left",
+    "fps": 15.0
+  },
+  "artifacts": {
+    "excel": "processed_phrases/20251017_205340_phrase37_20251025T042441Z/20251017_205340_phrase37_compressed_keypoints.xlsx",
+    "overlay_video": "processed_phrases/20251017_205340_phrase37_20251025T042441Z/20251017_205340_phrase37_compressed_overlay.mp4",
+    "video": "processed_phrases/20251017_205340_phrase37_20251025T042441Z/20251017_205340_phrase37_compressed.mp4",
+    "signal": "processed_phrases/20251017_205340_phrase37_20251025T042441Z/20251017_205340_phrase37.txt",
+    "result_json": "processed_phrases/20251017_205340_phrase37_20251025T042441Z/analysis_result.json"
+  },
+  "inputs": {
+    "video": "processed_phrases/20251017_205340_phrase37_20251025T042441Z/20251017_205340_phrase37_compressed.mp4",
+    "signal": "processed_phrases/20251017_205340_phrase37_20251025T042441Z/20251017_205340_phrase37.txt"
+  },
+  "winner": "left",
+  "reason": "Left has right-of-way (only right paused at 7.93s). Blade contact ignored (too early)",
+  "video_angle": "middle",
+  "frames_analyzed": 123,
+  "normalisation_constant": 158.2400360107422,
+  "left_pauses": [],
+  "right_pauses": [
+    {
+      "start_frame": 11,
+      "end_frame": 101,
+      "start_time": 0.7333333333333333,
+      "end_time": 6.733333333333333,
+      "duration": 6.0
+    },
+    {
+      "start_frame": 103,
+      "end_frame": 119,
+      "start_time": 6.866666666666666,
+      "end_time": 7.933333333333334,
+      "duration": 1.0666666666666667
+    }
+  ],
+  "blade_analysis": "Blade contact at 6.57s ignored (>1s before last pause)",
+  "blade_details": null,
+  "speed_comparison": null,
+  "natural_language_reason": "The right fencer maintained right-of-way because their attack continued after the left fencer's preparation ended.",
+  "lunge_detected": {
+    "left": false,
+    "right": false
+  },
+  "artifact_dir": "processed_phrases/20251017_205340_phrase37_20251025T042441Z",
+  "wall_time_seconds": 5.0703
+}

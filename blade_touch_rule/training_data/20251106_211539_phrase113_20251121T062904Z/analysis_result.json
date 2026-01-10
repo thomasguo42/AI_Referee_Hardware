@@ -1,0 +1,117 @@
+{
+  "status": "success",
+  "processing_time_seconds": 10.2775,
+  "phrase": {
+    "start_time": 0.0,
+    "start_frame": 0,
+    "simultaneous_hit_time": 11.437,
+    "simultaneous_hit_frame": 171,
+    "blade_contacts": [
+      {
+        "time": 6.191,
+        "frame": 92
+      }
+    ],
+    "lockout_start": 11.306,
+    "declared_winner": null,
+    "fps": 15.0
+  },
+  "artifacts": {
+    "original_video": "processed_phrases/20251106_211539_phrase113_20251121T062904Z/20251106_211539_phrase113_compressed.mp4",
+    "corrected_video": "processed_phrases/20251106_211539_phrase113_20251121T062904Z/20251106_211539_phrase113_compressed_corrected.mp4",
+    "analysis_video": "processed_phrases/20251106_211539_phrase113_20251121T062904Z/20251106_211539_phrase113_compressed_corrected.mp4",
+    "excel": "processed_phrases/20251106_211539_phrase113_20251121T062904Z/20251106_211539_phrase113_compressed_corrected_keypoints.xlsx",
+    "overlay_video": "processed_phrases/20251106_211539_phrase113_20251121T062904Z/20251106_211539_phrase113_compressed_corrected_overlay.mp4",
+    "video": "processed_phrases/20251106_211539_phrase113_20251121T062904Z/20251106_211539_phrase113_compressed_corrected.mp4",
+    "signal": "processed_phrases/20251106_211539_phrase113_20251121T062904Z/20251106_211539_phrase113.txt",
+    "result_json": "processed_phrases/20251106_211539_phrase113_20251121T062904Z/analysis_result.json"
+  },
+  "inputs": {
+    "video": "processed_phrases/20251106_211539_phrase113_20251121T062904Z/20251106_211539_phrase113_compressed_corrected.mp4",
+    "signal": "processed_phrases/20251106_211539_phrase113_20251121T062904Z/20251106_211539_phrase113.txt"
+  },
+  "winner": "left",
+  "reason": "Left has right-of-way (pause ended at 8.20s vs 9.67s). Blade contact ignored (too early)",
+  "video_angle": "middle",
+  "frames_analyzed": 174,
+  "normalisation_constant": 160.2572784423828,
+  "left_pauses": [
+    {
+      "start_frame": 96,
+      "end_frame": 123,
+      "start_time": 6.4,
+      "end_time": 8.2,
+      "duration": 1.8
+    }
+  ],
+  "right_pauses": [
+    {
+      "start_frame": 13,
+      "end_frame": 62,
+      "start_time": 0.8666666666666667,
+      "end_time": 4.133333333333334,
+      "duration": 3.2666666666666666
+    },
+    {
+      "start_frame": 67,
+      "end_frame": 88,
+      "start_time": 4.466666666666667,
+      "end_time": 5.866666666666666,
+      "duration": 1.4
+    },
+    {
+      "start_frame": 90,
+      "end_frame": 94,
+      "start_time": 6.0,
+      "end_time": 6.266666666666667,
+      "duration": 0.26666666666666666
+    },
+    {
+      "start_frame": 96,
+      "end_frame": 106,
+      "start_time": 6.4,
+      "end_time": 7.066666666666666,
+      "duration": 0.6666666666666666
+    },
+    {
+      "start_frame": 111,
+      "end_frame": 116,
+      "start_time": 7.4,
+      "end_time": 7.733333333333333,
+      "duration": 0.3333333333333333
+    },
+    {
+      "start_frame": 126,
+      "end_frame": 129,
+      "start_time": 8.4,
+      "end_time": 8.6,
+      "duration": 0.2
+    },
+    {
+      "start_frame": 131,
+      "end_frame": 137,
+      "start_time": 8.733333333333333,
+      "end_time": 9.133333333333333,
+      "duration": 0.4
+    },
+    {
+      "start_frame": 139,
+      "end_frame": 145,
+      "start_time": 9.266666666666667,
+      "end_time": 9.666666666666666,
+      "duration": 0.4
+    }
+  ],
+  "blade_analysis": "Blade contact at 6.19s ignored (>1s before last pause)",
+  "blade_details": null,
+  "speed_comparison": null,
+  "natural_language_reason": "The fencer on the left earned right-of-way because their final action began after the opponent's last pause ended, and any blade contact prior to that was too early to interrupt the phrase.",
+  "lunge_detected": {
+    "left": false,
+    "right": false
+  },
+  "artifact_dir": "processed_phrases/20251106_211539_phrase113_20251121T062904Z",
+  "wall_time_seconds": 13.6162,
+  "left_arm_extensions": [],
+  "right_arm_extensions": []
+}

@@ -1,0 +1,84 @@
+{
+  "status": "success",
+  "processing_time_seconds": 7.1607,
+  "phrase": {
+    "start_time": 0.0,
+    "start_frame": 0,
+    "simultaneous_hit_time": 4.201,
+    "simultaneous_hit_frame": 63,
+    "blade_contacts": [],
+    "lockout_start": 4.07,
+    "declared_winner": null,
+    "fps": 15.0
+  },
+  "artifacts": {
+    "original_video": "processed_phrases/20251105_183855_phrase04_20251106T003905Z/20251105_183855_phrase04_compressed.mp4",
+    "corrected_video": "processed_phrases/20251105_183855_phrase04_20251106T003905Z/20251105_183855_phrase04_compressed_corrected.mp4",
+    "analysis_video": "processed_phrases/20251105_183855_phrase04_20251106T003905Z/20251105_183855_phrase04_compressed_corrected.mp4",
+    "excel": "processed_phrases/20251105_183855_phrase04_20251106T003905Z/20251105_183855_phrase04_compressed_corrected_keypoints.xlsx",
+    "overlay_video": "processed_phrases/20251105_183855_phrase04_20251106T003905Z/20251105_183855_phrase04_compressed_corrected_overlay.mp4",
+    "video": "processed_phrases/20251105_183855_phrase04_20251106T003905Z/20251105_183855_phrase04_compressed_corrected.mp4",
+    "signal": "processed_phrases/20251105_183855_phrase04_20251106T003905Z/20251105_183855_phrase04.txt",
+    "result_json": "processed_phrases/20251105_183855_phrase04_20251106T003905Z/analysis_result.json"
+  },
+  "inputs": {
+    "video": "processed_phrases/20251105_183855_phrase04_20251106T003905Z/20251105_183855_phrase04_compressed_corrected.mp4",
+    "signal": "processed_phrases/20251105_183855_phrase04_20251106T003905Z/20251105_183855_phrase04.txt"
+  },
+  "winner": "right",
+  "reason": "Right has right-of-way (pause ended at 3.33s vs 3.80s)",
+  "video_angle": "right",
+  "frames_analyzed": 64,
+  "normalisation_constant": 153.2364501953125,
+  "left_pauses": [
+    {
+      "start_frame": 1,
+      "end_frame": 17,
+      "start_time": 0.06666666666666667,
+      "end_time": 1.1333333333333333,
+      "duration": 1.0666666666666667
+    },
+    {
+      "start_frame": 36,
+      "end_frame": 51,
+      "start_time": 2.4,
+      "end_time": 3.4,
+      "duration": 1.0
+    },
+    {
+      "start_frame": 53,
+      "end_frame": 57,
+      "start_time": 3.533333333333333,
+      "end_time": 3.8,
+      "duration": 0.26666666666666666
+    }
+  ],
+  "right_pauses": [
+    {
+      "start_frame": 1,
+      "end_frame": 7,
+      "start_time": 0.06666666666666667,
+      "end_time": 0.4666666666666667,
+      "duration": 0.4
+    },
+    {
+      "start_frame": 46,
+      "end_frame": 50,
+      "start_time": 3.066666666666667,
+      "end_time": 3.3333333333333335,
+      "duration": 0.26666666666666666
+    }
+  ],
+  "blade_analysis": null,
+  "blade_details": null,
+  "speed_comparison": null,
+  "natural_language_reason": "The fencer on the right maintained the attack after a period of engagement, thus earning right-of-way.",
+  "lunge_detected": {
+    "left": false,
+    "right": false
+  },
+  "artifact_dir": "processed_phrases/20251105_183855_phrase04_20251106T003905Z",
+  "wall_time_seconds": 9.4566,
+  "left_arm_extensions": [],
+  "right_arm_extensions": []
+}

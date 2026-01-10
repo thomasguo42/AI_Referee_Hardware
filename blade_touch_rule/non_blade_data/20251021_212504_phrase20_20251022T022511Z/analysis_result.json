@@ -1,0 +1,67 @@
+{
+  "status": "success",
+  "processing_time_seconds": 1.5192,
+  "phrase": {
+    "start_time": 0.0,
+    "start_frame": 0,
+    "simultaneous_hit_time": 0.801,
+    "simultaneous_hit_frame": 12,
+    "blade_contacts": [],
+    "lockout_start": 0.705,
+    "declared_winner": null,
+    "fps": 15.0
+  },
+  "artifacts": {
+    "excel": "processed_phrases/20251021_212504_phrase20_20251022T022511Z/20251021_212504_phrase20_compressed_keypoints.xlsx",
+    "overlay_video": "processed_phrases/20251021_212504_phrase20_20251022T022511Z/20251021_212504_phrase20_compressed_overlay.mp4",
+    "video": "processed_phrases/20251021_212504_phrase20_20251022T022511Z/20251021_212504_phrase20_compressed.mp4",
+    "signal": "processed_phrases/20251021_212504_phrase20_20251022T022511Z/20251021_212504_phrase20.txt",
+    "result_json": "processed_phrases/20251021_212504_phrase20_20251022T022511Z/analysis_result.json"
+  },
+  "inputs": {
+    "video": "processed_phrases/20251021_212504_phrase20_20251022T022511Z/20251021_212504_phrase20_compressed.mp4",
+    "signal": "processed_phrases/20251021_212504_phrase20_20251022T022511Z/20251021_212504_phrase20.txt"
+  },
+  "winner": "right",
+  "reason": "No pauses/blade contacts. Arm extensions simultaneous (0.60s vs 0.60s). Right faster (speed: 0.163 vs 0.136)",
+  "video_angle": "middle",
+  "frames_analyzed": 14,
+  "normalisation_constant": 152.5147247314453,
+  "left_pauses": [],
+  "right_pauses": [],
+  "blade_analysis": null,
+  "blade_details": null,
+  "speed_comparison": {
+    "left_speed": 0.13623942295715408,
+    "left_accel": 0.08526755779396224,
+    "right_speed": 0.16279195874421784,
+    "right_accel": 0.0926050401167359
+  },
+  "natural_language_reason": "The fencer on the right established the attack after the pause, gaining right-of-way.",
+  "artifact_dir": "processed_phrases/20251021_212504_phrase20_20251022T022511Z",
+  "wall_time_seconds": 1.9224,
+  "lunge_detected": {
+    "left": false,
+    "right": false
+  },
+  "left_arm_extensions": [
+    {
+      "start_frame": 9,
+      "end_frame": 13,
+      "start_time": 0.6,
+      "end_time": 0.8666666666666667,
+      "duration": 0.26666666666666666,
+      "avg_distance": 0.8072656587683185
+    }
+  ],
+  "right_arm_extensions": [
+    {
+      "start_frame": 9,
+      "end_frame": 13,
+      "start_time": 0.6,
+      "end_time": 0.8666666666666667,
+      "duration": 0.26666666666666666,
+      "avg_distance": 0.7809749300377062
+    }
+  ]
+}

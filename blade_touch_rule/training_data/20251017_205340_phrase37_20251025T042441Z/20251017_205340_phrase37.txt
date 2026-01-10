@@ -1,0 +1,17 @@
+Phrase 37 initialized at 2025-10-17 20:53:40
+Audio cue executed at 2025-10-17 20:53:38
+Audio cue duration: 2.50s
+Start command issued at 2025-10-17 20:53:40
+Recording started at 2025-10-17 20:53:40
+ 0.001s | Phrase recording started
+ 6.569s | Off-Target: Blade-to-blade contact.
+ 8.026s | HIT: Left scores on Right!
+Lockout active (0.130s window)
+ 8.050s | Lockout period started (0.200s window)
+ 8.147s | HIT: Simultaneous valid hits!
+ 8.221s | Off-Target: Blade-to-blade contact.
+ 8.270s | Phrase recording ended
+Scores -> Fencer 1: HIT, Fencer 2: HIT
+Phrase ended
+ 8.566s | Off-Target: Blade-to-blade contact.
+Winner: Left

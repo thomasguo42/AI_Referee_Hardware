@@ -1,0 +1,117 @@
+{
+  "status": "success",
+  "processing_time_seconds": 9.4625,
+  "phrase": {
+    "start_time": 0.0,
+    "start_frame": 0,
+    "simultaneous_hit_time": 10.062,
+    "simultaneous_hit_frame": 150,
+    "blade_contacts": [
+      {
+        "time": 1.224,
+        "frame": 18
+      }
+    ],
+    "lockout_start": 9.878,
+    "declared_winner": null,
+    "fps": 15.0
+  },
+  "artifacts": {
+    "original_video": "processed_phrases/20251106_203736_phrase09_20251121T062016Z/20251106_203736_phrase09_compressed.mp4",
+    "corrected_video": "processed_phrases/20251106_203736_phrase09_20251121T062016Z/20251106_203736_phrase09_compressed_corrected.mp4",
+    "analysis_video": "processed_phrases/20251106_203736_phrase09_20251121T062016Z/20251106_203736_phrase09_compressed_corrected.mp4",
+    "excel": "processed_phrases/20251106_203736_phrase09_20251121T062016Z/20251106_203736_phrase09_compressed_corrected_keypoints.xlsx",
+    "overlay_video": "processed_phrases/20251106_203736_phrase09_20251121T062016Z/20251106_203736_phrase09_compressed_corrected_overlay.mp4",
+    "video": "processed_phrases/20251106_203736_phrase09_20251121T062016Z/20251106_203736_phrase09_compressed_corrected.mp4",
+    "signal": "processed_phrases/20251106_203736_phrase09_20251121T062016Z/20251106_203736_phrase09.txt",
+    "result_json": "processed_phrases/20251106_203736_phrase09_20251121T062016Z/analysis_result.json"
+  },
+  "inputs": {
+    "video": "processed_phrases/20251106_203736_phrase09_20251121T062016Z/20251106_203736_phrase09_compressed_corrected.mp4",
+    "signal": "processed_phrases/20251106_203736_phrase09_20251121T062016Z/20251106_203736_phrase09.txt"
+  },
+  "winner": "left",
+  "reason": "Left has right-of-way (pause ended at 9.53s vs 9.93s). Blade contact ignored (too early)",
+  "video_angle": "right",
+  "frames_analyzed": 158,
+  "normalisation_constant": 173.22280883789062,
+  "left_pauses": [
+    {
+      "start_frame": 16,
+      "end_frame": 26,
+      "start_time": 1.0666666666666667,
+      "end_time": 1.7333333333333334,
+      "duration": 0.6666666666666666
+    },
+    {
+      "start_frame": 28,
+      "end_frame": 31,
+      "start_time": 1.8666666666666667,
+      "end_time": 2.066666666666667,
+      "duration": 0.2
+    },
+    {
+      "start_frame": 42,
+      "end_frame": 49,
+      "start_time": 2.8,
+      "end_time": 3.2666666666666666,
+      "duration": 0.4666666666666667
+    },
+    {
+      "start_frame": 65,
+      "end_frame": 72,
+      "start_time": 4.333333333333333,
+      "end_time": 4.8,
+      "duration": 0.4666666666666667
+    },
+    {
+      "start_frame": 86,
+      "end_frame": 92,
+      "start_time": 5.733333333333333,
+      "end_time": 6.133333333333334,
+      "duration": 0.4
+    },
+    {
+      "start_frame": 124,
+      "end_frame": 130,
+      "start_time": 8.266666666666667,
+      "end_time": 8.666666666666666,
+      "duration": 0.4
+    },
+    {
+      "start_frame": 139,
+      "end_frame": 143,
+      "start_time": 9.266666666666667,
+      "end_time": 9.533333333333333,
+      "duration": 0.26666666666666666
+    }
+  ],
+  "right_pauses": [
+    {
+      "start_frame": 25,
+      "end_frame": 66,
+      "start_time": 1.6666666666666667,
+      "end_time": 4.4,
+      "duration": 2.7333333333333334
+    },
+    {
+      "start_frame": 70,
+      "end_frame": 149,
+      "start_time": 4.666666666666667,
+      "end_time": 9.933333333333334,
+      "duration": 5.266666666666667
+    }
+  ],
+  "blade_analysis": "Blade contact at 1.22s ignored (>1s before last pause)",
+  "blade_details": null,
+  "speed_comparison": null,
+  "natural_language_reason": "The fencer on the left earned right-of-way because their final offensive action concluded before the opponent's, and any blade contact prior to the final pause was too early to interrupt the established attack.",
+  "lunge_detected": {
+    "left": false,
+    "right": false
+  },
+  "artifact_dir": "processed_phrases/20251106_203736_phrase09_20251121T062016Z",
+  "wall_time_seconds": 12.5321,
+  "left_arm_extensions": [],
+  "right_arm_extensions": []
+}

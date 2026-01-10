@@ -1,0 +1,55 @@
+{
+  "status": "success",
+  "processing_time_seconds": 1.5569,
+  "phrase": {
+    "start_time": 0.0,
+    "start_frame": 0,
+    "simultaneous_hit_time": 0.922,
+    "simultaneous_hit_frame": 13,
+    "blade_contacts": [],
+    "lockout_start": 0.738,
+    "declared_winner": null,
+    "fps": 15.0
+  },
+  "artifacts": {
+    "original_video": "processed_phrases/20251111_204032_phrase11_20251121T063336Z/20251111_204032_phrase11_compressed.mp4",
+    "corrected_video": "processed_phrases/20251111_204032_phrase11_20251121T063336Z/20251111_204032_phrase11_compressed_corrected.mp4",
+    "analysis_video": "processed_phrases/20251111_204032_phrase11_20251121T063336Z/20251111_204032_phrase11_compressed_corrected.mp4",
+    "excel": "processed_phrases/20251111_204032_phrase11_20251121T063336Z/20251111_204032_phrase11_compressed_corrected_keypoints.xlsx",
+    "overlay_video": "processed_phrases/20251111_204032_phrase11_20251121T063336Z/20251111_204032_phrase11_compressed_corrected_overlay.mp4",
+    "video": "processed_phrases/20251111_204032_phrase11_20251121T063336Z/20251111_204032_phrase11_compressed_corrected.mp4",
+    "signal": "processed_phrases/20251111_204032_phrase11_20251121T063336Z/20251111_204032_phrase11.txt",
+    "result_json": "processed_phrases/20251111_204032_phrase11_20251121T063336Z/analysis_result.json"
+  },
+  "inputs": {
+    "video": "processed_phrases/20251111_204032_phrase11_20251121T063336Z/20251111_204032_phrase11_compressed_corrected.mp4",
+    "signal": "processed_phrases/20251111_204032_phrase11_20251121T063336Z/20251111_204032_phrase11.txt"
+  },
+  "winner": "left",
+  "reason": "Left has right-of-way (only right paused at 0.33s)",
+  "video_angle": "middle",
+  "frames_analyzed": 16,
+  "normalisation_constant": 161.012451171875,
+  "left_pauses": [],
+  "right_pauses": [
+    {
+      "start_frame": 2,
+      "end_frame": 5,
+      "start_time": 0.13333333333333333,
+      "end_time": 0.3333333333333333,
+      "duration": 0.2
+    }
+  ],
+  "blade_analysis": null,
+  "blade_details": null,
+  "speed_comparison": null,
+  "natural_language_reason": "The left fencer's lunge, initiated without pause or blade contact, established right-of-way.",
+  "lunge_detected": {
+    "left": false,
+    "right": false
+  },
+  "artifact_dir": "processed_phrases/20251111_204032_phrase11_20251121T063336Z",
+  "wall_time_seconds": 1.9282,
+  "left_arm_extensions": [],
+  "right_arm_extensions": []
+}

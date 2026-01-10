@@ -1,0 +1,102 @@
+{
+  "status": "success",
+  "processing_time_seconds": 7.1522,
+  "phrase": {
+    "start_time": 0.001,
+    "start_frame": 0,
+    "simultaneous_hit_time": 6.283,
+    "simultaneous_hit_frame": 94,
+    "blade_contacts": [
+      {
+        "time": 1.649,
+        "frame": 24
+      },
+      {
+        "time": 6.429,
+        "frame": 96
+      },
+      {
+        "time": 6.491,
+        "frame": 97
+      }
+    ],
+    "lockout_start": 6.158,
+    "declared_winner": "Left",
+    "fps": 15.0
+  },
+  "artifacts": {
+    "original_video": "processed_phrases/20251017_205243_phrase34_20251025T203734Z/20251017_205243_phrase34_compressed.mp4",
+    "corrected_video": "processed_phrases/20251017_205243_phrase34_20251025T203734Z/20251017_205243_phrase34_compressed_corrected.mp4",
+    "analysis_video": "processed_phrases/20251017_205243_phrase34_20251025T203734Z/20251017_205243_phrase34_compressed_corrected.mp4",
+    "excel": "processed_phrases/20251017_205243_phrase34_20251025T203734Z/20251017_205243_phrase34_compressed_corrected_keypoints.xlsx",
+    "overlay_video": "processed_phrases/20251017_205243_phrase34_20251025T203734Z/20251017_205243_phrase34_compressed_corrected_overlay.mp4",
+    "video": "processed_phrases/20251017_205243_phrase34_20251025T203734Z/20251017_205243_phrase34_compressed_corrected.mp4",
+    "signal": "processed_phrases/20251017_205243_phrase34_20251025T203734Z/20251017_205243_phrase34.txt",
+    "result_json": "processed_phrases/20251017_205243_phrase34_20251025T203734Z/analysis_result.json"
+  },
+  "inputs": {
+    "video": "processed_phrases/20251017_205243_phrase34_20251025T203734Z/20251017_205243_phrase34_compressed_corrected.mp4",
+    "signal": "processed_phrases/20251017_205243_phrase34_20251025T203734Z/20251017_205243_phrase34.txt"
+  },
+  "winner": "left",
+  "reason": "Left has right-of-way (pause ended at 2.67s vs 6.53s). Blade contact ignored (too early)",
+  "video_angle": "middle",
+  "frames_analyzed": 99,
+  "normalisation_constant": 152.0098876953125,
+  "left_pauses": [
+    {
+      "start_frame": 16,
+      "end_frame": 34,
+      "start_time": 1.0666666666666667,
+      "end_time": 2.2666666666666666,
+      "duration": 1.2
+    },
+    {
+      "start_frame": 36,
+      "end_frame": 40,
+      "start_time": 2.4,
+      "end_time": 2.6666666666666665,
+      "duration": 0.26666666666666666
+    }
+  ],
+  "right_pauses": [
+    {
+      "start_frame": 15,
+      "end_frame": 18,
+      "start_time": 1.0,
+      "end_time": 1.2,
+      "duration": 0.2
+    },
+    {
+      "start_frame": 32,
+      "end_frame": 37,
+      "start_time": 2.1333333333333333,
+      "end_time": 2.466666666666667,
+      "duration": 0.3333333333333333
+    },
+    {
+      "start_frame": 39,
+      "end_frame": 59,
+      "start_time": 2.6,
+      "end_time": 3.933333333333333,
+      "duration": 1.3333333333333333
+    },
+    {
+      "start_frame": 61,
+      "end_frame": 98,
+      "start_time": 4.066666666666666,
+      "end_time": 6.533333333333333,
+      "duration": 2.466666666666667
+    }
+  ],
+  "blade_analysis": "Blade contact at 1.65s ignored (>1s before last pause)",
+  "blade_details": null,
+  "speed_comparison": null,
+  "natural_language_reason": "The winner had right-of-way because their attack resumed after the final pause, while the opponent's action was not a clear riposte.",
+  "lunge_detected": {
+    "left": false,
+    "right": false
+  },
+  "artifact_dir": "processed_phrases/20251017_205243_phrase34_20251025T203734Z",
+  "wall_time_seconds": 9.1085
+}

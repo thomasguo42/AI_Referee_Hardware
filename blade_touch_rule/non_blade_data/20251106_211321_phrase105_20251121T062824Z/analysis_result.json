@@ -1,0 +1,70 @@
+{
+  "status": "success",
+  "processing_time_seconds": 4.1718,
+  "phrase": {
+    "start_time": 0.0,
+    "start_frame": 0,
+    "simultaneous_hit_time": 4.065,
+    "simultaneous_hit_frame": 60,
+    "blade_contacts": [],
+    "lockout_start": 3.935,
+    "declared_winner": null,
+    "fps": 15.0
+  },
+  "artifacts": {
+    "original_video": "processed_phrases/20251106_211321_phrase105_20251121T062824Z/20251106_211321_phrase105_compressed.mp4",
+    "corrected_video": "processed_phrases/20251106_211321_phrase105_20251121T062824Z/20251106_211321_phrase105_compressed_corrected.mp4",
+    "analysis_video": "processed_phrases/20251106_211321_phrase105_20251121T062824Z/20251106_211321_phrase105_compressed_corrected.mp4",
+    "excel": "processed_phrases/20251106_211321_phrase105_20251121T062824Z/20251106_211321_phrase105_compressed_corrected_keypoints.xlsx",
+    "overlay_video": "processed_phrases/20251106_211321_phrase105_20251121T062824Z/20251106_211321_phrase105_compressed_corrected_overlay.mp4",
+    "video": "processed_phrases/20251106_211321_phrase105_20251121T062824Z/20251106_211321_phrase105_compressed_corrected.mp4",
+    "signal": "processed_phrases/20251106_211321_phrase105_20251121T062824Z/20251106_211321_phrase105.txt",
+    "result_json": "processed_phrases/20251106_211321_phrase105_20251121T062824Z/analysis_result.json"
+  },
+  "inputs": {
+    "video": "processed_phrases/20251106_211321_phrase105_20251121T062824Z/20251106_211321_phrase105_compressed_corrected.mp4",
+    "signal": "processed_phrases/20251106_211321_phrase105_20251121T062824Z/20251106_211321_phrase105.txt"
+  },
+  "winner": "left",
+  "reason": "Left has right-of-way (pause ended at 1.93s vs 3.60s)",
+  "video_angle": "middle",
+  "frames_analyzed": 62,
+  "normalisation_constant": 161.60411071777344,
+  "left_pauses": [
+    {
+      "start_frame": 16,
+      "end_frame": 29,
+      "start_time": 1.0666666666666667,
+      "end_time": 1.9333333333333333,
+      "duration": 0.8666666666666667
+    }
+  ],
+  "right_pauses": [
+    {
+      "start_frame": 22,
+      "end_frame": 31,
+      "start_time": 1.4666666666666666,
+      "end_time": 2.066666666666667,
+      "duration": 0.6
+    },
+    {
+      "start_frame": 39,
+      "end_frame": 54,
+      "start_time": 2.6,
+      "end_time": 3.6,
+      "duration": 1.0
+    }
+  ],
+  "blade_analysis": null,
+  "blade_details": null,
+  "speed_comparison": null,
+  "natural_language_reason": "The fencer on the left initiated their attack before the fencer on the right could complete their preparation and launch their own offensive action.",
+  "lunge_detected": {
+    "left": false,
+    "right": false
+  },
+  "artifact_dir": "processed_phrases/20251106_211321_phrase105_20251121T062824Z",
+  "wall_time_seconds": 5.4216,
+  "left_arm_extensions": [],
+  "right_arm_extensions": []
+}

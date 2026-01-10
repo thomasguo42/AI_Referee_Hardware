@@ -1,0 +1,60 @@
+{
+  "status": "success",
+  "processing_time_seconds": 2.3102,
+  "phrase": {
+    "start_time": 0.0,
+    "start_frame": 0,
+    "simultaneous_hit_time": 1.721,
+    "simultaneous_hit_frame": 25,
+    "blade_contacts": [],
+    "lockout_start": 1.625,
+    "declared_winner": null,
+    "fps": 15.0
+  },
+  "artifacts": {
+    "excel": "processed_phrases/20251021_212818_phrase26_20251022T022842Z/20251021_212818_phrase26_compressed_keypoints.xlsx",
+    "overlay_video": "processed_phrases/20251021_212818_phrase26_20251022T022842Z/20251021_212818_phrase26_compressed_overlay.mp4",
+    "video": "processed_phrases/20251021_212818_phrase26_20251022T022842Z/20251021_212818_phrase26_compressed.mp4",
+    "signal": "processed_phrases/20251021_212818_phrase26_20251022T022842Z/20251021_212818_phrase26.txt",
+    "result_json": "processed_phrases/20251021_212818_phrase26_20251022T022842Z/analysis_result.json"
+  },
+  "inputs": {
+    "video": "processed_phrases/20251021_212818_phrase26_20251022T022842Z/20251021_212818_phrase26_compressed.mp4",
+    "signal": "processed_phrases/20251021_212818_phrase26_20251022T022842Z/20251021_212818_phrase26.txt"
+  },
+  "winner": "left",
+  "reason": "Left has right-of-way (pause ended at 0.87s vs 1.73s)",
+  "video_angle": "middle",
+  "frames_analyzed": 27,
+  "normalisation_constant": 158.02781677246094,
+  "left_pauses": [
+    {
+      "start_frame": 10,
+      "end_frame": 13,
+      "start_time": 0.6666666666666666,
+      "end_time": 0.8666666666666667,
+      "duration": 0.2
+    }
+  ],
+  "right_pauses": [
+    {
+      "start_frame": 10,
+      "end_frame": 26,
+      "start_time": 0.6666666666666666,
+      "end_time": 1.7333333333333334,
+      "duration": 1.0666666666666667
+    }
+  ],
+  "blade_analysis": null,
+  "blade_details": null,
+  "speed_comparison": null,
+  "natural_language_reason": "The fencer on the left earned right-of-way because the fencer on the right paused their attack for an extended period, breaking the continuity of their offensive action.",
+  "artifact_dir": "processed_phrases/20251021_212818_phrase26_20251022T022842Z",
+  "wall_time_seconds": 2.8957,
+  "lunge_detected": {
+    "left": false,
+    "right": false
+  },
+  "left_arm_extensions": [],
+  "right_arm_extensions": []
+}

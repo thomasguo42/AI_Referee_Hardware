@@ -1,0 +1,67 @@
+{
+  "status": "success",
+  "processing_time_seconds": 1.4676,
+  "phrase": {
+    "start_time": 0.0,
+    "start_frame": 0,
+    "simultaneous_hit_time": 2.707,
+    "simultaneous_hit_frame": 40,
+    "blade_contacts": [],
+    "lockout_start": 2.611,
+    "declared_winner": "Right",
+    "fps": 15.0
+  },
+  "artifacts": {
+    "excel": "processed_phrases/20251021_211797_phrase09_20251022T213127Z/20251021_211797_phrase09_compressed_keypoints.xlsx",
+    "overlay_video": "processed_phrases/20251021_211797_phrase09_20251022T213127Z/20251021_211797_phrase09_compressed_overlay.mp4",
+    "video": "processed_phrases/20251021_211797_phrase09_20251022T213127Z/20251021_211797_phrase09_compressed.mp4",
+    "signal": "processed_phrases/20251021_211797_phrase09_20251022T213127Z/20251021_211797_phrase09.txt",
+    "result_json": "processed_phrases/20251021_211797_phrase09_20251022T213127Z/analysis_result.json"
+  },
+  "inputs": {
+    "video": "processed_phrases/20251021_211797_phrase09_20251022T213127Z/20251021_211797_phrase09_compressed.mp4",
+    "signal": "processed_phrases/20251021_211797_phrase09_20251022T213127Z/20251021_211797_phrase09.txt"
+  },
+  "winner": "left",
+  "reason": "Left has right-of-way (pause ended at 2.13s vs 2.20s)",
+  "video_angle": "middle",
+  "frames_analyzed": 42,
+  "normalisation_constant": 163.3343048095703,
+  "left_pauses": [
+    {
+      "start_frame": 1,
+      "end_frame": 18,
+      "start_time": 0.06666666666666667,
+      "end_time": 1.2,
+      "duration": 1.1333333333333333
+    },
+    {
+      "start_frame": 22,
+      "end_frame": 32,
+      "start_time": 1.4666666666666666,
+      "end_time": 2.1333333333333333,
+      "duration": 0.6666666666666666
+    }
+  ],
+  "right_pauses": [
+    {
+      "start_frame": 28,
+      "end_frame": 33,
+      "start_time": 1.8666666666666667,
+      "end_time": 2.2,
+      "duration": 0.3333333333333333
+    }
+  ],
+  "blade_analysis": null,
+  "blade_details": null,
+  "speed_comparison": null,
+  "natural_language_reason": "The fencer on the right maintained continuous offensive action, while the fencer on the left paused, thus the fencer on the right established right-of-way.",
+  "lunge_detected": {
+    "left": false,
+    "right": false
+  },
+  "artifact_dir": "processed_phrases/20251021_211797_phrase09_20251022T213127Z",
+  "wall_time_seconds": 2.3265,
+  "left_arm_extensions": [],
+  "right_arm_extensions": []
+}

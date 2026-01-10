@@ -1,0 +1,121 @@
+{
+  "status": "success",
+  "processing_time_seconds": 10.0701,
+  "phrase": {
+    "start_time": 0.0,
+    "start_frame": 0,
+    "simultaneous_hit_time": 9.765,
+    "simultaneous_hit_frame": 146,
+    "blade_contacts": [
+      {
+        "time": 1.02,
+        "frame": 15
+      },
+      {
+        "time": 1.113,
+        "frame": 16
+      }
+    ],
+    "lockout_start": 9.634,
+    "declared_winner": null,
+    "fps": 15.0
+  },
+  "artifacts": {
+    "original_video": "processed_phrases/20251106_204304_phrase31_20251107T052602Z/20251106_204304_phrase31_compressed.mp4",
+    "corrected_video": "processed_phrases/20251106_204304_phrase31_20251107T052602Z/20251106_204304_phrase31_compressed_corrected.mp4",
+    "analysis_video": "processed_phrases/20251106_204304_phrase31_20251107T052602Z/20251106_204304_phrase31_compressed_corrected.mp4",
+    "excel": "processed_phrases/20251106_204304_phrase31_20251107T052602Z/20251106_204304_phrase31_compressed_corrected_keypoints.xlsx",
+    "overlay_video": "processed_phrases/20251106_204304_phrase31_20251107T052602Z/20251106_204304_phrase31_compressed_corrected_overlay.mp4",
+    "video": "processed_phrases/20251106_204304_phrase31_20251107T052602Z/20251106_204304_phrase31_compressed_corrected.mp4",
+    "signal": "processed_phrases/20251106_204304_phrase31_20251107T052602Z/20251106_204304_phrase31.txt",
+    "result_json": "processed_phrases/20251106_204304_phrase31_20251107T052602Z/analysis_result.json"
+  },
+  "inputs": {
+    "video": "processed_phrases/20251106_204304_phrase31_20251107T052602Z/20251106_204304_phrase31_compressed_corrected.mp4",
+    "signal": "processed_phrases/20251106_204304_phrase31_20251107T052602Z/20251106_204304_phrase31.txt"
+  },
+  "winner": "left",
+  "reason": "Left has right-of-way (pause ended at 9.53s vs 9.73s). Blade contact ignored (too early)",
+  "video_angle": "right",
+  "frames_analyzed": 148,
+  "normalisation_constant": 174.40907287597656,
+  "left_pauses": [
+    {
+      "start_frame": 12,
+      "end_frame": 30,
+      "start_time": 0.8,
+      "end_time": 2.0,
+      "duration": 1.2
+    },
+    {
+      "start_frame": 39,
+      "end_frame": 44,
+      "start_time": 2.6,
+      "end_time": 2.933333333333333,
+      "duration": 0.3333333333333333
+    },
+    {
+      "start_frame": 51,
+      "end_frame": 56,
+      "start_time": 3.4,
+      "end_time": 3.7333333333333334,
+      "duration": 0.3333333333333333
+    },
+    {
+      "start_frame": 89,
+      "end_frame": 95,
+      "start_time": 5.933333333333334,
+      "end_time": 6.333333333333333,
+      "duration": 0.4
+    },
+    {
+      "start_frame": 117,
+      "end_frame": 122,
+      "start_time": 7.8,
+      "end_time": 8.133333333333333,
+      "duration": 0.3333333333333333
+    },
+    {
+      "start_frame": 135,
+      "end_frame": 143,
+      "start_time": 9.0,
+      "end_time": 9.533333333333333,
+      "duration": 0.5333333333333333
+    }
+  ],
+  "right_pauses": [
+    {
+      "start_frame": 21,
+      "end_frame": 80,
+      "start_time": 1.4,
+      "end_time": 5.333333333333333,
+      "duration": 3.933333333333333
+    },
+    {
+      "start_frame": 82,
+      "end_frame": 131,
+      "start_time": 5.466666666666667,
+      "end_time": 8.733333333333333,
+      "duration": 3.2666666666666666
+    },
+    {
+      "start_frame": 143,
+      "end_frame": 146,
+      "start_time": 9.533333333333333,
+      "end_time": 9.733333333333333,
+      "duration": 0.2
+    }
+  ],
+  "blade_analysis": "Blade contact at 1.11s ignored (>1s before last pause)",
+  "blade_details": null,
+  "speed_comparison": null,
+  "natural_language_reason": "The winner earned right-of-way because their attack resumed after a pause, while the opponent's riposte was initiated after the winner's final preparatory movement had concluded.",
+  "lunge_detected": {
+    "left": false,
+    "right": false
+  },
+  "artifact_dir": "processed_phrases/20251106_204304_phrase31_20251107T052602Z",
+  "wall_time_seconds": 14.6613,
+  "left_arm_extensions": [],
+  "right_arm_extensions": []
+}

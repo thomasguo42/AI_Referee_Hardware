@@ -1,0 +1,56 @@
+{
+  "status": "success",
+  "processing_time_seconds": 1.7551,
+  "phrase": {
+    "start_time": 0.0,
+    "start_frame": 0,
+    "simultaneous_hit_time": 1.154,
+    "simultaneous_hit_frame": 17,
+    "blade_contacts": [],
+    "lockout_start": 1.007,
+    "declared_winner": null,
+    "fps": 15.0
+  },
+  "artifacts": {
+    "original_video": "processed_phrases/20251111_212149_phrase14_20251121T063845Z/20251111_212149_phrase14_compressed.mp4",
+    "corrected_video": "processed_phrases/20251111_212149_phrase14_20251121T063845Z/20251111_212149_phrase14_compressed_corrected.mp4",
+    "analysis_video": "processed_phrases/20251111_212149_phrase14_20251121T063845Z/20251111_212149_phrase14_compressed_corrected.mp4",
+    "excel": "processed_phrases/20251111_212149_phrase14_20251121T063845Z/20251111_212149_phrase14_compressed_corrected_keypoints.xlsx",
+    "overlay_video": "processed_phrases/20251111_212149_phrase14_20251121T063845Z/20251111_212149_phrase14_compressed_corrected_overlay.mp4",
+    "video": "processed_phrases/20251111_212149_phrase14_20251121T063845Z/20251111_212149_phrase14_compressed_corrected.mp4",
+    "signal": "processed_phrases/20251111_212149_phrase14_20251121T063845Z/20251111_212149_phrase14.txt",
+    "result_json": "processed_phrases/20251111_212149_phrase14_20251121T063845Z/analysis_result.json"
+  },
+  "inputs": {
+    "video": "processed_phrases/20251111_212149_phrase14_20251121T063845Z/20251111_212149_phrase14_compressed_corrected.mp4",
+    "signal": "processed_phrases/20251111_212149_phrase14_20251121T063845Z/20251111_212149_phrase14.txt"
+  },
+  "winner": "left",
+  "reason": "No pauses/blade contacts. Only left extended arm (at 0.87s)",
+  "video_angle": "middle",
+  "frames_analyzed": 17,
+  "normalisation_constant": 157.67774963378906,
+  "left_pauses": [],
+  "right_pauses": [],
+  "blade_analysis": null,
+  "blade_details": null,
+  "speed_comparison": null,
+  "natural_language_reason": "The left fencer initiated a faster, continuous attack, establishing right-of-way.",
+  "lunge_detected": {
+    "left": false,
+    "right": false
+  },
+  "artifact_dir": "processed_phrases/20251111_212149_phrase14_20251121T063845Z",
+  "wall_time_seconds": 2.114,
+  "left_arm_extensions": [
+    {
+      "start_frame": 13,
+      "end_frame": 15,
+      "start_time": 0.8666666666666667,
+      "end_time": 1.0,
+      "duration": 0.13333333333333333,
+      "avg_distance": 0.7064700788956387
+    }
+  ],
+  "right_arm_extensions": []
+}

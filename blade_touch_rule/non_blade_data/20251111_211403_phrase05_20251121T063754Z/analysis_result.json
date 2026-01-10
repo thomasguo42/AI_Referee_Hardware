@@ -1,0 +1,107 @@
+{
+  "status": "success",
+  "processing_time_seconds": 10.7131,
+  "phrase": {
+    "start_time": 0.001,
+    "start_frame": 0,
+    "simultaneous_hit_time": 12.057,
+    "simultaneous_hit_frame": 180,
+    "blade_contacts": [
+      {
+        "time": 9.798,
+        "frame": 146
+      },
+      {
+        "time": 12.156,
+        "frame": 182
+      }
+    ],
+    "lockout_start": 11.925,
+    "declared_winner": null,
+    "fps": 15.0
+  },
+  "artifacts": {
+    "original_video": "processed_phrases/20251111_211403_phrase05_20251121T063754Z/20251111_211403_phrase05_compressed.mp4",
+    "corrected_video": "processed_phrases/20251111_211403_phrase05_20251121T063754Z/20251111_211403_phrase05_compressed_corrected.mp4",
+    "analysis_video": "processed_phrases/20251111_211403_phrase05_20251121T063754Z/20251111_211403_phrase05_compressed_corrected.mp4",
+    "excel": "processed_phrases/20251111_211403_phrase05_20251121T063754Z/20251111_211403_phrase05_compressed_corrected_keypoints.xlsx",
+    "overlay_video": "processed_phrases/20251111_211403_phrase05_20251121T063754Z/20251111_211403_phrase05_compressed_corrected_overlay.mp4",
+    "video": "processed_phrases/20251111_211403_phrase05_20251121T063754Z/20251111_211403_phrase05_compressed_corrected.mp4",
+    "signal": "processed_phrases/20251111_211403_phrase05_20251121T063754Z/20251111_211403_phrase05.txt",
+    "result_json": "processed_phrases/20251111_211403_phrase05_20251121T063754Z/analysis_result.json"
+  },
+  "inputs": {
+    "video": "processed_phrases/20251111_211403_phrase05_20251121T063754Z/20251111_211403_phrase05_compressed_corrected.mp4",
+    "signal": "processed_phrases/20251111_211403_phrase05_20251121T063754Z/20251111_211403_phrase05.txt"
+  },
+  "winner": "left",
+  "reason": "Left has right-of-way (pause ended at 11.93s vs 12.40s). Blade contact ignored (too early)",
+  "video_angle": "middle",
+  "frames_analyzed": 187,
+  "normalisation_constant": 175.93679809570312,
+  "left_pauses": [
+    {
+      "start_frame": 27,
+      "end_frame": 33,
+      "start_time": 1.8,
+      "end_time": 2.2,
+      "duration": 0.4
+    },
+    {
+      "start_frame": 35,
+      "end_frame": 157,
+      "start_time": 2.3333333333333335,
+      "end_time": 10.466666666666667,
+      "duration": 8.133333333333333
+    },
+    {
+      "start_frame": 159,
+      "end_frame": 179,
+      "start_time": 10.6,
+      "end_time": 11.933333333333334,
+      "duration": 1.3333333333333333
+    }
+  ],
+  "right_pauses": [
+    {
+      "start_frame": 17,
+      "end_frame": 41,
+      "start_time": 1.1333333333333333,
+      "end_time": 2.7333333333333334,
+      "duration": 1.6
+    },
+    {
+      "start_frame": 105,
+      "end_frame": 108,
+      "start_time": 7.0,
+      "end_time": 7.2,
+      "duration": 0.2
+    },
+    {
+      "start_frame": 152,
+      "end_frame": 167,
+      "start_time": 10.133333333333333,
+      "end_time": 11.133333333333333,
+      "duration": 1.0
+    },
+    {
+      "start_frame": 172,
+      "end_frame": 186,
+      "start_time": 11.466666666666667,
+      "end_time": 12.4,
+      "duration": 0.9333333333333333
+    }
+  ],
+  "blade_analysis": "Blade contact at 9.80s ignored (>1s before last pause)",
+  "blade_details": null,
+  "speed_comparison": null,
+  "natural_language_reason": "The right fencer maintained the attack after a period of inaction by the left, and the earlier blade contact was too far removed from the final action to be considered.",
+  "lunge_detected": {
+    "left": false,
+    "right": false
+  },
+  "artifact_dir": "processed_phrases/20251111_211403_phrase05_20251121T063754Z",
+  "wall_time_seconds": 13.8299,
+  "left_arm_extensions": [],
+  "right_arm_extensions": []
+}

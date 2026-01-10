@@ -1,0 +1,15 @@
+Phrase 21 initialized at 2025-11-11 20:52:22
+Audio cue executed at 2025-11-11 20:52:19
+Audio cue duration: 2.51s
+Start command issued at 2025-11-11 20:52:22
+Recording started at 2025-11-11 20:52:22
+ 0.000s | Phrase recording started
+ 1.126s | HIT: Simultaneous valid hits!
+Lockout active (0.130s window)
+ 1.191s | Lockout period started (0.200s window)
+ 1.380s | Phrase recording ended
+Scores -> Fencer 1: HIT, Fencer 2: HIT
+Phrase ended
+[2025-11-11 20:52:23] Interpretation -> Right Fencer: HIT, Left Fencer: HIT
+[2025-11-11 20:52:23] Awaiting manual winner selection (double hit)
+[2025-11-11 20:52:27] Confirmed result winner: Abstain

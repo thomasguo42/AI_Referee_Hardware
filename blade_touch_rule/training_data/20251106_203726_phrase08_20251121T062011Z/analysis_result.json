@@ -1,0 +1,56 @@
+{
+  "status": "success",
+  "processing_time_seconds": 1.8554,
+  "phrase": {
+    "start_time": 0.0,
+    "start_frame": 0,
+    "simultaneous_hit_time": 1.276,
+    "simultaneous_hit_frame": 19,
+    "blade_contacts": [],
+    "lockout_start": 1.145,
+    "declared_winner": null,
+    "fps": 15.0
+  },
+  "artifacts": {
+    "original_video": "processed_phrases/20251106_203726_phrase08_20251121T062011Z/20251106_203726_phrase08_compressed.mp4",
+    "corrected_video": "processed_phrases/20251106_203726_phrase08_20251121T062011Z/20251106_203726_phrase08_compressed_corrected.mp4",
+    "analysis_video": "processed_phrases/20251106_203726_phrase08_20251121T062011Z/20251106_203726_phrase08_compressed_corrected.mp4",
+    "excel": "processed_phrases/20251106_203726_phrase08_20251121T062011Z/20251106_203726_phrase08_compressed_corrected_keypoints.xlsx",
+    "overlay_video": "processed_phrases/20251106_203726_phrase08_20251121T062011Z/20251106_203726_phrase08_compressed_corrected_overlay.mp4",
+    "video": "processed_phrases/20251106_203726_phrase08_20251121T062011Z/20251106_203726_phrase08_compressed_corrected.mp4",
+    "signal": "processed_phrases/20251106_203726_phrase08_20251121T062011Z/20251106_203726_phrase08.txt",
+    "result_json": "processed_phrases/20251106_203726_phrase08_20251121T062011Z/analysis_result.json"
+  },
+  "inputs": {
+    "video": "processed_phrases/20251106_203726_phrase08_20251121T062011Z/20251106_203726_phrase08_compressed_corrected.mp4",
+    "signal": "processed_phrases/20251106_203726_phrase08_20251121T062011Z/20251106_203726_phrase08.txt"
+  },
+  "winner": "right",
+  "reason": "No pauses/blade contacts. Only right extended arm (at 1.00s)",
+  "video_angle": "right",
+  "frames_analyzed": 19,
+  "normalisation_constant": 172.69093322753906,
+  "left_pauses": [],
+  "right_pauses": [],
+  "blade_analysis": null,
+  "blade_details": null,
+  "speed_comparison": null,
+  "natural_language_reason": "The left fencer gained right-of-way by initiating a lunge without interruption or blade contact.",
+  "lunge_detected": {
+    "left": false,
+    "right": false
+  },
+  "artifact_dir": "processed_phrases/20251106_203726_phrase08_20251121T062011Z",
+  "wall_time_seconds": 2.3218,
+  "left_arm_extensions": [],
+  "right_arm_extensions": [
+    {
+      "start_frame": 15,
+      "end_frame": 18,
+      "start_time": 1.0,
+      "end_time": 1.2,
+      "duration": 0.2,
+      "avg_distance": 0.8894119877073126
+    }
+  ]
+}

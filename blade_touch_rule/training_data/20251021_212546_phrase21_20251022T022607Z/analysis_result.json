@@ -1,0 +1,141 @@
+{
+  "status": "success",
+  "processing_time_seconds": 3.7771,
+  "phrase": {
+    "start_time": 0.0,
+    "start_frame": 0,
+    "simultaneous_hit_time": 3.598,
+    "simultaneous_hit_frame": 53,
+    "blade_contacts": [
+      {
+        "time": 1.47,
+        "frame": 22
+      },
+      {
+        "time": 3.317,
+        "frame": 49
+      }
+    ],
+    "lockout_start": 3.423,
+    "declared_winner": null,
+    "fps": 15.0
+  },
+  "artifacts": {
+    "excel": "processed_phrases/20251021_212546_phrase21_20251022T022607Z/20251021_212546_phrase21_compressed_keypoints.xlsx",
+    "overlay_video": "processed_phrases/20251021_212546_phrase21_20251022T022607Z/20251021_212546_phrase21_compressed_overlay.mp4",
+    "video": "processed_phrases/20251021_212546_phrase21_20251022T022607Z/20251021_212546_phrase21_compressed.mp4",
+    "signal": "processed_phrases/20251021_212546_phrase21_20251022T022607Z/20251021_212546_phrase21.txt",
+    "result_json": "processed_phrases/20251021_212546_phrase21_20251022T022607Z/analysis_result.json"
+  },
+  "inputs": {
+    "video": "processed_phrases/20251021_212546_phrase21_20251022T022607Z/20251021_212546_phrase21_compressed.mp4",
+    "signal": "processed_phrases/20251021_212546_phrase21_20251022T022607Z/20251021_212546_phrase21.txt"
+  },
+  "winner": "right",
+  "reason": "Right has right-of-way (pause ended at 1.67s vs 2.87s). Right maintained right-of-way (logistic momentum confirmed)",
+  "video_angle": "middle",
+  "frames_analyzed": 56,
+  "normalisation_constant": 154.57872009277344,
+  "left_pauses": [
+    {
+      "start_frame": 10,
+      "end_frame": 25,
+      "start_time": 0.6666666666666666,
+      "end_time": 1.6666666666666667,
+      "duration": 1.0
+    },
+    {
+      "start_frame": 27,
+      "end_frame": 36,
+      "start_time": 1.8,
+      "end_time": 2.4,
+      "duration": 0.6
+    },
+    {
+      "start_frame": 38,
+      "end_frame": 43,
+      "start_time": 2.533333333333333,
+      "end_time": 2.8666666666666667,
+      "duration": 0.3333333333333333
+    }
+  ],
+  "right_pauses": [
+    {
+      "start_frame": 22,
+      "end_frame": 25,
+      "start_time": 1.4666666666666666,
+      "end_time": 1.6666666666666667,
+      "duration": 0.2
+    }
+  ],
+  "blade_analysis": "Blade contact at 3.32s - logistic momentum vote (p_left=0.03)",
+  "blade_details": {
+    "contact_frame": 49,
+    "left_features": {
+      "front_now": 2.267703841213306,
+      "front_progress": -2.334012939773481,
+      "front_velocity": 0.14555542382975295,
+      "back_now": 1.810827946696654,
+      "back_progress": -2.1015310344405513,
+      "back_velocity": -0.01600320458940041,
+      "front_knee_now": 2.167993373654591,
+      "front_knee_progress": -2.2969237659334896,
+      "front_knee_velocity": 0.5810638024628856,
+      "front_wrist_now": 2.124057213134513,
+      "front_wrist_progress": -2.2101060454148675,
+      "front_wrist_velocity": 0.9247255137495591,
+      "stance_now": 0.4568758945166522,
+      "stance_progress": -0.23248190533292967,
+      "com_progress": -2.136930237498335,
+      "com_velocity": 0.6508150015927233,
+      "front_height_change": 0.1004913591875436,
+      "weapon_lead": -0.14364662807879336,
+      "weapon_lead_progress": 0.12390689435861324,
+      "weapon_vs_com": 0.21528969383555796,
+      "attack_start_frame": 4,
+      "attack_lead_time": 3.0,
+      "attack_progress_rate": -0.05186695421718846,
+      "front_velocity_mean_window": 0.5115245875537278,
+      "front_velocity_peak_window": 0.9278778844537494
+    },
+    "right_features": {
+      "front_now": 4.107215153175011,
+      "front_progress": 4.272432821731585,
+      "front_velocity": 0.7616447448494656,
+      "back_now": 4.718093364069647,
+      "back_progress": 4.401456240287347,
+      "back_velocity": 0.38195361301562425,
+      "front_knee_now": 4.060461946932181,
+      "front_knee_progress": 4.362503737486637,
+      "front_knee_velocity": 1.3670302200164253,
+      "front_wrist_now": 4.042007128789964,
+      "front_wrist_progress": 4.361132271145142,
+      "front_wrist_velocity": 1.4975137878584266,
+      "stance_now": -0.6108782108946356,
+      "stance_progress": -0.12902341855576172,
+      "com_progress": 4.596448595529269,
+      "com_velocity": 1.1751879552293243,
+      "front_height_change": 0.0049558998786922714,
+      "weapon_lead": 0.06520802438504703,
+      "weapon_lead_progress": 0.08869944941355712,
+      "weapon_vs_com": 0.15464315528863448,
+      "attack_start_frame": 9,
+      "attack_lead_time": 2.6666666666666665,
+      "attack_progress_rate": 0.10681082054328964,
+      "front_velocity_mean_window": 1.4880749374831614,
+      "front_velocity_peak_window": 2.8599242819016
+    },
+    "logistic_available": true,
+    "rationale": "logistic momentum vote (p_left=0.03)"
+  },
+  "speed_comparison": null,
+  "natural_language_reason": "The right fencer maintained right-of-way by initiating a blade beat during the final phase of the action.",
+  "artifact_dir": "processed_phrases/20251021_212546_phrase21_20251022T022607Z",
+  "wall_time_seconds": 4.9241,
+  "lunge_detected": {
+    "left": false,
+    "right": false
+  },
+  "left_arm_extensions": [],
+  "right_arm_extensions": []
+}

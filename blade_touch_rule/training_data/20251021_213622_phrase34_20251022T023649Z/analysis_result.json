@@ -1,0 +1,76 @@
+{
+  "status": "success",
+  "processing_time_seconds": 3.1831,
+  "phrase": {
+    "start_time": 0.0,
+    "start_frame": 0,
+    "simultaneous_hit_time": 3.118,
+    "simultaneous_hit_frame": 46,
+    "blade_contacts": [
+      {
+        "time": 1.145,
+        "frame": 17
+      },
+      {
+        "time": 1.177,
+        "frame": 17
+      }
+    ],
+    "lockout_start": 2.958,
+    "declared_winner": null,
+    "fps": 15.0
+  },
+  "artifacts": {
+    "excel": "processed_phrases/20251021_213622_phrase34_20251022T023649Z/20251021_213622_phrase34_compressed_keypoints.xlsx",
+    "overlay_video": "processed_phrases/20251021_213622_phrase34_20251022T023649Z/20251021_213622_phrase34_compressed_overlay.mp4",
+    "video": "processed_phrases/20251021_213622_phrase34_20251022T023649Z/20251021_213622_phrase34_compressed.mp4",
+    "signal": "processed_phrases/20251021_213622_phrase34_20251022T023649Z/20251021_213622_phrase34.txt",
+    "result_json": "processed_phrases/20251021_213622_phrase34_20251022T023649Z/analysis_result.json"
+  },
+  "inputs": {
+    "video": "processed_phrases/20251021_213622_phrase34_20251022T023649Z/20251021_213622_phrase34_compressed.mp4",
+    "signal": "processed_phrases/20251021_213622_phrase34_20251022T023649Z/20251021_213622_phrase34.txt"
+  },
+  "winner": "left",
+  "reason": "Left has right-of-way (pause ended at 2.00s vs 3.00s). Blade contact ignored (too early)",
+  "video_angle": "middle",
+  "frames_analyzed": 46,
+  "normalisation_constant": 172.78680419921875,
+  "left_pauses": [
+    {
+      "start_frame": 18,
+      "end_frame": 30,
+      "start_time": 1.2,
+      "end_time": 2.0,
+      "duration": 0.8
+    }
+  ],
+  "right_pauses": [
+    {
+      "start_frame": 14,
+      "end_frame": 17,
+      "start_time": 0.9333333333333333,
+      "end_time": 1.1333333333333333,
+      "duration": 0.2
+    },
+    {
+      "start_frame": 27,
+      "end_frame": 45,
+      "start_time": 1.8,
+      "end_time": 3.0,
+      "duration": 1.2
+    }
+  ],
+  "blade_analysis": "Blade contact at 1.18s ignored (>1s before last pause)",
+  "blade_details": null,
+  "speed_comparison": null,
+  "natural_language_reason": "The left fencer initiated an attack after the right fencer's pause concluded, thereby earning right-of-way.",
+  "artifact_dir": "processed_phrases/20251021_213622_phrase34_20251022T023649Z",
+  "wall_time_seconds": 4.1899,
+  "lunge_detected": {
+    "left": false,
+    "right": false
+  },
+  "left_arm_extensions": [],
+  "right_arm_extensions": []
+}
