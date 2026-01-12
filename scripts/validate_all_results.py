@@ -9,6 +9,7 @@ from typing import Optional
 
 # Import the debug referee logic
 sys.path.append(str(Path(__file__).parent))
+import debug_referee as debug_referee_module
 from debug_referee import (
     parse_txt_file,
     referee_decision,
@@ -55,6 +56,20 @@ def load_keypoints_from_excel(excel_path: str):
     else:
         raise ValueError(f"Unknown column format in {excel_path}. Columns: {list(left_x.columns)[:5]}")
     
+    if debug_referee_module.DROP_TAIL_FRAMES > 0:
+        left_xdata = debug_referee_module._trim_keypoint_data(
+            left_xdata, debug_referee_module.DROP_TAIL_FRAMES
+        )
+        left_ydata = debug_referee_module._trim_keypoint_data(
+            left_ydata, debug_referee_module.DROP_TAIL_FRAMES
+        )
+        right_xdata = debug_referee_module._trim_keypoint_data(
+            right_xdata, debug_referee_module.DROP_TAIL_FRAMES
+        )
+        right_ydata = debug_referee_module._trim_keypoint_data(
+            right_ydata, debug_referee_module.DROP_TAIL_FRAMES
+        )
+
     return left_xdata, left_ydata, right_xdata, right_ydata
 
 WINNER_PRIORITIES = [
@@ -166,6 +181,9 @@ def main():
             
             # Parse phrase from txt
             phrase = parse_txt_file(str(txt_path))
+            if left_xdata and 16 in left_xdata:
+                max_frame = len(left_xdata[16]) - 1
+                debug_referee_module._trim_phrase_to_frames(phrase, max_frame)
             
             # Load normalization constant from JSON if available
             norm_constant = None
