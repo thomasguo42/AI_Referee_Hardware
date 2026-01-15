@@ -1,4 +1,7 @@
+from __future__ import annotations
+
 import argparse
+import contextlib
 import json
 import math
 import os
@@ -26,6 +29,211 @@ LOGISTIC_MODEL_CACHE = None
 
 DROP_TAIL_FRAMES = 1
 LUNGE_BACKWARD_THRESHOLD = 0.01
+
+DEBUG_LOGGING = True
+
+def _debug(message: str) -> None:
+    if DEBUG_LOGGING:
+        print(message)
+
+def _decide_attack_by_arm_and_speed(
+    left_xdata: Dict[int, List[float]],
+    left_ydata: Dict[int, List[float]],
+    right_xdata: Dict[int, List[float]],
+    right_ydata: Dict[int, List[float]],
+    left_slow_start: Optional[PauseInterval],
+    right_slow_start: Optional[PauseInterval],
+    window_start: int,
+    window_end: int,
+    fps: float,
+) -> Tuple[str, str, Dict, List[ArmExtensionInterval], List[ArmExtensionInterval]]:
+    window_hit_frame = window_end
+    left_extensions = detect_arm_extension(
+        left_xdata,
+        left_ydata,
+        is_left_fencer=True,
+        fps=fps,
+        hit_frame=window_hit_frame,
+        start_frame=window_start,
+        end_frame=window_end,
+        debug=True,
+    )
+    right_extensions = detect_arm_extension(
+        right_xdata,
+        right_ydata,
+        is_left_fencer=False,
+        fps=fps,
+        hit_frame=window_hit_frame,
+        start_frame=window_start,
+        end_frame=window_end,
+        debug=True,
+    )
+
+    left_latest_ext = left_extensions[-1] if (left_extensions and left_extensions[-1].near_hit) else None
+    right_latest_ext = right_extensions[-1] if (right_extensions and right_extensions[-1].near_hit) else None
+
+    if left_latest_ext and right_latest_ext:
+        left_start_frame = left_latest_ext.effective_start_frame
+        right_start_frame = right_latest_ext.effective_start_frame
+        left_start = left_latest_ext.effective_start_time
+        right_start = right_latest_ext.effective_start_time
+
+        if left_start_frame == right_start_frame:
+            if left_slow_start and not right_slow_start:
+                return (
+                    "right",
+                    f'Arm extensions simultaneous ({left_start:.2f}s). Left penalized for slow start.',
+                    {},
+                    left_extensions,
+                    right_extensions,
+                )
+            if right_slow_start and not left_slow_start:
+                return (
+                    "left",
+                    f'Arm extensions simultaneous ({left_start:.2f}s). Right penalized for slow start.',
+                    {},
+                    left_extensions,
+                    right_extensions,
+                )
+
+            left_speed, left_accel = calculate_speed_acceleration(
+                left_xdata, left_ydata, start_frame=window_start, end_frame=window_end
+            )
+            right_speed, right_accel = calculate_speed_acceleration(
+                right_xdata, right_ydata, start_frame=window_start, end_frame=window_end
+            )
+
+            speed_info = {
+                'left_speed': left_speed,
+                'left_accel': left_accel,
+                'right_speed': right_speed,
+                'right_accel': right_accel
+            }
+
+            if left_speed > right_speed:
+                return (
+                    "left",
+                    f'Arm extensions simultaneous ({left_start:.2f}s vs {right_start:.2f}s). '
+                    f'Left faster (speed: {left_speed:.3f} vs {right_speed:.3f})',
+                    speed_info,
+                    left_extensions,
+                    right_extensions,
+                )
+            return (
+                "right",
+                f'Arm extensions simultaneous ({left_start:.2f}s vs {right_start:.2f}s). '
+                f'Right faster (speed: {right_speed:.3f} vs {left_speed:.3f})',
+                speed_info,
+                left_extensions,
+                right_extensions,
+            )
+        if left_start_frame < right_start_frame:
+            return (
+                "left",
+                f'Left extended arm first ({left_start:.2f}s vs {right_start:.2f}s)',
+                {},
+                left_extensions,
+                right_extensions,
+            )
+        return (
+            "right",
+            f'Right extended arm first ({right_start:.2f}s vs {left_start:.2f}s)',
+            {},
+            left_extensions,
+            right_extensions,
+        )
+
+    if left_latest_ext:
+        left_start = left_latest_ext.effective_start_time
+        return (
+            "left",
+            f'Only left extended arm (at {left_start:.2f}s)',
+            {},
+            left_extensions,
+            right_extensions,
+        )
+
+    if right_latest_ext:
+        right_start = right_latest_ext.effective_start_time
+        return (
+            "right",
+            f'Only right extended arm (at {right_start:.2f}s)',
+            {},
+            left_extensions,
+            right_extensions,
+        )
+
+    left_speed, left_accel = calculate_speed_acceleration(
+        left_xdata, left_ydata, start_frame=window_start, end_frame=window_end
+    )
+    right_speed, right_accel = calculate_speed_acceleration(
+        right_xdata, right_ydata, start_frame=window_start, end_frame=window_end
+    )
+
+    speed_info = {
+        'left_speed': left_speed,
+        'left_accel': left_accel,
+        'right_speed': right_speed,
+        'right_accel': right_accel
+    }
+
+    if left_speed > right_speed:
+        return (
+            "left",
+            f'No arm extensions detected. Left faster (speed: {left_speed:.3f} vs {right_speed:.3f})',
+            speed_info,
+            left_extensions,
+            right_extensions,
+        )
+    return (
+        "right",
+        f'No arm extensions detected. Right faster (speed: {right_speed:.3f} vs {left_speed:.3f})',
+        speed_info,
+        left_extensions,
+        right_extensions,
+    )
+
+def _find_overlapping_pause_pair(
+    left_pauses: List[PauseInterval],
+    right_pauses: List[PauseInterval],
+    fps: float,
+    max_duration_seconds: float = 1.0,
+    min_overlap_ratio: float = 0.5,
+    max_end_frame_delta: int = 3,
+) -> Optional[Tuple[PauseInterval, PauseInterval]]:
+    max_duration_frames = fps * max_duration_seconds
+    best_pair = None
+    best_overlap = 0.0
+    for left in left_pauses:
+        left_len = left.end_frame - left.start_frame + 1
+        if left_len >= max_duration_frames:
+            continue
+        for right in right_pauses:
+            right_len = right.end_frame - right.start_frame + 1
+            if right_len >= max_duration_frames:
+                continue
+            overlap_start = max(left.start_frame, right.start_frame)
+            overlap_end = min(left.end_frame, right.end_frame)
+            overlap_frames = max(0, overlap_end - overlap_start + 1)
+            if overlap_frames <= 0:
+                continue
+            longer = max(left_len, right_len)
+            overlap_ratio = overlap_frames / longer if longer > 0 else 0.0
+            if overlap_ratio < min_overlap_ratio:
+                continue
+            if abs(left.end_frame - right.end_frame) > max_end_frame_delta:
+                continue
+            if overlap_ratio > best_overlap:
+                best_overlap = overlap_ratio
+                best_pair = (left, right)
+    if best_pair:
+        _debug(
+            "[PauseOverlap] match "
+            f"left={best_pair[0].start_frame}-{best_pair[0].end_frame} "
+            f"right={best_pair[1].start_frame}-{best_pair[1].end_frame} "
+            f"overlap_ratio={best_overlap:.2f}"
+        )
+    return best_pair
 
 def _load_logistic_model():
     global LOGISTIC_MODEL_CACHE
@@ -328,9 +536,16 @@ def detect_lunge_intervals(
     if max_frame < 0:
         return intervals
 
+    side = "left" if is_left_fencer else "right"
+    _debug(
+        f"[Lunge:{side}] start max_frame={max_frame} threshold={threshold} "
+        f"min_consecutive={min_consecutive} end_frame_buffer={end_frame_buffer}"
+    )
+
     lunge_frames = []
     for i in range(0, max_frame + 1):
         if i >= len(xdata[15]) or i >= len(xdata[16]):
+            _debug(f"[Lunge:{side}] frame={i} missing keypoints")
             lunge_frames.append(False)
             continue
         x_rear = xdata[15][i]
@@ -338,21 +553,24 @@ def detect_lunge_intervals(
         x_front = xdata[16][i]
         y_front = ydata[16][i]
         if any(np.isnan([x_rear, y_rear, x_front, y_front])):
+            _debug(f"[Lunge:{side}] frame={i} nan keypoints")
             lunge_frames.append(False)
             continue
         dist = math.hypot(x_front - x_rear, y_front - y_rear)
-        print (dist)
-        lunge_frames.append(dist > threshold)
-        print (lunge_frames)
+        is_lunge = dist > threshold
+        _debug(f"[Lunge:{side}] frame={i} dist={dist:.3f} lunge={is_lunge}")
+        lunge_frames.append(is_lunge)
 
     expected_direction = 1 if is_left_fencer else -1
     start = None
     for i, is_lunge in enumerate(lunge_frames):
         if is_lunge and start is None:
             start = i
+            _debug(f"[Lunge:{side}] interval start frame={start}")
         elif not is_lunge and start is not None:
             end = i - 1
             if end - start + 1 >= min_consecutive:
+                _debug(f"[Lunge:{side}] interval candidate {start}-{end} accepted length={end - start + 1}")
                 intervals.append(
                     LungeInterval(
                         start_frame=start,
@@ -361,11 +579,14 @@ def detect_lunge_intervals(
                         end_time=end / fps,
                     )
                 )
+            else:
+                _debug(f"[Lunge:{side}] interval candidate {start}-{end} rejected length={end - start + 1}")
             start = None
 
     if start is not None:
         end = len(lunge_frames) - 1
         if end - start + 1 >= min_consecutive:
+            _debug(f"[Lunge:{side}] interval candidate {start}-{end} accepted length={end - start + 1}")
             intervals.append(
                 LungeInterval(
                     start_frame=start,
@@ -374,10 +595,16 @@ def detect_lunge_intervals(
                     end_time=end / fps,
                 )
             )
+        else:
+            _debug(f"[Lunge:{side}] interval candidate {start}-{end} rejected length={end - start + 1}")
 
     valid_intervals = []
     for interval in intervals:
         if interval.end_frame > (max_frame - end_frame_buffer):
+            _debug(
+                f"[Lunge:{side}] interval {interval.start_frame}-{interval.end_frame} "
+                f"rejected end_frame within buffer"
+            )
             continue
         has_backward = False
         for f_idx in range(interval.start_frame + 1, interval.end_frame + 1):
@@ -389,9 +616,16 @@ def detect_lunge_intervals(
                 continue
             bf_vel = (curr_bf - prev_bf) * expected_direction
             if bf_vel < -LUNGE_BACKWARD_THRESHOLD:
+                _debug(
+                    f"[Lunge:{side}] interval {interval.start_frame}-{interval.end_frame} "
+                    f"rejected backward frame={f_idx} bf_vel={bf_vel:.4f}"
+                )
                 has_backward = True
                 break
         if not has_backward:
+            _debug(
+                f"[Lunge:{side}] interval {interval.start_frame}-{interval.end_frame} accepted"
+            )
             valid_intervals.append(interval)
     return valid_intervals
 
@@ -444,6 +678,8 @@ def detect_pause_retreat_intervals(xdata: Dict, ydata: Dict, is_left_fencer: boo
     pause_frames: List[Tuple[List[int], bool]] = []
     current_pause_frames = []
 
+    side = "left" if is_left_fencer else "right"
+
     def process_and_filter_interval(frames):
         # print ("Processing frames:", frames) # Clean up
         if len(frames) < min_pause_frames:
@@ -461,16 +697,16 @@ def detect_pause_retreat_intervals(xdata: Dict, ydata: Dict, is_left_fencer: boo
             return
 
         avg_abs_vel = np.mean(interval_vels)
-        print(f"  [Interval {frames[0]}-{frames[-1]}] Avg Abs Vel: {avg_abs_vel:.4f}")
+        _debug(f"[PauseDetect:{side}] interval {frames[0]}-{frames[-1]} avg_abs_vel={avg_abs_vel:.4f}")
         
         # If average velocity is high, it's a retreat (valid break of ROW)
         # We skip variance and back foot checks for retreats
         if avg_abs_vel > retreat_threshold:
-            print(f"  -> Classified as RETREAT (Avg Vel > {retreat_threshold})")
+            _debug(f"[PauseDetect:{side}] classified=RETREAT threshold={retreat_threshold:.4f}")
             pause_frames.append((frames, True))
             return
 
-        print(f"  -> Classified as PAUSE (Avg Vel <= {retreat_threshold}). Applying filters...")
+        _debug(f"[PauseDetect:{side}] classified=PAUSE threshold={retreat_threshold:.4f}")
         
         # Filter: Back Foot Movement (Keypoint 15)
         # Identify valid frames where back foot velocity is within threshold
@@ -490,7 +726,10 @@ def detect_pause_retreat_intervals(xdata: Dict, ydata: Dict, is_left_fencer: boo
             if bf_vel < back_foot_threshold:
                 valid_frames.append(f_idx)
             else:
-                print(f"    Frame {f_idx} REJECTED: Back Foot Vel {bf_vel:.4f} >= {back_foot_threshold}")
+                _debug(
+                    f"[PauseDetect:{side}] reject frame={f_idx} back_foot_vel={bf_vel:.4f} "
+                    f"threshold={back_foot_threshold:.4f}"
+                )
 
         # Split valid_frames into continuous segments
         if not valid_frames:
@@ -524,13 +763,16 @@ def detect_pause_retreat_intervals(xdata: Dict, ydata: Dict, is_left_fencer: boo
             
             if len(y_coords) > 1:
                 y_var = np.var(y_coords)
-                print(f"    Segment {segment} Y-Var: {y_var:.6f} (Threshold: {y_variance_threshold})")
+                _debug(
+                    f"[PauseDetect:{side}] segment {segment[0]}-{segment[-1]} "
+                    f"y_var={y_var:.6f} threshold={y_variance_threshold:.6f}"
+                )
                 if y_var >= y_variance_threshold:
-                    print(f"    -> REJECTED: High Y-Variance")
+                    _debug(f"[PauseDetect:{side}] reject segment=high_y_variance")
                     continue # Failed Y-var check
             
             # Passed checks
-            print(f"    Segment {segment} ACCEPTED as valid pause.")
+            _debug(f"[PauseDetect:{side}] accept segment {segment[0]}-{segment[-1]}")
             pause_frames.append((segment, False))
     
     for i, vel in enumerate(velocities):
@@ -684,18 +926,18 @@ def detect_arm_extension(xdata: Dict, ydata: Dict, is_left_fencer: bool,
     debug_side = 'left' if is_left_fencer else 'right'
     if effective_start is None:
         if debug:
-            print(f"[ArmExt:{debug_side}] no straightening >= {straight_angle_threshold}° in latest reach interval")
+            _debug(f"[ArmExt:{debug_side}] no straightening >= {straight_angle_threshold}deg in latest reach interval")
         return intervals
 
     avg_dist = float(np.mean([distance_by_frame[f] for f in latest_frames])) if latest_frames else 0.0
     avg_angle = float(np.mean(angle_samples)) if angle_samples else 0.0
 
     if debug:
-        print(
+        _debug(
             f"[ArmExt:{debug_side}] reach interval {latest_frames[0]}-{latest_frames[-1]} (len={len(latest_frames)}) "
             f"avg distance={avg_dist:.3f} (threshold {distance_threshold})"
         )
-        print(
+        _debug(
             f"[ArmExt:{debug_side}] effective start frame {effective_start} angle >= {straight_angle_threshold}°"
         )
 
@@ -786,9 +1028,7 @@ def analyze_blade_contact(left_xdata: Dict, left_ydata: Dict, right_xdata: Dict,
         'rationale': rationale,
     }
 
-    print(f"Blade Contact Analysis @ Frame {contact_frame}:")
-    print(f"  Rationale: {rationale}")
-    print(f"  Winner: {winner}")
+    _debug(f"[BladeContact] frame={contact_frame} rationale={rationale} winner={winner}")
     return winner, details
 
 def referee_decision(phrase: FencingPhrase, left_xdata: Dict, left_ydata: Dict,
@@ -805,7 +1045,7 @@ def referee_decision(phrase: FencingPhrase, left_xdata: Dict, left_ydata: Dict,
         'blade_analysis': None,
         'blade_details': None,
         'speed_comparison': None,
-        'lunge_detected': {'left': [], 'right': [], 'latest': None}
+        'lunge_detected': {'left': [], 'right': [], 'latest': None},
     }
     
     # Removed hit_frame usage for pause detection range
@@ -816,9 +1056,6 @@ def referee_decision(phrase: FencingPhrase, left_xdata: Dict, left_ydata: Dict,
     right_pauses_raw = detect_pause_retreat_intervals(
         right_xdata, right_ydata, is_left_fencer=False, fps=phrase.fps
     )
-
-    left_has_retreat = any(p.is_retreat for p in left_pauses_raw)
-    right_has_retreat = any(p.is_retreat for p in right_pauses_raw)
 
     left_pauses = left_pauses_raw
     right_pauses = right_pauses_raw
@@ -869,16 +1106,14 @@ def referee_decision(phrase: FencingPhrase, left_xdata: Dict, left_ydata: Dict,
         other_pause_end_frame = (
             right_last_pause_end_frame if latest_side == 'left' else left_last_pause_end_frame
         )
-        if other_pause_end_frame is not None:
-            if latest_interval.end_frame <= other_pause_end_frame <= (latest_interval.end_frame + 4):
-                winner = 'right' if latest_side == 'left' else 'left'
-                result['winner'] = winner
-                result['reason'] = (
-                    f'{winner.capitalize()} wins: pause end within lunge window '
-                    f'[{latest_interval.end_frame}, {latest_interval.end_frame + 4}] '
-                    f'after {latest_side} lunge'
-                )
-                return result
+        if other_pause_end_frame is None or other_pause_end_frame < (latest_interval.end_frame + 4):
+            winner = 'right' if latest_side == 'left' else 'left'
+            result['winner'] = winner
+            result['reason'] = (
+                f'{winner.capitalize()} wins: pause end before lunge window end '
+                f'({latest_interval.end_frame + 4}) after {latest_side} lunge'
+            )
+            return result
     
     hit_time = phrase.simultaneous_hit_time
     hit_frame = phrase.simultaneous_hit_frame
@@ -906,260 +1141,52 @@ def referee_decision(phrase: FencingPhrase, left_xdata: Dict, left_ydata: Dict,
     result['left_arm_extensions'] = [asdict(e) for e in left_extensions]
     result['right_arm_extensions'] = [asdict(e) for e in right_extensions]
 
-    if (
-        not left_has_retreat
-        and not right_has_retreat
-        and left_last_pause_end_frame is not None
-        and right_last_pause_end_frame is not None
-        and abs(left_last_pause_end_frame - right_last_pause_end_frame) <= 3
-    ):
-        window_start = max(left_last_pause_end_frame, right_last_pause_end_frame)
+    overlap_pair = _find_overlapping_pause_pair(left_pauses, right_pauses, phrase.fps)
+    if overlap_pair:
+        left_match, right_match = overlap_pair
+        window_start = max(left_match.end_frame, right_match.end_frame)
         window_end = len(left_xdata[16]) - 1
-        window_hit_frame = (
-            hit_frame if hit_frame is not None and hit_frame >= window_start else window_end
-        )
-
-        left_extensions = detect_arm_extension(
+        winner, detail, speed_info, left_ext, right_ext = _decide_attack_by_arm_and_speed(
             left_xdata,
             left_ydata,
-            is_left_fencer=True,
-            fps=phrase.fps,
-            hit_frame=window_hit_frame,
-            start_frame=window_start,
-            end_frame=window_end,
-            debug=True,
-        )
-        right_extensions = detect_arm_extension(
             right_xdata,
             right_ydata,
-            is_left_fencer=False,
+            left_slow_start,
+            right_slow_start,
+            window_start=window_start,
+            window_end=window_end,
             fps=phrase.fps,
-            hit_frame=window_hit_frame,
-            start_frame=window_start,
-            end_frame=window_end,
-            debug=True,
         )
-
-        result['left_arm_extensions'] = [asdict(e) for e in left_extensions]
-        result['right_arm_extensions'] = [asdict(e) for e in right_extensions]
-
-        left_latest_ext = left_extensions[-1] if (left_extensions and left_extensions[-1].near_hit) else None
-        right_latest_ext = right_extensions[-1] if (right_extensions and right_extensions[-1].near_hit) else None
-
-        if left_latest_ext and right_latest_ext:
-            left_start_frame = left_latest_ext.effective_start_frame
-            right_start_frame = right_latest_ext.effective_start_frame
-            left_start = left_latest_ext.effective_start_time
-            right_start = right_latest_ext.effective_start_time
-
-            if left_start_frame == right_start_frame:
-                if left_slow_start and not right_slow_start:
-                    result['winner'] = 'right'
-                    result['reason'] = (
-                        f'Pause ends close (<=3 frames). Arm extensions simultaneous ({left_start:.2f}s). '
-                        'Left penalized for slow start.'
-                    )
-                    return result
-                if right_slow_start and not left_slow_start:
-                    result['winner'] = 'left'
-                    result['reason'] = (
-                        f'Pause ends close (<=3 frames). Arm extensions simultaneous ({left_start:.2f}s). '
-                        'Right penalized for slow start.'
-                    )
-                    return result
-
-                left_speed, left_accel = calculate_speed_acceleration(
-                    left_xdata, left_ydata, start_frame=window_start, end_frame=window_end
-                )
-                right_speed, right_accel = calculate_speed_acceleration(
-                    right_xdata, right_ydata, start_frame=window_start, end_frame=window_end
-                )
-
-                result['speed_comparison'] = {
-                    'left_speed': left_speed,
-                    'left_accel': left_accel,
-                    'right_speed': right_speed,
-                    'right_accel': right_accel
-                }
-
-                if left_speed > right_speed:
-                    result['winner'] = 'left'
-                    result['reason'] = (
-                        f'Pause ends close (<=3 frames). Arm extensions simultaneous '
-                        f'({left_start:.2f}s vs {right_start:.2f}s). '
-                        f'Left faster (speed: {left_speed:.3f} vs {right_speed:.3f})'
-                    )
-                else:
-                    result['winner'] = 'right'
-                    result['reason'] = (
-                        f'Pause ends close (<=3 frames). Arm extensions simultaneous '
-                        f'({left_start:.2f}s vs {right_start:.2f}s). '
-                        f'Right faster (speed: {right_speed:.3f} vs {left_speed:.3f})'
-                    )
-            else:
-                if left_start_frame < right_start_frame:
-                    result['winner'] = 'left'
-                    result['reason'] = (
-                        f'Pause ends close (<=3 frames). Left extended arm first '
-                        f'({left_start:.2f}s vs {right_start:.2f}s)'
-                    )
-                else:
-                    result['winner'] = 'right'
-                    result['reason'] = (
-                        f'Pause ends close (<=3 frames). Right extended arm first '
-                        f'({right_start:.2f}s vs {left_start:.2f}s)'
-                    )
-
-        elif left_latest_ext:
-            left_start = left_latest_ext.effective_start_time
-            result['winner'] = 'left'
-            result['reason'] = (
-                f'Pause ends close (<=3 frames). Only left extended arm (at {left_start:.2f}s)'
-            )
-
-        elif right_latest_ext:
-            right_start = right_latest_ext.effective_start_time
-            result['winner'] = 'right'
-            result['reason'] = (
-                f'Pause ends close (<=3 frames). Only right extended arm (at {right_start:.2f}s)'
-            )
-
-        else:
-            left_speed, left_accel = calculate_speed_acceleration(
-                left_xdata, left_ydata, start_frame=window_start, end_frame=window_end
-            )
-            right_speed, right_accel = calculate_speed_acceleration(
-                right_xdata, right_ydata, start_frame=window_start, end_frame=window_end
-            )
-
-            result['speed_comparison'] = {
-                'left_speed': left_speed,
-                'left_accel': left_accel,
-                'right_speed': right_speed,
-                'right_accel': right_accel
-            }
-
-            if left_speed > right_speed:
-                result['winner'] = 'left'
-                result['reason'] = (
-                    f'Pause ends close (<=3 frames). No arm extensions detected. '
-                    f'Left faster (speed: {left_speed:.3f} vs {right_speed:.3f})'
-                )
-            else:
-                result['winner'] = 'right'
-                result['reason'] = (
-                    f'Pause ends close (<=3 frames). No arm extensions detected. '
-                    f'Right faster (speed: {right_speed:.3f} vs {left_speed:.3f})'
-                )
-
+        result['left_arm_extensions'] = [asdict(e) for e in left_ext]
+        result['right_arm_extensions'] = [asdict(e) for e in right_ext]
+        if speed_info:
+            result['speed_comparison'] = speed_info
+        result['winner'] = winner
+        result['reason'] = (
+            f'Pauses overlap (>50%, <1s). {detail}'
+        )
         return result
 
     if not left_pauses and not right_pauses and not last_blade_contact:
-        print(f"\nArm Extension Analysis:")
-        print(f"  Left extensions: {len(left_extensions)}")
-        for ext in left_extensions:
-            print(
-                f"    Frames {ext.start_frame}-{ext.end_frame} ({ext.start_time:.2f}s-{ext.end_time:.2f}s),"
-                f" avg dist: {ext.avg_distance:.3f}, effective start: {ext.effective_start_time:.2f}s"
-            )
-        print(f"  Right extensions: {len(right_extensions)}")
-        for ext in right_extensions:
-            print(
-                f"    Frames {ext.start_frame}-{ext.end_frame} ({ext.start_time:.2f}s-{ext.end_time:.2f}s),"
-                f" avg dist: {ext.avg_distance:.3f}, effective start: {ext.effective_start_time:.2f}s"
-            )
-        
-        left_latest_ext = left_extensions[-1] if (left_extensions and left_extensions[-1].near_hit) else None
-        right_latest_ext = right_extensions[-1] if (right_extensions and right_extensions[-1].near_hit) else None
-        
-        # Compare arm extension timing
-        if left_latest_ext and right_latest_ext:
-            left_start_frame = left_latest_ext.effective_start_frame
-            right_start_frame = right_latest_ext.effective_start_frame
-            left_start = left_latest_ext.effective_start_time
-            right_start = right_latest_ext.effective_start_time
-            
-            if left_start_frame == right_start_frame:
-                if left_slow_start and not right_slow_start:
-                    result['winner'] = 'right'
-                    result['reason'] = (
-                        f'No pauses/blade contacts. Arm extensions simultaneous ({left_start:.2f}s). '
-                        'Left penalized for slow start.'
-                    )
-                    return result
-                if right_slow_start and not left_slow_start:
-                    result['winner'] = 'left'
-                    result['reason'] = (
-                        f'No pauses/blade contacts. Arm extensions simultaneous ({left_start:.2f}s). '
-                        'Right penalized for slow start.'
-                    )
-                    return result
-
-                print("\nArm extensions occurred on the same frame, using speed comparison")
-                
-                left_speed, left_accel = calculate_speed_acceleration(
-                    left_xdata, left_ydata
-                )
-                right_speed, right_accel = calculate_speed_acceleration(
-                    right_xdata, right_ydata
-                )
-                
-                result['speed_comparison'] = {
-                    'left_speed': left_speed,
-                    'left_accel': left_accel,
-                    'right_speed': right_speed,
-                    'right_accel': right_accel
-                }
-                
-                if left_speed > right_speed:
-                    result['winner'] = 'left'
-                    result['reason'] = f'No pauses/blade contacts. Arm extensions simultaneous ({left_start:.2f}s vs {right_start:.2f}s). Left faster (speed: {left_speed:.3f} vs {right_speed:.3f})'
-                else:
-                    result['winner'] = 'right'
-                    result['reason'] = f'No pauses/blade contacts. Arm extensions simultaneous ({left_start:.2f}s vs {right_start:.2f}s). Right faster (speed: {right_speed:.3f} vs {left_speed:.3f})'
-            else:
-                # Whoever extended first gets priority
-                if left_start_frame < right_start_frame:
-                    result['winner'] = 'left'
-                    result['reason'] = f'No pauses/blade contacts. Left extended arm first ({left_start:.2f}s vs {right_start:.2f}s)'
-                else:
-                    result['winner'] = 'right'
-                    result['reason'] = f'No pauses/blade contacts. Right extended arm first ({right_start:.2f}s vs {left_start:.2f}s)'
-
-        elif left_latest_ext:
-            left_start = left_latest_ext.effective_start_time
-            result['winner'] = 'left'
-            result['reason'] = f'No pauses/blade contacts. Only left extended arm (at {left_start:.2f}s)'
-
-        elif right_latest_ext:
-            right_start = right_latest_ext.effective_start_time
-            result['winner'] = 'right'
-            result['reason'] = f'No pauses/blade contacts. Only right extended arm (at {right_start:.2f}s)'
-        
-        else:
-            # No arm extensions detected, fall back to speed comparison
-            print("\nNo arm extensions detected, using speed comparison")
-            
-            left_speed, left_accel = calculate_speed_acceleration(
-                left_xdata, left_ydata
-            )
-            right_speed, right_accel = calculate_speed_acceleration(
-                right_xdata, right_ydata
-            )
-            
-            result['speed_comparison'] = {
-                'left_speed': left_speed,
-                'left_accel': left_accel,
-                'right_speed': right_speed,
-                'right_accel': right_accel
-            }
-            
-            if left_speed > right_speed:
-                result['winner'] = 'left'
-                result['reason'] = f'No pauses/blade contacts/arm extensions. Left faster (speed: {left_speed:.3f} vs {right_speed:.3f})'
-            else:
-                result['winner'] = 'right'
-                result['reason'] = f'No pauses/blade contacts/arm extensions. Right faster (speed: {right_speed:.3f} vs {left_speed:.3f})'
+        window_start = 0
+        window_end = len(left_xdata[16]) - 1
+        winner, detail, speed_info, left_ext, right_ext = _decide_attack_by_arm_and_speed(
+            left_xdata,
+            left_ydata,
+            right_xdata,
+            right_ydata,
+            left_slow_start,
+            right_slow_start,
+            window_start=window_start,
+            window_end=window_end,
+            fps=phrase.fps,
+        )
+        result['left_arm_extensions'] = [asdict(e) for e in left_ext]
+        result['right_arm_extensions'] = [asdict(e) for e in right_ext]
+        if speed_info:
+            result['speed_comparison'] = speed_info
+        result['winner'] = winner
+        result['reason'] = f'No pauses/blade contacts. {detail}'
 
         return result
     
@@ -1259,42 +1286,44 @@ def main():
             print(f"Subfolder not found in mismatched_results either.")
             sys.exit(1)
     
-    print(f"Analyzing {target_dir}...")
+    debug_log_path = PROJECT_ROOT / "debug.txt"
+    with open(debug_log_path, "w") as log_file, contextlib.redirect_stdout(log_file), contextlib.redirect_stderr(log_file):
+        print(f"Analyzing {target_dir}...")
+
+        txt_files = list(target_dir.glob("*.txt"))
+        excel_files = list(target_dir.glob("*.xlsx"))
+        json_path = target_dir / "analysis_result.json"
     
-    txt_files = list(target_dir.glob("*.txt"))
-    excel_files = list(target_dir.glob("*.xlsx"))
-    json_path = target_dir / "analysis_result.json"
-    
-    if not txt_files or not excel_files or not json_path.exists():
-        print("Missing required files (txt, xlsx, or json)")
-        sys.exit(1)
+        if not txt_files or not excel_files or not json_path.exists():
+            print("Missing required files (txt, xlsx, or json)")
+            sys.exit(1)
+            
+        txt_path = txt_files[0]
+        excel_path = excel_files[0]
         
-    txt_path = txt_files[0]
-    excel_path = excel_files[0]
-    
-    # Load normalization constant from existing JSON
-    with open(json_path, 'r') as f:
-        data = json.load(f)
-        norm_constant = data.get("normalisation_constant")
+        # Load normalization constant from existing JSON
+        with open(json_path, 'r') as f:
+            data = json.load(f)
+            norm_constant = data.get("normalisation_constant")
+            
+        phrase = parse_txt_file(str(txt_path))
+        left_x, left_y, right_x, right_y = load_keypoints_from_excel(str(excel_path))
+        if left_x and 16 in left_x:
+            max_frame = len(left_x[16]) - 1
+            _trim_phrase_to_frames(phrase, max_frame)
         
-    phrase = parse_txt_file(str(txt_path))
-    left_x, left_y, right_x, right_y = load_keypoints_from_excel(str(excel_path))
-    if left_x and 16 in left_x:
-        max_frame = len(left_x[16]) - 1
-        _trim_phrase_to_frames(phrase, max_frame)
-    
-    decision = referee_decision(
-        phrase, 
-        left_x, left_y, 
-        right_x, right_y, 
-        normalisation_constant=norm_constant
-    )
-    
-    print("\n" + "="*60)
-    print("DEBUG RESULT")
-    print("="*60)
-    print(json.dumps(sanitize_for_json(decision), indent=2))
-    print("="*60)
+        decision = referee_decision(
+            phrase, 
+            left_x, left_y, 
+            right_x, right_y, 
+            normalisation_constant=norm_constant
+        )
+        
+        print("\n" + "="*60)
+        print("DEBUG RESULT")
+        print("="*60)
+        print(json.dumps(sanitize_for_json(decision), indent=2))
+        print("="*60)
 
 if __name__ == "__main__":
     main()

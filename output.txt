@@ -1,0 +1,65 @@
+Analyzing /workspace/data/training_data/20251111_212902_phrase24_20251121T063923Z...
+[PauseDetect:left] interval 10-16 avg_abs_vel=0.0437
+[PauseDetect:left] classified=RETREAT threshold=0.0350
+[PauseDetect:right] interval 2-6 avg_abs_vel=0.0162
+[PauseDetect:right] classified=PAUSE threshold=0.0350
+[PauseDetect:right] reject frame=5 back_foot_vel=0.1931 threshold=0.0500
+[PauseDetect:right] reject frame=6 back_foot_vel=0.0938 threshold=0.0500
+
+============================================================
+DEBUG RESULT
+============================================================
+{
+  "winner": "right",
+  "reason": "Right has right-of-way (pause by left at 1.07s)",
+  "left_pauses": [
+    {
+      "start_frame": 10,
+      "end_frame": 16,
+      "start_time": 0.6666666666666666,
+      "end_time": 1.0666666666666667,
+      "duration": 0.4,
+      "is_retreat": true
+    }
+  ],
+  "right_pauses": [],
+  "left_slow_start": null,
+  "right_slow_start": null,
+  "blade_analysis": null,
+  "blade_details": null,
+  "speed_comparison": null,
+  "lunge_detected": {
+    "left": [],
+    "right": [],
+    "latest": null
+  },
+  "left_arm_extensions": [
+    {
+      "start_frame": 14,
+      "end_frame": 16,
+      "start_time": 0.9333333333333333,
+      "end_time": 1.0666666666666667,
+      "duration": 0.13333333333333333,
+      "avg_distance": 0.5525815319280601,
+      "avg_angle": 119.29348874846886,
+      "effective_start_frame": 15,
+      "effective_start_time": 1.0,
+      "near_hit": true
+    }
+  ],
+  "right_arm_extensions": [
+    {
+      "start_frame": 16,
+      "end_frame": 17,
+      "start_time": 1.0666666666666667,
+      "end_time": 1.1333333333333333,
+      "duration": 0.06666666666666667,
+      "avg_distance": 0.7927986858711262,
+      "avg_angle": 115.39396198837277,
+      "effective_start_frame": 17,
+      "effective_start_time": 1.1333333333333333,
+      "near_hit": true
+    }
+  ]
+}
+============================================================

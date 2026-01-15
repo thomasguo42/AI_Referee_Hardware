@@ -79,6 +79,17 @@ WINNER_PRIORITIES = [
     "Manual selection winner",
 ]
 
+def has_relevant_blade_contact(phrase) -> bool:
+    """Check if any blade contact is within 1s before hit and before lockout."""
+    hit_time = phrase.simultaneous_hit_time
+    if hit_time is None:
+        return False
+    for bc in phrase.blade_contacts:
+        if (hit_time - 1.0) <= bc.time < hit_time:
+            if phrase.lockout_start is None or bc.time < phrase.lockout_start:
+                return True
+    return False
+
 
 def _extract_winner(content: str, label: str) -> Optional[str]:
     pattern = rf"{re.escape(label)}:\s*(?P<winner>Right|Left|Abstain)(?:\\s+Fencer)?(?:\\s*\\([^)]*\\))?"
@@ -133,6 +144,13 @@ def main():
     if correct_dir.exists():
         shutil.rmtree(correct_dir)
     correct_dir.mkdir(parents=True, exist_ok=True)
+
+    mismatch_blade_dir = mismatch_dir / "blade_contact"
+    mismatch_other_dir = mismatch_dir / "no_blade_contact"
+    correct_blade_dir = correct_dir / "blade_contact"
+    correct_other_dir = correct_dir / "no_blade_contact"
+    for d in [mismatch_blade_dir, mismatch_other_dir, correct_blade_dir, correct_other_dir]:
+        d.mkdir(parents=True, exist_ok=True)
     
     total_processed = 0
     total_checked = 0
@@ -184,6 +202,7 @@ def main():
             if left_xdata and 16 in left_xdata:
                 max_frame = len(left_xdata[16]) - 1
                 debug_referee_module._trim_phrase_to_frames(phrase, max_frame)
+            blade_relevant = has_relevant_blade_contact(phrase)
             
             # Load normalization constant from JSON if available
             norm_constant = None
@@ -238,7 +257,8 @@ def main():
                 mismatches_found += 1
                 
                 # Copy entire folder to mismatched_results
-                destination = mismatch_dir / item.name
+                destination_root = mismatch_blade_dir if blade_relevant else mismatch_other_dir
+                destination = destination_root / item.name
                 if destination.exists():
                     shutil.rmtree(destination)
                 shutil.copytree(str(item), str(destination))
@@ -249,7 +269,8 @@ def main():
                 print()
             else:
                 # Match found - copy to correct_results
-                destination = correct_dir / item.name
+                destination_root = correct_blade_dir if blade_relevant else correct_other_dir
+                destination = destination_root / item.name
                 if destination.exists():
                     shutil.rmtree(destination)
                 shutil.copytree(str(item), str(destination))
