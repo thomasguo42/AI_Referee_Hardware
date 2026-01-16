@@ -193,47 +193,47 @@ def _decide_attack_by_arm_and_speed(
         right_extensions,
     )
 
-def _find_overlapping_pause_pair(
+def _pause_overlap_ok(
     left_pauses: List[PauseInterval],
     right_pauses: List[PauseInterval],
     fps: float,
-    max_duration_seconds: float = 1.0,
+    max_total_seconds: float = 1.0,
     min_overlap_ratio: float = 0.5,
     max_end_frame_delta: int = 3,
-) -> Optional[Tuple[PauseInterval, PauseInterval]]:
-    max_duration_frames = fps * max_duration_seconds
-    best_pair = None
-    best_overlap = 0.0
-    for left in left_pauses:
-        left_len = left.end_frame - left.start_frame + 1
-        if left_len >= max_duration_frames:
-            continue
-        for right in right_pauses:
-            right_len = right.end_frame - right.start_frame + 1
-            if right_len >= max_duration_frames:
-                continue
-            overlap_start = max(left.start_frame, right.start_frame)
-            overlap_end = min(left.end_frame, right.end_frame)
-            overlap_frames = max(0, overlap_end - overlap_start + 1)
-            if overlap_frames <= 0:
-                continue
-            longer = max(left_len, right_len)
-            overlap_ratio = overlap_frames / longer if longer > 0 else 0.0
-            if overlap_ratio < min_overlap_ratio:
-                continue
-            if abs(left.end_frame - right.end_frame) > max_end_frame_delta:
-                continue
-            if overlap_ratio > best_overlap:
-                best_overlap = overlap_ratio
-                best_pair = (left, right)
-    if best_pair:
-        _debug(
-            "[PauseOverlap] match "
-            f"left={best_pair[0].start_frame}-{best_pair[0].end_frame} "
-            f"right={best_pair[1].start_frame}-{best_pair[1].end_frame} "
-            f"overlap_ratio={best_overlap:.2f}"
-        )
-    return best_pair
+    left_last_end: Optional[int] = None,
+    right_last_end: Optional[int] = None,
+) -> Tuple[bool, float]:
+    left_frames = set()
+    for interval in left_pauses:
+        left_frames.update(range(interval.start_frame, interval.end_frame + 1))
+    right_frames = set()
+    for interval in right_pauses:
+        right_frames.update(range(interval.start_frame, interval.end_frame + 1))
+
+    if not left_frames or not right_frames:
+        return False, 0.0
+
+    left_total = len(left_frames)
+    right_total = len(right_frames)
+    max_total_frames = fps * max_total_seconds
+    if left_total >= max_total_frames or right_total >= max_total_frames:
+        return False, 0.0
+
+    overlap_frames = len(left_frames & right_frames)
+    overlap_ratio = overlap_frames / max(left_total, right_total)
+    if overlap_ratio < min_overlap_ratio:
+        return False, overlap_ratio
+
+    if left_last_end is not None and right_last_end is not None:
+        if abs(left_last_end - right_last_end) > max_end_frame_delta:
+            return False, overlap_ratio
+
+    _debug(
+        "[PauseOverlap] totals "
+        f"left={left_total} right={right_total} overlap={overlap_frames} "
+        f"ratio={overlap_ratio:.2f}"
+    )
+    return True, overlap_ratio
 
 def _load_logistic_model():
     global LOGISTIC_MODEL_CACHE
@@ -1141,10 +1141,15 @@ def referee_decision(phrase: FencingPhrase, left_xdata: Dict, left_ydata: Dict,
     result['left_arm_extensions'] = [asdict(e) for e in left_extensions]
     result['right_arm_extensions'] = [asdict(e) for e in right_extensions]
 
-    overlap_pair = _find_overlapping_pause_pair(left_pauses, right_pauses, phrase.fps)
-    if overlap_pair:
-        left_match, right_match = overlap_pair
-        window_start = max(left_match.end_frame, right_match.end_frame)
+    overlap_ok, overlap_ratio = _pause_overlap_ok(
+        left_pauses,
+        right_pauses,
+        phrase.fps,
+        left_last_end=left_last_pause_end_frame,
+        right_last_end=right_last_pause_end_frame,
+    )
+    if overlap_ok:
+        window_start = max(left_last_pause_end_frame, right_last_pause_end_frame)
         window_end = len(left_xdata[16]) - 1
         winner, detail, speed_info, left_ext, right_ext = _decide_attack_by_arm_and_speed(
             left_xdata,
@@ -1163,7 +1168,7 @@ def referee_decision(phrase: FencingPhrase, left_xdata: Dict, left_ydata: Dict,
             result['speed_comparison'] = speed_info
         result['winner'] = winner
         result['reason'] = (
-            f'Pauses overlap (>50%, <1s). {detail}'
+            f'Pauses overlap (>50%, <1s, ratio={overlap_ratio:.2f}). {detail}'
         )
         return result
 
