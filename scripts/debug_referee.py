@@ -804,14 +804,27 @@ def detect_pause_retreat_intervals(xdata: Dict, ydata: Dict, is_left_fencer: boo
     return intervals
 
 
-def _extract_slow_start(pauses: List[PauseInterval]) -> Tuple[List[PauseInterval], Optional[PauseInterval]]:
-    """Reclassify a single short opening pause as a slow start."""
-    if len(pauses) == 1:
-        interval = pauses[0]
+def _extract_slow_starts(
+    pauses: List[PauseInterval],
+    fps: float,
+) -> Tuple[List[PauseInterval], Optional[PauseInterval]]:
+    """Reclassify opening short pauses as slow starts."""
+    if not pauses:
+        return pauses, None
+
+    max_frames = int(fps * 1.0)
+    remaining: List[PauseInterval] = []
+    slow_start: Optional[PauseInterval] = None
+
+    for interval in pauses:
         length_frames = interval.end_frame - interval.start_frame + 1
-        if interval.start_frame <= 5 and length_frames < 8:
-            return [], interval
-    return pauses, None
+        if interval.start_frame <= 2 and length_frames < max_frames:
+            if slow_start is None or interval.end_frame > slow_start.end_frame:
+                slow_start = interval
+            continue
+        remaining.append(interval)
+
+    return remaining, slow_start
 
 @dataclass
 class ArmExtensionInterval:
@@ -1059,8 +1072,8 @@ def referee_decision(phrase: FencingPhrase, left_xdata: Dict, left_ydata: Dict,
 
     left_pauses = left_pauses_raw
     right_pauses = right_pauses_raw
-    left_pauses, left_slow_start = _extract_slow_start(left_pauses)
-    right_pauses, right_slow_start = _extract_slow_start(right_pauses)
+    left_pauses, left_slow_start = _extract_slow_starts(left_pauses, phrase.fps)
+    right_pauses, right_slow_start = _extract_slow_starts(right_pauses, phrase.fps)
     result['left_slow_start'] = asdict(left_slow_start) if left_slow_start else None
     result['right_slow_start'] = asdict(right_slow_start) if right_slow_start else None
     
