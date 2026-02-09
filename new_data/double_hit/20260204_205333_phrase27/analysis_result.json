@@ -1,0 +1,62 @@
+{
+  "normalisation_constant": 154.38795471191406,
+  "video_angle": "left",
+  "winner": "left",
+  "reason": "Left has right-of-way (only right paused at 0.07s)",
+  "left_pauses": [
+    {
+      "start_frame": 12,
+      "end_frame": 17,
+      "start_time": 0.8,
+      "end_time": 1.1333333333333333,
+      "duration": 0.3333333333333333
+    },
+    {
+      "start_frame": 29,
+      "end_frame": 42,
+      "start_time": 1.9333333333333333,
+      "end_time": 2.8,
+      "duration": 0.8666666666666667
+    }
+  ],
+  "right_pauses": [
+    {
+      "start_frame": 1,
+      "end_frame": 11,
+      "start_time": 0.06666666666666667,
+      "end_time": 0.7333333333333333,
+      "duration": 0.6666666666666666
+    },
+    {
+      "start_frame": 13,
+      "end_frame": 20,
+      "start_time": 0.8666666666666667,
+      "end_time": 1.3333333333333333,
+      "duration": 0.4666666666666667
+    }
+  ],
+  "blade_analysis": "right",
+  "blade_details": {
+    "analysis_window": "frames 10-21",
+    "contact_frame": 18,
+    "left_variance_x": 0.04636679364054091,
+    "left_variance_y": 0.001081008490731387,
+    "left_variance_total": 0.047447802131272296,
+    "right_variance_x": 0.06657912266799584,
+    "right_variance_y": 0.048161645436603756,
+    "right_variance_total": 0.1147407681045996,
+    "samples_left": 12,
+    "samples_right": 12,
+    "current_right_of_way": "left"
+  },
+  "speed_comparison": {
+    "left_speed": 0.048219009608461275,
+    "right_speed": 0.08363228277967785,
+    "left_accel": 0.03952640454068531,
+    "right_accel": 0.07249541281064086
+  },
+  "lunge_detected": {
+    "left": true,
+    "right": true
+  }
+}

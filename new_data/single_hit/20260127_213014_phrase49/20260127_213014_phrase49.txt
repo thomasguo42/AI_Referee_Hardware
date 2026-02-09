@@ -1,0 +1,16 @@
+Phrase 49 initialized at 2026-01-27 21:30:14
+Audio cue executed at 2026-01-27 21:30:11
+Audio cue duration: 2.53s
+Start command issued at 2026-01-27 21:30:14
+Recording started at 2026-01-27 21:30:14
+ 0.000s | Phrase recording started
+ 1.771s | Off-Target: Blade-to-blade contact.
+ 2.004s | HIT: Left scores on Right!
+Lockout active (0.200s window)
+ 2.060s | Lockout period started (0.200s window)
+ 2.244s | Phrase recording ended
+Scores -> Fencer 1: HIT, Fencer 2: MISS
+Phrase ended
+[2026-01-27 21:30:16] Interpretation -> Right Fencer: HIT, Left Fencer: MISS
+[2026-01-27 21:30:16] Awaiting manual winner selection (single hit confirmation)
+[2026-01-27 21:30:19] Confirmed result winner: Right Fencer (Green Lamp)

@@ -1,0 +1,35 @@
+{
+  "normalisation_constant": 69.57060241699219,
+  "video_angle": "middle",
+  "winner": "left",
+  "reason": "Left has right-of-way (only right paused at 0.07s)",
+  "left_pauses": [],
+  "right_pauses": [
+    {
+      "start_frame": 1,
+      "end_frame": 5,
+      "start_time": 0.06666666666666667,
+      "end_time": 0.3333333333333333,
+      "duration": 0.26666666666666666
+    },
+    {
+      "start_frame": 7,
+      "end_frame": 20,
+      "start_time": 0.4666666666666667,
+      "end_time": 1.3333333333333333,
+      "duration": 0.8666666666666667
+    }
+  ],
+  "blade_analysis": "none",
+  "blade_details": {},
+  "speed_comparison": {
+    "left_speed": 0.32864789395973504,
+    "right_speed": 0.1286781229987285,
+    "left_accel": 0.377651788778558,
+    "right_accel": 0.14285300665446132
+  },
+  "lunge_detected": {
+    "left": false,
+    "right": true
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "normalisation_constant": 140.0061798095703,
+  "video_angle": "middle",
+  "winner": "left",
+  "reason": "Left has right-of-way (only right paused at 0.07s)",
+  "left_pauses": [
+    {
+      "start_frame": 2,
+      "end_frame": 7,
+      "start_time": 0.13333333333333333,
+      "end_time": 0.4666666666666667,
+      "duration": 0.3333333333333333
+    },
+    {
+      "start_frame": 10,
+      "end_frame": 14,
+      "start_time": 0.6666666666666666,
+      "end_time": 0.9333333333333333,
+      "duration": 0.26666666666666666
+    },
+    {
+      "start_frame": 33,
+      "end_frame": 38,
+      "start_time": 2.2,
+      "end_time": 2.533333333333333,
+      "duration": 0.3333333333333333
+    }
+  ],
+  "right_pauses": [
+    {
+      "start_frame": 1,
+      "end_frame": 6,
+      "start_time": 0.06666666666666667,
+      "end_time": 0.4,
+      "duration": 0.3333333333333333
+    },
+    {
+      "start_frame": 8,
+      "end_frame": 11,
+      "start_time": 0.5333333333333333,
+      "end_time": 0.7333333333333333,
+      "duration": 0.2
+    },
+    {
+      "start_frame": 15,
+      "end_frame": 26,
+      "start_time": 1.0,
+      "end_time": 1.7333333333333334,
+      "duration": 0.7333333333333333
+    },
+    {
+      "start_frame": 30,
+      "end_frame": 63,
+      "start_time": 2.0,
+      "end_time": 4.2,
+      "duration": 2.2
+    }
+  ],
+  "blade_analysis": "right",
+  "blade_details": {
+    "analysis_window": "frames 20-31",
+    "contact_frame": 28,
+    "left_variance_x": 0.03397372386257916,
+    "left_variance_y": 0.008630642929509375,
+    "left_variance_total": 0.04260436679208853,
+    "right_variance_x": 0.008997832431181064,
+    "right_variance_y": 0.0029164767717680647,
+    "right_variance_total": 0.011914309202949128,
+    "samples_left": 12,
+    "samples_right": 12,
+    "current_right_of_way": "left"
+  },
+  "speed_comparison": {
+    "left_speed": 0.1191452089168126,
+    "right_speed": 0.06750343775176415,
+    "left_accel": 0.11264941021874074,
+    "right_accel": 0.08365554888430136
+  },
+  "lunge_detected": {
+    "left": true,
+    "right": true
+  }
+}

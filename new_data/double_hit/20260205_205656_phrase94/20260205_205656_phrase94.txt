@@ -1,0 +1,16 @@
+Phrase 94 initialized at 2026-02-05 20:56:56
+Audio cue executed at 2026-02-05 20:56:53
+Audio cue duration: 2.50s
+Start command issued at 2026-02-05 20:56:56
+Recording started at 2026-02-05 20:56:56
+ 0.000s | Phrase recording started
+ 1.022s | HIT: Left scores on Right!
+Lockout active (0.200s window)
+ 1.078s | Lockout period started (0.200s window)
+ 1.264s | HIT: Right scores on Left!
+ 1.298s | Phrase recording ended
+Scores -> Fencer 1: HIT, Fencer 2: HIT
+Phrase ended
+[2026-02-05 20:56:57] Interpretation -> Right Fencer: HIT, Left Fencer: HIT
+[2026-02-05 20:56:57] Awaiting manual winner selection (double hit)
+[2026-02-05 20:57:01] Confirmed result winner: Right Fencer (Green Lamp)

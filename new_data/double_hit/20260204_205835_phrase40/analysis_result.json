@@ -1,0 +1,174 @@
+{
+  "normalisation_constant": 69.55863952636719,
+  "video_angle": "middle",
+  "winner": "left",
+  "reason": "Left has right-of-way (only right paused at 0.07s)",
+  "left_pauses": [
+    {
+      "start_frame": 1,
+      "end_frame": 5,
+      "start_time": 0.06666666666666667,
+      "end_time": 0.3333333333333333,
+      "duration": 0.26666666666666666
+    },
+    {
+      "start_frame": 39,
+      "end_frame": 64,
+      "start_time": 2.6,
+      "end_time": 4.266666666666667,
+      "duration": 1.6666666666666667
+    },
+    {
+      "start_frame": 66,
+      "end_frame": 75,
+      "start_time": 4.4,
+      "end_time": 5.0,
+      "duration": 0.6
+    },
+    {
+      "start_frame": 77,
+      "end_frame": 88,
+      "start_time": 5.133333333333334,
+      "end_time": 5.866666666666666,
+      "duration": 0.7333333333333333
+    },
+    {
+      "start_frame": 93,
+      "end_frame": 134,
+      "start_time": 6.2,
+      "end_time": 8.933333333333334,
+      "duration": 2.7333333333333334
+    },
+    {
+      "start_frame": 137,
+      "end_frame": 150,
+      "start_time": 9.133333333333333,
+      "end_time": 10.0,
+      "duration": 0.8666666666666667
+    },
+    {
+      "start_frame": 165,
+      "end_frame": 190,
+      "start_time": 11.0,
+      "end_time": 12.666666666666666,
+      "duration": 1.6666666666666667
+    },
+    {
+      "start_frame": 198,
+      "end_frame": 202,
+      "start_time": 13.2,
+      "end_time": 13.466666666666667,
+      "duration": 0.26666666666666666
+    },
+    {
+      "start_frame": 287,
+      "end_frame": 290,
+      "start_time": 19.133333333333333,
+      "end_time": 19.333333333333332,
+      "duration": 0.2
+    }
+  ],
+  "right_pauses": [
+    {
+      "start_frame": 1,
+      "end_frame": 5,
+      "start_time": 0.06666666666666667,
+      "end_time": 0.3333333333333333,
+      "duration": 0.26666666666666666
+    },
+    {
+      "start_frame": 32,
+      "end_frame": 43,
+      "start_time": 2.1333333333333333,
+      "end_time": 2.8666666666666667,
+      "duration": 0.7333333333333333
+    },
+    {
+      "start_frame": 45,
+      "end_frame": 51,
+      "start_time": 3.0,
+      "end_time": 3.4,
+      "duration": 0.4
+    },
+    {
+      "start_frame": 53,
+      "end_frame": 56,
+      "start_time": 3.533333333333333,
+      "end_time": 3.7333333333333334,
+      "duration": 0.2
+    },
+    {
+      "start_frame": 169,
+      "end_frame": 182,
+      "start_time": 11.266666666666667,
+      "end_time": 12.133333333333333,
+      "duration": 0.8666666666666667
+    },
+    {
+      "start_frame": 186,
+      "end_frame": 190,
+      "start_time": 12.4,
+      "end_time": 12.666666666666666,
+      "duration": 0.26666666666666666
+    },
+    {
+      "start_frame": 222,
+      "end_frame": 238,
+      "start_time": 14.8,
+      "end_time": 15.866666666666667,
+      "duration": 1.0666666666666667
+    },
+    {
+      "start_frame": 250,
+      "end_frame": 255,
+      "start_time": 16.666666666666668,
+      "end_time": 17.0,
+      "duration": 0.3333333333333333
+    },
+    {
+      "start_frame": 257,
+      "end_frame": 265,
+      "start_time": 17.133333333333333,
+      "end_time": 17.666666666666668,
+      "duration": 0.5333333333333333
+    },
+    {
+      "start_frame": 267,
+      "end_frame": 271,
+      "start_time": 17.8,
+      "end_time": 18.066666666666666,
+      "duration": 0.26666666666666666
+    },
+    {
+      "start_frame": 273,
+      "end_frame": 291,
+      "start_time": 18.2,
+      "end_time": 19.4,
+      "duration": 1.2
+    }
+  ],
+  "blade_analysis": "left",
+  "blade_details": {
+    "analysis_window": "frames 25-36",
+    "contact_frame": 33,
+    "left_variance_x": 0.3387918098520089,
+    "left_variance_y": 0.05152978958625778,
+    "left_variance_total": 0.39032159943826666,
+    "right_variance_x": 0.001173461813000834,
+    "right_variance_y": 0.001759057321417272,
+    "right_variance_total": 0.0029325191344181057,
+    "samples_left": 12,
+    "samples_right": 12,
+    "current_right_of_way": "left"
+  },
+  "speed_comparison": {
+    "left_speed": 0.10620709928772927,
+    "right_speed": 0.11528065591859646,
+    "left_accel": 0.07511534235882902,
+    "right_accel": 0.07803389549142319
+  },
+  "lunge_detected": {
+    "left": true,
+    "right": false
+  }
+}

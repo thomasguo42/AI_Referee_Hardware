@@ -1,0 +1,20 @@
+{
+  "normalisation_constant": 18.727691650390625,
+  "video_angle": "left",
+  "winner": "right",
+  "reason": "Simultaneous action, default to right",
+  "left_pauses": [],
+  "right_pauses": [],
+  "blade_analysis": "none",
+  "blade_details": {},
+  "speed_comparison": {
+    "left_speed": 1.4960768466274144,
+    "right_speed": 1.4567424393633646,
+    "left_accel": 1.576104739410293,
+    "right_accel": 3.0581242848012535
+  },
+  "lunge_detected": {
+    "left": false,
+    "right": false
+  }
+}
