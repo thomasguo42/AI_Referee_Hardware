@@ -1,0 +1,31 @@
+{
+  "normalisation_constant": 161.61920166015625,
+  "video_angle": "middle",
+  "winner": "right",
+  "reason": "Right wins: pause end before lunge window end (28) after left lunge",
+  "left_pauses": [],
+  "right_pauses": [],
+  "blade_analysis": null,
+  "blade_details": null,
+  "speed_comparison": null,
+  "lunge_detected": {
+    "left": [
+      {
+        "start_frame": 20,
+        "end_frame": 24,
+        "start_time": 1.3333333333333333,
+        "end_time": 1.6
+      }
+    ],
+    "right": [],
+    "latest": {
+      "side": "left",
+      "start_frame": 20,
+      "end_frame": 24,
+      "start_time": 1.3333333333333333,
+      "end_time": 1.6
+    }
+  },
+  "left_arm_extensions": [],
+  "right_arm_extensions": []
+}

@@ -8,7 +8,7 @@ Recording started at 2026-02-04 20:54:33
 Lockout active (0.200s window)
  1.281s | Lockout period started (0.200s window)
  1.412s | HIT: Simultaneous valid hits!
- 1.412s | HIT: Left scores on Right! (simultaneous)
+ 1.412s | HIT: Right scores on Left! (simultaneous)
  1.523s | Phrase recording ended
 Scores -> Fencer 1: HIT, Fencer 2: HIT
 Phrase ended

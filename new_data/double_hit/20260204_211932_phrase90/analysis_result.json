@@ -1,64 +1,57 @@
 {
-  "normalisation_constant": 179.0332794189453,
+  "normalisation_constant": 179.0264892578125,
   "video_angle": "middle",
-  "winner": "left",
-  "reason": "Left has right-of-way (only right paused at 0.13s)",
+  "winner": "right",
+  "reason": "Right wins: pause end before lunge window end (37) after left lunge",
   "left_pauses": [
     {
       "start_frame": 32,
-      "end_frame": 35,
+      "end_frame": 36,
       "start_time": 2.1333333333333333,
-      "end_time": 2.3333333333333335,
-      "duration": 0.2
+      "end_time": 2.4,
+      "duration": 0.26666666666666666,
+      "is_retreat": false
     },
     {
-      "start_frame": 37,
-      "end_frame": 83,
-      "start_time": 2.466666666666667,
-      "end_time": 5.533333333333333,
-      "duration": 3.066666666666667
+      "start_frame": 38,
+      "end_frame": 82,
+      "start_time": 2.533333333333333,
+      "end_time": 5.466666666666667,
+      "duration": 2.933333333333333,
+      "is_retreat": false
     }
   ],
   "right_pauses": [
     {
-      "start_frame": 2,
-      "end_frame": 5,
-      "start_time": 0.13333333333333333,
-      "end_time": 0.3333333333333333,
-      "duration": 0.2
-    },
-    {
       "start_frame": 8,
-      "end_frame": 14,
-      "start_time": 0.5333333333333333,
-      "end_time": 0.9333333333333333,
-      "duration": 0.4
-    },
-    {
-      "start_frame": 17,
       "end_frame": 24,
-      "start_time": 1.1333333333333333,
+      "start_time": 0.5333333333333333,
       "end_time": 1.6,
-      "duration": 0.4666666666666667
-    },
-    {
-      "start_frame": 26,
-      "end_frame": 47,
-      "start_time": 1.7333333333333334,
-      "end_time": 3.1333333333333333,
-      "duration": 1.4
+      "duration": 1.0666666666666667,
+      "is_retreat": false
     }
   ],
-  "blade_analysis": "none",
-  "blade_details": {},
-  "speed_comparison": {
-    "left_speed": 0.050595172890520304,
-    "right_speed": 0.059618935309924084,
-    "left_accel": 0.02678044284908955,
-    "right_accel": 0.021171021959189466
-  },
+  "blade_analysis": null,
+  "blade_details": null,
+  "speed_comparison": null,
   "lunge_detected": {
-    "left": true,
-    "right": true
-  }
+    "left": [
+      {
+        "start_frame": 22,
+        "end_frame": 33,
+        "start_time": 1.4666666666666666,
+        "end_time": 2.2
+      }
+    ],
+    "right": [],
+    "latest": {
+      "side": "left",
+      "start_frame": 22,
+      "end_frame": 33,
+      "start_time": 1.4666666666666666,
+      "end_time": 2.2
+    }
+  },
+  "left_arm_extensions": [],
+  "right_arm_extensions": []
 }

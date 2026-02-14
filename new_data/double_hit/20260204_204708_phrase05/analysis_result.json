@@ -1,36 +1,53 @@
 {
-  "normalisation_constant": 127.03868103027344,
-  "video_angle": "left",
-  "winner": "left",
-  "reason": "Left has right-of-way (only right paused at 0.07s)",
+  "normalisation_constant": 173.70265197753906,
+  "video_angle": "middle",
+  "winner": "right",
+  "reason": "Right has right-of-way (pause by left at 1.20s)",
   "left_pauses": [
     {
       "start_frame": 10,
-      "end_frame": 15,
+      "end_frame": 18,
       "start_time": 0.6666666666666666,
-      "end_time": 1.0,
-      "duration": 0.3333333333333333
+      "end_time": 1.2,
+      "duration": 0.5333333333333333,
+      "is_retreat": false
     }
   ],
-  "right_pauses": [
-    {
-      "start_frame": 1,
-      "end_frame": 25,
-      "start_time": 0.06666666666666667,
-      "end_time": 1.6666666666666667,
-      "duration": 1.6
-    }
-  ],
-  "blade_analysis": "none",
-  "blade_details": {},
-  "speed_comparison": {
-    "left_speed": 0.07351307460745388,
-    "right_speed": 0.0784810416705523,
-    "left_accel": 0.03364603750929282,
-    "right_accel": 0.08208848422468548
-  },
+  "right_pauses": [],
+  "blade_analysis": null,
+  "blade_details": null,
+  "speed_comparison": null,
   "lunge_detected": {
-    "left": true,
-    "right": true
-  }
+    "left": [],
+    "right": [],
+    "latest": null
+  },
+  "left_arm_extensions": [
+    {
+      "start_frame": 24,
+      "end_frame": 29,
+      "start_time": 1.6,
+      "end_time": 1.9333333333333333,
+      "duration": 0.3333333333333333,
+      "avg_distance": 0.6928440441393248,
+      "avg_angle": 155.30547935053787,
+      "effective_start_frame": 25,
+      "effective_start_time": 1.6666666666666667,
+      "near_hit": true
+    }
+  ],
+  "right_arm_extensions": [
+    {
+      "start_frame": 28,
+      "end_frame": 29,
+      "start_time": 1.8666666666666667,
+      "end_time": 1.9333333333333333,
+      "duration": 0.06666666666666667,
+      "avg_distance": 0.653661062354589,
+      "avg_angle": 174.69726224115283,
+      "effective_start_frame": 28,
+      "effective_start_time": 1.8666666666666667,
+      "near_hit": true
+    }
+  ]
 }

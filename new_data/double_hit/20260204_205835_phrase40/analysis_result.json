@@ -1,174 +1,178 @@
 {
-  "normalisation_constant": 69.55863952636719,
+  "normalisation_constant": 153.33758544921875,
   "video_angle": "middle",
-  "winner": "left",
-  "reason": "Left has right-of-way (only right paused at 0.07s)",
+  "winner": "right",
+  "reason": "Right has right-of-way (pause at 16.20s vs pause at 19.40s)",
   "left_pauses": [
     {
-      "start_frame": 1,
-      "end_frame": 5,
-      "start_time": 0.06666666666666667,
-      "end_time": 0.3333333333333333,
-      "duration": 0.26666666666666666
+      "start_frame": 23,
+      "end_frame": 26,
+      "start_time": 1.5333333333333334,
+      "end_time": 1.7333333333333334,
+      "duration": 0.2,
+      "is_retreat": false
     },
     {
-      "start_frame": 39,
-      "end_frame": 64,
-      "start_time": 2.6,
-      "end_time": 4.266666666666667,
-      "duration": 1.6666666666666667
-    },
-    {
-      "start_frame": 66,
-      "end_frame": 75,
-      "start_time": 4.4,
-      "end_time": 5.0,
-      "duration": 0.6
-    },
-    {
-      "start_frame": 77,
-      "end_frame": 88,
-      "start_time": 5.133333333333334,
-      "end_time": 5.866666666666666,
-      "duration": 0.7333333333333333
+      "start_frame": 32,
+      "end_frame": 90,
+      "start_time": 2.1333333333333333,
+      "end_time": 6.0,
+      "duration": 3.8666666666666667,
+      "is_retreat": true
     },
     {
       "start_frame": 93,
-      "end_frame": 134,
+      "end_frame": 160,
       "start_time": 6.2,
-      "end_time": 8.933333333333334,
-      "duration": 2.7333333333333334
+      "end_time": 10.666666666666666,
+      "duration": 4.466666666666667,
+      "is_retreat": true
     },
     {
-      "start_frame": 137,
-      "end_frame": 150,
-      "start_time": 9.133333333333333,
-      "end_time": 10.0,
-      "duration": 0.8666666666666667
+      "start_frame": 219,
+      "end_frame": 224,
+      "start_time": 14.6,
+      "end_time": 14.933333333333334,
+      "duration": 0.3333333333333333,
+      "is_retreat": false
     },
     {
-      "start_frame": 165,
-      "end_frame": 190,
-      "start_time": 11.0,
-      "end_time": 12.666666666666666,
-      "duration": 1.6666666666666667
+      "start_frame": 227,
+      "end_frame": 230,
+      "start_time": 15.133333333333333,
+      "end_time": 15.333333333333334,
+      "duration": 0.2,
+      "is_retreat": false
     },
     {
-      "start_frame": 198,
-      "end_frame": 202,
-      "start_time": 13.2,
-      "end_time": 13.466666666666667,
-      "duration": 0.26666666666666666
+      "start_frame": 265,
+      "end_frame": 285,
+      "start_time": 17.666666666666668,
+      "end_time": 19.0,
+      "duration": 1.3333333333333333,
+      "is_retreat": false
     },
     {
       "start_frame": 287,
-      "end_frame": 290,
+      "end_frame": 291,
       "start_time": 19.133333333333333,
-      "end_time": 19.333333333333332,
-      "duration": 0.2
+      "end_time": 19.4,
+      "duration": 0.26666666666666666,
+      "is_retreat": false
     }
   ],
   "right_pauses": [
     {
-      "start_frame": 1,
-      "end_frame": 5,
-      "start_time": 0.06666666666666667,
-      "end_time": 0.3333333333333333,
-      "duration": 0.26666666666666666
+      "start_frame": 13,
+      "end_frame": 21,
+      "start_time": 0.8666666666666667,
+      "end_time": 1.4,
+      "duration": 0.5333333333333333,
+      "is_retreat": false
     },
     {
-      "start_frame": 32,
-      "end_frame": 43,
-      "start_time": 2.1333333333333333,
-      "end_time": 2.8666666666666667,
-      "duration": 0.7333333333333333
+      "start_frame": 24,
+      "end_frame": 55,
+      "start_time": 1.6,
+      "end_time": 3.6666666666666665,
+      "duration": 2.066666666666667,
+      "is_retreat": false
     },
     {
-      "start_frame": 45,
-      "end_frame": 51,
-      "start_time": 3.0,
-      "end_time": 3.4,
-      "duration": 0.4
+      "start_frame": 64,
+      "end_frame": 67,
+      "start_time": 4.266666666666667,
+      "end_time": 4.466666666666667,
+      "duration": 0.2,
+      "is_retreat": false
     },
     {
-      "start_frame": 53,
-      "end_frame": 56,
-      "start_time": 3.533333333333333,
-      "end_time": 3.7333333333333334,
-      "duration": 0.2
+      "start_frame": 69,
+      "end_frame": 72,
+      "start_time": 4.6,
+      "end_time": 4.8,
+      "duration": 0.2,
+      "is_retreat": false
     },
     {
-      "start_frame": 169,
-      "end_frame": 182,
-      "start_time": 11.266666666666667,
-      "end_time": 12.133333333333333,
-      "duration": 0.8666666666666667
+      "start_frame": 76,
+      "end_frame": 83,
+      "start_time": 5.066666666666666,
+      "end_time": 5.533333333333333,
+      "duration": 0.4666666666666667,
+      "is_retreat": false
     },
     {
-      "start_frame": 186,
-      "end_frame": 190,
-      "start_time": 12.4,
-      "end_time": 12.666666666666666,
-      "duration": 0.26666666666666666
-    },
-    {
-      "start_frame": 222,
+      "start_frame": 167,
       "end_frame": 238,
-      "start_time": 14.8,
+      "start_time": 11.133333333333333,
       "end_time": 15.866666666666667,
-      "duration": 1.0666666666666667
+      "duration": 4.733333333333333,
+      "is_retreat": false
     },
     {
-      "start_frame": 250,
-      "end_frame": 255,
-      "start_time": 16.666666666666668,
-      "end_time": 17.0,
-      "duration": 0.3333333333333333
-    },
-    {
-      "start_frame": 257,
-      "end_frame": 265,
-      "start_time": 17.133333333333333,
-      "end_time": 17.666666666666668,
-      "duration": 0.5333333333333333
-    },
-    {
-      "start_frame": 267,
-      "end_frame": 271,
-      "start_time": 17.8,
-      "end_time": 18.066666666666666,
-      "duration": 0.26666666666666666
-    },
-    {
-      "start_frame": 273,
-      "end_frame": 291,
-      "start_time": 18.2,
-      "end_time": 19.4,
-      "duration": 1.2
+      "start_frame": 240,
+      "end_frame": 243,
+      "start_time": 16.0,
+      "end_time": 16.2,
+      "duration": 0.2,
+      "is_retreat": false
     }
   ],
-  "blade_analysis": "left",
-  "blade_details": {
-    "analysis_window": "frames 25-36",
-    "contact_frame": 33,
-    "left_variance_x": 0.3387918098520089,
-    "left_variance_y": 0.05152978958625778,
-    "left_variance_total": 0.39032159943826666,
-    "right_variance_x": 0.001173461813000834,
-    "right_variance_y": 0.001759057321417272,
-    "right_variance_total": 0.0029325191344181057,
-    "samples_left": 12,
-    "samples_right": 12,
-    "current_right_of_way": "left"
-  },
-  "speed_comparison": {
-    "left_speed": 0.10620709928772927,
-    "right_speed": 0.11528065591859646,
-    "left_accel": 0.07511534235882902,
-    "right_accel": 0.07803389549142319
-  },
+  "blade_analysis": null,
+  "blade_details": null,
+  "speed_comparison": null,
   "lunge_detected": {
-    "left": true,
-    "right": false
-  }
+    "left": [
+      {
+        "start_frame": 29,
+        "end_frame": 34,
+        "start_time": 1.9333333333333333,
+        "end_time": 2.2666666666666666
+      }
+    ],
+    "right": [
+      {
+        "start_frame": 97,
+        "end_frame": 100,
+        "start_time": 6.466666666666667,
+        "end_time": 6.666666666666667
+      }
+    ],
+    "latest": {
+      "side": "right",
+      "start_frame": 97,
+      "end_frame": 100,
+      "start_time": 6.466666666666667,
+      "end_time": 6.666666666666667
+    }
+  },
+  "left_arm_extensions": [
+    {
+      "start_frame": 167,
+      "end_frame": 170,
+      "start_time": 11.133333333333333,
+      "end_time": 11.333333333333334,
+      "duration": 0.2,
+      "avg_distance": 0.5234350277407709,
+      "avg_angle": 159.86315281018938,
+      "effective_start_frame": 167,
+      "effective_start_time": 11.133333333333333,
+      "near_hit": true
+    }
+  ],
+  "right_arm_extensions": [
+    {
+      "start_frame": 291,
+      "end_frame": 295,
+      "start_time": 19.4,
+      "end_time": 19.666666666666668,
+      "duration": 0.26666666666666666,
+      "avg_distance": 0.6776914229249441,
+      "avg_angle": 101.38869242882616,
+      "effective_start_frame": 293,
+      "effective_start_time": 19.533333333333335,
+      "near_hit": true
+    }
+  ]
 }

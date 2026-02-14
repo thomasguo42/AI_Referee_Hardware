@@ -1,0 +1,126 @@
+{
+  "normalisation_constant": 165.81497192382812,
+  "video_angle": "middle",
+  "winner": "left",
+  "reason": "Right has right-of-way (pause at 1.13s vs pause at 10.13s). Logistic momentum favored left despite pause context",
+  "left_pauses": [
+    {
+      "start_frame": 61,
+      "end_frame": 64,
+      "start_time": 4.066666666666666,
+      "end_time": 4.266666666666667,
+      "duration": 0.2,
+      "is_retreat": false
+    },
+    {
+      "start_frame": 80,
+      "end_frame": 85,
+      "start_time": 5.333333333333333,
+      "end_time": 5.666666666666667,
+      "duration": 0.3333333333333333,
+      "is_retreat": false
+    },
+    {
+      "start_frame": 100,
+      "end_frame": 108,
+      "start_time": 6.666666666666667,
+      "end_time": 7.2,
+      "duration": 0.5333333333333333,
+      "is_retreat": false
+    },
+    {
+      "start_frame": 117,
+      "end_frame": 136,
+      "start_time": 7.8,
+      "end_time": 9.066666666666666,
+      "duration": 1.2666666666666666,
+      "is_retreat": false
+    },
+    {
+      "start_frame": 148,
+      "end_frame": 152,
+      "start_time": 9.866666666666667,
+      "end_time": 10.133333333333333,
+      "duration": 0.26666666666666666,
+      "is_retreat": false
+    }
+  ],
+  "right_pauses": [
+    {
+      "start_frame": 14,
+      "end_frame": 17,
+      "start_time": 0.9333333333333333,
+      "end_time": 1.1333333333333333,
+      "duration": 0.2,
+      "is_retreat": false
+    }
+  ],
+  "blade_analysis": "Blade contact at 5.85s - logistic momentum vote (p_left=0.98)",
+  "blade_details": {
+    "contact_frame": 87,
+    "left_features": {
+      "front_now": 6.506647280490666,
+      "front_progress": 3.058044529923575,
+      "front_velocity": 0.003715888228876807,
+      "back_now": 5.956843059396237,
+      "back_progress": 3.2335895314649603,
+      "back_velocity": 1.023023231203155,
+      "front_knee_now": 6.632182831271251,
+      "front_knee_progress": 3.3408685681683274,
+      "front_knee_velocity": 0.4105752817053676,
+      "front_wrist_now": 6.781872575769428,
+      "front_wrist_progress": 3.543009280518274,
+      "front_wrist_velocity": 0.9494729383399991,
+      "stance_now": 0.549804221094429,
+      "stance_progress": -0.1755450015413853,
+      "com_progress": 3.4646133792221305,
+      "com_velocity": 0.6763848309307674,
+      "front_height_change": -0.061341050994538904,
+      "weapon_lead": 0.2752252952787613,
+      "weapon_lead_progress": 0.484964750594699,
+      "weapon_vs_com": 0.4099690342647593,
+      "attack_start_frame": 25,
+      "attack_lead_time": 4.133333333333334,
+      "attack_progress_rate": 0.049323298869735084,
+      "front_velocity_mean_window": 0.05358498552938684,
+      "front_velocity_peak_window": 0.17095294404542827
+    },
+    "right_features": {
+      "front_now": 8.446575042445604,
+      "front_progress": -1.1869089570574731,
+      "front_velocity": -0.045098625636685874,
+      "back_now": 8.956719564547225,
+      "back_progress": -1.0597262684218531,
+      "back_velocity": 0.01915918596465449,
+      "front_knee_now": 8.551087389629929,
+      "front_knee_progress": -1.17587989159692,
+      "front_knee_velocity": -0.33701394608372404,
+      "front_wrist_now": 8.396262762438058,
+      "front_wrist_progress": -1.1372024091618087,
+      "front_wrist_velocity": -0.681586660347766,
+      "stance_now": -0.510144522101621,
+      "stance_progress": -0.12718268863562,
+      "com_progress": -1.1493236770545288,
+      "com_velocity": -0.5012197646972183,
+      "front_height_change": 0.09695497775344286,
+      "weapon_lead": 0.05031228000754595,
+      "weapon_lead_progress": 0.04970654789566442,
+      "weapon_vs_com": 0.3945340185978452,
+      "attack_start_frame": 9,
+      "attack_lead_time": 5.2,
+      "attack_progress_rate": -0.015216781500736834,
+      "front_velocity_mean_window": -0.02717070724266968,
+      "front_velocity_peak_window": 0.12708006460015575
+    },
+    "logistic_available": true,
+    "rationale": "logistic momentum vote (p_left=0.98)"
+  },
+  "speed_comparison": null,
+  "lunge_detected": {
+    "left": [],
+    "right": [],
+    "latest": null
+  },
+  "left_arm_extensions": [],
+  "right_arm_extensions": []
+}

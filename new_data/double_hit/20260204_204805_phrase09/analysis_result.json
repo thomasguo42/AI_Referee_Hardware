@@ -1,35 +1,70 @@
 {
-  "normalisation_constant": 127.30426025390625,
+  "normalisation_constant": 171.4962615966797,
   "video_angle": "middle",
   "winner": "left",
-  "reason": "Left has right-of-way (only right paused at 0.07s)",
-  "left_pauses": [],
-  "right_pauses": [
+  "reason": "Left has right-of-way (pause at 1.20s vs pause at 3.27s)",
+  "left_pauses": [
     {
-      "start_frame": 1,
-      "end_frame": 8,
-      "start_time": 0.06666666666666667,
-      "end_time": 0.5333333333333333,
-      "duration": 0.4666666666666667
-    },
-    {
-      "start_frame": 14,
-      "end_frame": 50,
-      "start_time": 0.9333333333333333,
-      "end_time": 3.3333333333333335,
-      "duration": 2.4
+      "start_frame": 8,
+      "end_frame": 18,
+      "start_time": 0.5333333333333333,
+      "end_time": 1.2,
+      "duration": 0.6666666666666666,
+      "is_retreat": false
     }
   ],
-  "blade_analysis": "none",
-  "blade_details": {},
-  "speed_comparison": {
-    "left_speed": 0.12194483090075471,
-    "right_speed": 0.1045502286404933,
-    "left_accel": 0.0925259964016328,
-    "right_accel": 0.1290843928903958
-  },
+  "right_pauses": [
+    {
+      "start_frame": 18,
+      "end_frame": 26,
+      "start_time": 1.2,
+      "end_time": 1.7333333333333334,
+      "duration": 0.5333333333333333,
+      "is_retreat": false
+    },
+    {
+      "start_frame": 28,
+      "end_frame": 49,
+      "start_time": 1.8666666666666667,
+      "end_time": 3.2666666666666666,
+      "duration": 1.4,
+      "is_retreat": true
+    }
+  ],
+  "blade_analysis": null,
+  "blade_details": null,
+  "speed_comparison": null,
   "lunge_detected": {
-    "left": true,
-    "right": true
-  }
+    "left": [
+      {
+        "start_frame": 27,
+        "end_frame": 30,
+        "start_time": 1.8,
+        "end_time": 2.0
+      }
+    ],
+    "right": [],
+    "latest": {
+      "side": "left",
+      "start_frame": 27,
+      "end_frame": 30,
+      "start_time": 1.8,
+      "end_time": 2.0
+    }
+  },
+  "left_arm_extensions": [
+    {
+      "start_frame": 45,
+      "end_frame": 48,
+      "start_time": 3.0,
+      "end_time": 3.2,
+      "duration": 0.2,
+      "avg_distance": 0.6572548502226889,
+      "avg_angle": 132.6006250039317,
+      "effective_start_frame": 47,
+      "effective_start_time": 3.1333333333333333,
+      "near_hit": true
+    }
+  ],
+  "right_arm_extensions": []
 }

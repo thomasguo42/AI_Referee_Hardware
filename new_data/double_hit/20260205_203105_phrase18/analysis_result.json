@@ -1,76 +1,123 @@
 {
-  "normalisation_constant": 99.56100463867188,
+  "normalisation_constant": 99.56333923339844,
   "video_angle": "left",
   "winner": "left",
-  "reason": "Left has right-of-way (only right paused at 0.07s)",
+  "reason": "Right has right-of-way (pause at 2.53s vs pause at 3.07s). Logistic momentum favored left despite pause context",
   "left_pauses": [
     {
-      "start_frame": 33,
+      "start_frame": 32,
       "end_frame": 36,
-      "start_time": 2.2,
+      "start_time": 2.1333333333333333,
       "end_time": 2.4,
-      "duration": 0.2
+      "duration": 0.26666666666666666,
+      "is_retreat": true
     },
     {
       "start_frame": 40,
       "end_frame": 46,
       "start_time": 2.6666666666666665,
       "end_time": 3.066666666666667,
-      "duration": 0.4
+      "duration": 0.4,
+      "is_retreat": false
     }
   ],
   "right_pauses": [
-    {
-      "start_frame": 1,
-      "end_frame": 5,
-      "start_time": 0.06666666666666667,
-      "end_time": 0.3333333333333333,
-      "duration": 0.26666666666666666
-    },
     {
       "start_frame": 10,
       "end_frame": 24,
       "start_time": 0.6666666666666666,
       "end_time": 1.6,
-      "duration": 0.9333333333333333
+      "duration": 0.9333333333333333,
+      "is_retreat": false
     },
     {
       "start_frame": 35,
       "end_frame": 38,
       "start_time": 2.3333333333333335,
       "end_time": 2.533333333333333,
-      "duration": 0.2
-    },
-    {
-      "start_frame": 49,
-      "end_frame": 52,
-      "start_time": 3.2666666666666666,
-      "end_time": 3.466666666666667,
-      "duration": 0.2
+      "duration": 0.2,
+      "is_retreat": true
     }
   ],
-  "blade_analysis": "right",
+  "blade_analysis": "Blade contact at 1.23s - logistic momentum vote (p_left=0.77)",
   "blade_details": {
-    "analysis_window": "frames 10-21",
     "contact_frame": 18,
-    "left_variance_x": 0.08866934561521865,
-    "left_variance_y": 0.0022863280363127183,
-    "left_variance_total": 0.09095567365153137,
-    "right_variance_x": 0.0009364751358252955,
-    "right_variance_y": 0.00031418566155374085,
-    "right_variance_total": 0.0012506607973790363,
-    "samples_left": 12,
-    "samples_right": 12,
-    "current_right_of_way": "left"
+    "left_features": {
+      "front_now": 6.812533304684472,
+      "front_progress": 0.8448332202551327,
+      "front_velocity": 0.4721437588419719,
+      "back_now": 5.821103288698223,
+      "back_progress": 1.2090255560819072,
+      "back_velocity": 2.1217986315060067,
+      "front_knee_now": 6.935487188242483,
+      "front_knee_progress": 1.249399239814112,
+      "front_knee_velocity": 1.4065507910135566,
+      "front_wrist_now": 7.290309875136839,
+      "front_wrist_progress": 1.3590142380447583,
+      "front_wrist_velocity": 1.0585131026395,
+      "stance_now": 0.991430015986249,
+      "stance_progress": -0.36419233582677446,
+      "com_progress": 1.3695193841884334,
+      "com_velocity": 1.7903207563912438,
+      "front_height_change": -0.020268926371150187,
+      "weapon_lead": 0.47777657045236754,
+      "weapon_lead_progress": 0.5141810177896255,
+      "weapon_vs_com": 0.9375753162881804,
+      "attack_start_frame": 4,
+      "attack_lead_time": 0.9333333333333333,
+      "attack_progress_rate": 0.06034523001822377,
+      "front_velocity_mean_window": 0.6594530591114167,
+      "front_velocity_peak_window": 1.3950932898982327
+    },
+    "right_features": {
+      "front_now": 9.70211508597034,
+      "front_progress": 0.015588699618067636,
+      "front_velocity": 0.11034511507539868,
+      "back_now": 10.06531112801367,
+      "back_progress": 0.0005466987423545788,
+      "back_velocity": -0.011554053091051841,
+      "front_knee_now": 9.610412165058515,
+      "front_knee_progress": -0.005245561559318546,
+      "front_knee_velocity": -0.38869066785307993,
+      "front_wrist_now": 9.459561810352609,
+      "front_wrist_progress": -0.029184321246505718,
+      "front_wrist_velocity": -0.3032329739403128,
+      "stance_now": -0.3631960420433309,
+      "stance_progress": 0.015042000875713057,
+      "com_progress": -0.005622114264511424,
+      "com_velocity": -0.0559104904947727,
+      "front_height_change": -0.03647984983255892,
+      "weapon_lead": 0.24255327561773043,
+      "weapon_lead_progress": -0.044773020864573354,
+      "weapon_vs_com": 0.3241870515218199,
+      "attack_start_frame": 18,
+      "attack_lead_time": 0.06666666666666667,
+      "attack_progress_rate": 0.015588699618067636,
+      "front_velocity_mean_window": 0.06248138884040077,
+      "front_velocity_peak_window": 0.1136554685276625
+    },
+    "logistic_available": true,
+    "rationale": "logistic momentum vote (p_left=0.77)"
   },
-  "speed_comparison": {
-    "left_speed": 0.12521815148140789,
-    "right_speed": 0.050969263236695844,
-    "left_accel": 0.08498985945177089,
-    "right_accel": 0.048423740859883505
-  },
+  "speed_comparison": null,
   "lunge_detected": {
-    "left": true,
-    "right": false
-  }
+    "left": [],
+    "right": [],
+    "latest": null
+  },
+  "left_arm_extensions": [
+    {
+      "start_frame": 44,
+      "end_frame": 51,
+      "start_time": 2.933333333333333,
+      "end_time": 3.4,
+      "duration": 0.4666666666666667,
+      "avg_distance": 1.0764064785239442,
+      "avg_angle": 153.63153252421094,
+      "effective_start_frame": 44,
+      "effective_start_time": 2.933333333333333,
+      "near_hit": true
+    }
+  ],
+  "right_arm_extensions": []
 }

@@ -1,0 +1,185 @@
+{
+  "normalisation_constant": 170.4043426513672,
+  "video_angle": "middle",
+  "winner": "right",
+  "reason": "Right has right-of-way (pause at 8.93s vs pause at 12.33s)",
+  "left_pauses": [
+    {
+      "start_frame": 4,
+      "end_frame": 7,
+      "start_time": 0.26666666666666666,
+      "end_time": 0.4666666666666667,
+      "duration": 0.2,
+      "is_retreat": false
+    },
+    {
+      "start_frame": 29,
+      "end_frame": 45,
+      "start_time": 1.9333333333333333,
+      "end_time": 3.0,
+      "duration": 1.0666666666666667,
+      "is_retreat": true
+    },
+    {
+      "start_frame": 47,
+      "end_frame": 54,
+      "start_time": 3.1333333333333333,
+      "end_time": 3.6,
+      "duration": 0.4666666666666667,
+      "is_retreat": true
+    },
+    {
+      "start_frame": 56,
+      "end_frame": 68,
+      "start_time": 3.7333333333333334,
+      "end_time": 4.533333333333333,
+      "duration": 0.8,
+      "is_retreat": true
+    },
+    {
+      "start_frame": 70,
+      "end_frame": 75,
+      "start_time": 4.666666666666667,
+      "end_time": 5.0,
+      "duration": 0.3333333333333333,
+      "is_retreat": false
+    },
+    {
+      "start_frame": 118,
+      "end_frame": 133,
+      "start_time": 7.866666666666666,
+      "end_time": 8.866666666666667,
+      "duration": 1.0,
+      "is_retreat": false
+    },
+    {
+      "start_frame": 137,
+      "end_frame": 142,
+      "start_time": 9.133333333333333,
+      "end_time": 9.466666666666667,
+      "duration": 0.3333333333333333,
+      "is_retreat": false
+    },
+    {
+      "start_frame": 166,
+      "end_frame": 169,
+      "start_time": 11.066666666666666,
+      "end_time": 11.266666666666667,
+      "duration": 0.2,
+      "is_retreat": false
+    },
+    {
+      "start_frame": 171,
+      "end_frame": 176,
+      "start_time": 11.4,
+      "end_time": 11.733333333333333,
+      "duration": 0.3333333333333333,
+      "is_retreat": false
+    },
+    {
+      "start_frame": 181,
+      "end_frame": 185,
+      "start_time": 12.066666666666666,
+      "end_time": 12.333333333333334,
+      "duration": 0.26666666666666666,
+      "is_retreat": false
+    }
+  ],
+  "right_pauses": [
+    {
+      "start_frame": 7,
+      "end_frame": 11,
+      "start_time": 0.4666666666666667,
+      "end_time": 0.7333333333333333,
+      "duration": 0.26666666666666666,
+      "is_retreat": false
+    },
+    {
+      "start_frame": 48,
+      "end_frame": 65,
+      "start_time": 3.2,
+      "end_time": 4.333333333333333,
+      "duration": 1.1333333333333333,
+      "is_retreat": false
+    },
+    {
+      "start_frame": 68,
+      "end_frame": 71,
+      "start_time": 4.533333333333333,
+      "end_time": 4.733333333333333,
+      "duration": 0.2,
+      "is_retreat": false
+    },
+    {
+      "start_frame": 78,
+      "end_frame": 103,
+      "start_time": 5.2,
+      "end_time": 6.866666666666666,
+      "duration": 1.6666666666666667,
+      "is_retreat": false
+    },
+    {
+      "start_frame": 105,
+      "end_frame": 134,
+      "start_time": 7.0,
+      "end_time": 8.933333333333334,
+      "duration": 1.9333333333333333,
+      "is_retreat": true
+    }
+  ],
+  "blade_analysis": null,
+  "blade_details": null,
+  "speed_comparison": null,
+  "lunge_detected": {
+    "left": [],
+    "right": [
+      {
+        "start_frame": 35,
+        "end_frame": 46,
+        "start_time": 2.3333333333333335,
+        "end_time": 3.066666666666667
+      },
+      {
+        "start_frame": 105,
+        "end_frame": 109,
+        "start_time": 7.0,
+        "end_time": 7.266666666666667
+      }
+    ],
+    "latest": {
+      "side": "right",
+      "start_frame": 105,
+      "end_frame": 109,
+      "start_time": 7.0,
+      "end_time": 7.266666666666667
+    }
+  },
+  "left_arm_extensions": [
+    {
+      "start_frame": 202,
+      "end_frame": 211,
+      "start_time": 13.466666666666667,
+      "end_time": 14.066666666666666,
+      "duration": 0.6,
+      "avg_distance": 0.5997194144515768,
+      "avg_angle": 143.93135727899553,
+      "effective_start_frame": 204,
+      "effective_start_time": 13.6,
+      "near_hit": true
+    }
+  ],
+  "right_arm_extensions": [
+    {
+      "start_frame": 190,
+      "end_frame": 194,
+      "start_time": 12.666666666666666,
+      "end_time": 12.933333333333334,
+      "duration": 0.26666666666666666,
+      "avg_distance": 0.5172279172995619,
+      "avg_angle": 160.13087296690884,
+      "effective_start_frame": 190,
+      "effective_start_time": 12.666666666666666,
+      "near_hit": true
+    }
+  ]
+}

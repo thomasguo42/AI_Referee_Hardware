@@ -1,83 +1,148 @@
 {
-  "normalisation_constant": 181.24087524414062,
+  "normalisation_constant": 181.24510192871094,
   "video_angle": "middle",
-  "winner": "right",
-  "reason": "Right has right-of-way (only left paused at 0.07s)",
+  "winner": "left",
+  "reason": "Right has right-of-way (pause by left at 10.73s). Logistic momentum favored left despite pause context",
   "left_pauses": [
     {
-      "start_frame": 1,
-      "end_frame": 9,
-      "start_time": 0.06666666666666667,
-      "end_time": 0.6,
-      "duration": 0.5333333333333333
-    },
-    {
-      "start_frame": 14,
+      "start_frame": 13,
       "end_frame": 19,
-      "start_time": 0.9333333333333333,
+      "start_time": 0.8666666666666667,
       "end_time": 1.2666666666666666,
-      "duration": 0.3333333333333333
+      "duration": 0.4,
+      "is_retreat": false
     },
     {
       "start_frame": 28,
       "end_frame": 45,
       "start_time": 1.8666666666666667,
       "end_time": 3.0,
-      "duration": 1.1333333333333333
+      "duration": 1.1333333333333333,
+      "is_retreat": false
     },
     {
       "start_frame": 76,
       "end_frame": 94,
       "start_time": 5.066666666666666,
       "end_time": 6.266666666666667,
-      "duration": 1.2
+      "duration": 1.2,
+      "is_retreat": false
     },
     {
       "start_frame": 156,
       "end_frame": 161,
       "start_time": 10.4,
       "end_time": 10.733333333333333,
-      "duration": 0.3333333333333333
+      "duration": 0.3333333333333333,
+      "is_retreat": false
     }
   ],
-  "right_pauses": [
-    {
-      "start_frame": 2,
-      "end_frame": 6,
-      "start_time": 0.13333333333333333,
-      "end_time": 0.4,
-      "duration": 0.26666666666666666
-    },
-    {
-      "start_frame": 28,
-      "end_frame": 164,
-      "start_time": 1.8666666666666667,
-      "end_time": 10.933333333333334,
-      "duration": 9.066666666666666
-    }
-  ],
-  "blade_analysis": "left",
+  "right_pauses": [],
+  "blade_analysis": "Blade contact at 5.61s - logistic momentum vote (p_left=0.74)",
   "blade_details": {
-    "analysis_window": "frames 58-69",
-    "contact_frame": 66,
-    "left_variance_x": 0.002485925065262688,
-    "left_variance_y": 0.013042240279856954,
-    "left_variance_total": 0.015528165345119641,
-    "right_variance_x": 0.00466507057458821,
-    "right_variance_y": 0.005313579142036885,
-    "right_variance_total": 0.009978649716625095,
-    "samples_left": 12,
-    "samples_right": 12,
-    "current_right_of_way": "right"
+    "contact_frame": 84,
+    "left_features": {
+      "front_now": 4.485045435377219,
+      "front_progress": 1.8078577857581184,
+      "front_velocity": 0.033763035251745954,
+      "back_now": 3.784609278991999,
+      "back_progress": 1.5254358217351478,
+      "back_velocity": -0.1660091669705177,
+      "front_knee_now": 4.395295906013085,
+      "front_knee_progress": 1.7209436980508377,
+      "front_knee_velocity": -0.0008587247146629728,
+      "front_wrist_now": 4.321764824093189,
+      "front_wrist_progress": 1.6814762387082962,
+      "front_wrist_velocity": 0.03176271179876844,
+      "stance_now": 0.7004361563852202,
+      "stance_progress": 0.2824219640229706,
+      "com_progress": 1.7300629756714034,
+      "com_velocity": 0.031608646482317315,
+      "front_height_change": 0.03829615883174409,
+      "weapon_lead": -0.16328061128402993,
+      "weapon_lead_progress": -0.12638154704982218,
+      "weapon_vs_com": 0.24994799243210952,
+      "attack_start_frame": 17,
+      "attack_lead_time": 4.466666666666667,
+      "attack_progress_rate": 0.026982952026240573,
+      "front_velocity_mean_window": -0.002747919086916184,
+      "front_velocity_peak_window": 0.08420048393347201
+    },
+    "right_features": {
+      "front_now": 6.26085952113974,
+      "front_progress": 0.3539963659106826,
+      "front_velocity": -0.304205755829714,
+      "back_now": 6.687600579184563,
+      "back_progress": 0.6493815035242658,
+      "back_velocity": -2.1101694979465857,
+      "front_knee_now": 6.400433605467685,
+      "front_knee_progress": 0.3499527490935197,
+      "front_knee_velocity": -1.103011690695097,
+      "front_wrist_now": 6.234016796823796,
+      "front_wrist_progress": 0.5662892796048924,
+      "front_wrist_velocity": -0.49874731427531405,
+      "stance_now": -0.426741058044823,
+      "stance_progress": -0.2953851376135832,
+      "com_progress": 0.3729980916947939,
+      "com_velocity": -1.0158233498867908,
+      "front_height_change": 0.14983513748309019,
+      "weapon_lead": 0.026842724315944366,
+      "weapon_lead_progress": 0.21229291369420977,
+      "weapon_vs_com": 0.48790448354485605,
+      "attack_start_frame": 8,
+      "attack_lead_time": 5.066666666666666,
+      "attack_progress_rate": 0.004657846919877403,
+      "front_velocity_mean_window": -1.149490586819637,
+      "front_velocity_peak_window": -0.1422250180353224
+    },
+    "logistic_available": true,
+    "rationale": "logistic momentum vote (p_left=0.74)"
   },
-  "speed_comparison": {
-    "left_speed": 0.0420747655787307,
-    "right_speed": 0.04578451671199929,
-    "left_accel": 0.01785466824206524,
-    "right_accel": 0.024726425883727622
-  },
+  "speed_comparison": null,
   "lunge_detected": {
-    "left": true,
-    "right": true
-  }
+    "left": [],
+    "right": [
+      {
+        "start_frame": 20,
+        "end_frame": 25,
+        "start_time": 1.3333333333333333,
+        "end_time": 1.6666666666666667
+      }
+    ],
+    "latest": {
+      "side": "right",
+      "start_frame": 20,
+      "end_frame": 25,
+      "start_time": 1.3333333333333333,
+      "end_time": 1.6666666666666667
+    }
+  },
+  "left_arm_extensions": [
+    {
+      "start_frame": 118,
+      "end_frame": 125,
+      "start_time": 7.866666666666666,
+      "end_time": 8.333333333333334,
+      "duration": 0.4666666666666667,
+      "avg_distance": 0.5683659810865498,
+      "avg_angle": 136.04648498026603,
+      "effective_start_frame": 118,
+      "effective_start_time": 7.866666666666666,
+      "near_hit": true
+    }
+  ],
+  "right_arm_extensions": [
+    {
+      "start_frame": 124,
+      "end_frame": 124,
+      "start_time": 8.266666666666667,
+      "end_time": 8.266666666666667,
+      "duration": 0.0,
+      "avg_distance": 0.5052011132485484,
+      "avg_angle": 143.74682637454336,
+      "effective_start_frame": 124,
+      "effective_start_time": 8.266666666666667,
+      "near_hit": true
+    }
+  ]
 }

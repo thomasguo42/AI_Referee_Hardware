@@ -400,6 +400,42 @@ def parse_txt_file(txt_path: str) -> FencingPhrase:
         fps=fps
     )
 
+
+def extract_side_hit_events(txt_path: str, fps: float = 15.0) -> Dict[str, List[Dict[str, float]]]:
+    """
+    Extract explicit side hit lines from TXT and map them to frame indices.
+
+    Returns keys:
+    - left_scores_on_right: [{time, frame}, ...]
+    - right_scores_on_left: [{time, frame}, ...]
+    """
+    pattern = re.compile(
+        r"(?P<time>\d+\.\d+)s\s*\|\s*HIT:\s*(?P<scorer>Left|Right)\s+scores\s+on\s+(?P<target>Left|Right)!",
+        re.IGNORECASE,
+    )
+    events = {
+        "left_scores_on_right": [],
+        "right_scores_on_left": [],
+    }
+
+    with open(txt_path, "r") as f:
+        for line in f:
+            m = pattern.search(line)
+            if not m:
+                continue
+            time_s = float(m.group("time"))
+            scorer = m.group("scorer").lower()
+            target = m.group("target").lower()
+            frame = int(time_s * fps)
+            payload = {"time": time_s, "frame": frame}
+
+            if scorer == "left" and target == "right":
+                events["left_scores_on_right"].append(payload)
+            elif scorer == "right" and target == "left":
+                events["right_scores_on_left"].append(payload)
+
+    return events
+
 def load_keypoints_from_excel(excel_path: str) -> Tuple[Dict, Dict, Dict, Dict]:
     """Load keypoint data from Excel file"""
     df_left_x = pd.read_excel(excel_path, sheet_name='left_x')
@@ -1329,6 +1365,7 @@ def main():
         if left_x and 16 in left_x:
             max_frame = len(left_x[16]) - 1
             _trim_phrase_to_frames(phrase, max_frame)
+        side_hit_events = extract_side_hit_events(str(txt_path), fps=phrase.fps)
         
         decision = referee_decision(
             phrase, 
@@ -1336,6 +1373,13 @@ def main():
             right_x, right_y, 
             normalisation_constant=norm_constant
         )
+
+        print("\n" + "="*60)
+        print("HIT FRAME SUMMARY")
+        print("="*60)
+        print(f"Left scores on Right (time/frame): {side_hit_events['left_scores_on_right']}")
+        print(f"Right scores on Left (time/frame): {side_hit_events['right_scores_on_left']}")
+        print("="*60)
         
         print("\n" + "="*60)
         print("DEBUG RESULT")

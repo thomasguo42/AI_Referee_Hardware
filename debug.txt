@@ -1,132 +1,113 @@
-Analyzing /workspace/data/training_data/20251106_210143_phrase77_20251121T062603Z...
-[PauseDetect:left] interval 1-4 avg_abs_vel=0.0195
-[PauseDetect:left] classified=PAUSE threshold=0.0350
-[PauseDetect:left] reject frame=2 back_foot_vel=0.0913 threshold=0.0500
-[PauseDetect:left] reject frame=3 back_foot_vel=0.1458 threshold=0.0500
-[PauseDetect:left] interval 13-26 avg_abs_vel=0.0410
+Analyzing /workspace/data/training_data/20251111_212902_phrase24_20251121T063923Z...
+[PauseDetect:left] interval 10-16 avg_abs_vel=0.0437
 [PauseDetect:left] classified=RETREAT threshold=0.0350
-[PauseDetect:right] interval 20-27 avg_abs_vel=0.0745
-[PauseDetect:right] classified=RETREAT threshold=0.0350
-[Lunge:left] start max_frame=27 threshold=1.0 min_consecutive=3 end_frame_buffer=4
-[Lunge:left] frame=0 dist=0.721 lunge=False
-[Lunge:left] frame=1 dist=0.706 lunge=False
-[Lunge:left] frame=2 dist=0.645 lunge=False
-[Lunge:left] frame=3 dist=0.484 lunge=False
-[Lunge:left] frame=4 dist=0.489 lunge=False
-[Lunge:left] frame=5 dist=0.638 lunge=False
-[Lunge:left] frame=6 dist=0.788 lunge=False
-[Lunge:left] frame=7 dist=0.761 lunge=False
-[Lunge:left] frame=8 dist=0.712 lunge=False
-[Lunge:left] frame=9 dist=0.579 lunge=False
-[Lunge:left] frame=10 dist=0.465 lunge=False
-[Lunge:left] frame=11 dist=0.593 lunge=False
-[Lunge:left] frame=12 dist=0.724 lunge=False
-[Lunge:left] frame=13 dist=0.775 lunge=False
-[Lunge:left] frame=14 dist=0.860 lunge=False
-[Lunge:left] frame=15 dist=1.010 lunge=True
-[Lunge:left] frame=16 dist=1.081 lunge=True
-[Lunge:left] frame=17 dist=0.968 lunge=False
-[Lunge:left] frame=18 dist=0.903 lunge=False
-[Lunge:left] frame=19 dist=0.931 lunge=False
-[Lunge:left] frame=20 dist=0.930 lunge=False
-[Lunge:left] frame=21 dist=0.914 lunge=False
-[Lunge:left] frame=22 dist=0.818 lunge=False
-[Lunge:left] frame=23 dist=0.784 lunge=False
-[Lunge:left] frame=24 dist=0.705 lunge=False
-[Lunge:left] frame=25 dist=0.628 lunge=False
-[Lunge:left] frame=26 dist=0.519 lunge=False
-[Lunge:left] frame=27 dist=0.419 lunge=False
-[Lunge:left] interval start frame=15
-[Lunge:left] interval candidate 15-16 rejected length=2
-[Lunge:right] start max_frame=27 threshold=1.0 min_consecutive=3 end_frame_buffer=4
-[Lunge:right] frame=0 dist=0.959 lunge=False
-[Lunge:right] frame=1 dist=0.944 lunge=False
-[Lunge:right] frame=2 dist=0.922 lunge=False
-[Lunge:right] frame=3 dist=0.715 lunge=False
-[Lunge:right] frame=4 dist=0.468 lunge=False
-[Lunge:right] frame=5 dist=0.336 lunge=False
-[Lunge:right] frame=6 dist=0.535 lunge=False
-[Lunge:right] frame=7 dist=0.733 lunge=False
-[Lunge:right] frame=8 dist=0.748 lunge=False
-[Lunge:right] frame=9 dist=0.709 lunge=False
-[Lunge:right] frame=10 dist=0.577 lunge=False
-[Lunge:right] frame=11 dist=0.662 lunge=False
-[Lunge:right] frame=12 dist=0.966 lunge=False
-[Lunge:right] frame=13 dist=1.405 lunge=True
-[Lunge:right] frame=14 dist=1.330 lunge=True
-[Lunge:right] frame=15 dist=1.066 lunge=True
-[Lunge:right] frame=16 dist=0.826 lunge=False
-[Lunge:right] frame=17 dist=0.628 lunge=False
-[Lunge:right] frame=18 dist=0.651 lunge=False
-[Lunge:right] frame=19 dist=0.652 lunge=False
-[Lunge:right] frame=20 dist=0.682 lunge=False
-[Lunge:right] frame=21 dist=0.754 lunge=False
-[Lunge:right] frame=22 dist=0.760 lunge=False
-[Lunge:right] frame=23 dist=0.801 lunge=False
-[Lunge:right] frame=24 dist=0.850 lunge=False
-[Lunge:right] frame=25 dist=0.871 lunge=False
-[Lunge:right] frame=26 dist=0.828 lunge=False
-[Lunge:right] frame=27 dist=0.590 lunge=False
-[Lunge:right] interval start frame=13
-[Lunge:right] interval candidate 13-15 accepted length=3
-[Lunge:right] interval 13-15 accepted
-[PauseOverlap] totals left=14 right=8 overlap=7 ratio=0.50
+[PauseDetect:right] interval 2-6 avg_abs_vel=0.0162
+[PauseDetect:right] classified=PAUSE threshold=0.0350
+[PauseDetect:right] reject frame=5 back_foot_vel=0.1931 threshold=0.0500
+[PauseDetect:right] reject frame=6 back_foot_vel=0.0938 threshold=0.0500
+[Lunge:left] start max_frame=17 threshold=1.0 min_consecutive=3 end_frame_buffer=4
+[Lunge:left] frame=0 dist=0.708 lunge=False
+[Lunge:left] frame=1 dist=0.812 lunge=False
+[Lunge:left] frame=2 dist=0.830 lunge=False
+[Lunge:left] frame=3 dist=0.832 lunge=False
+[Lunge:left] frame=4 dist=0.705 lunge=False
+[Lunge:left] frame=5 dist=0.629 lunge=False
+[Lunge:left] frame=6 dist=0.618 lunge=False
+[Lunge:left] frame=7 dist=0.448 lunge=False
+[Lunge:left] frame=8 dist=0.438 lunge=False
+[Lunge:left] frame=9 dist=0.658 lunge=False
+[Lunge:left] frame=10 dist=0.719 lunge=False
+[Lunge:left] frame=11 dist=0.720 lunge=False
+[Lunge:left] frame=12 dist=0.718 lunge=False
+[Lunge:left] frame=13 dist=0.708 lunge=False
+[Lunge:left] frame=14 dist=0.626 lunge=False
+[Lunge:left] frame=15 dist=0.720 lunge=False
+[Lunge:left] frame=16 dist=0.816 lunge=False
+[Lunge:left] frame=17 dist=0.881 lunge=False
+[Lunge:right] start max_frame=17 threshold=1.0 min_consecutive=3 end_frame_buffer=4
+[Lunge:right] frame=0 dist=0.629 lunge=False
+[Lunge:right] frame=1 dist=0.742 lunge=False
+[Lunge:right] frame=2 dist=0.773 lunge=False
+[Lunge:right] frame=3 dist=0.806 lunge=False
+[Lunge:right] frame=4 dist=0.766 lunge=False
+[Lunge:right] frame=5 dist=0.588 lunge=False
+[Lunge:right] frame=6 dist=0.493 lunge=False
+[Lunge:right] frame=7 dist=0.294 lunge=False
+[Lunge:right] frame=8 dist=0.282 lunge=False
+[Lunge:right] frame=9 dist=0.494 lunge=False
+[Lunge:right] frame=10 dist=0.804 lunge=False
+[Lunge:right] frame=11 dist=1.101 lunge=True
+[Lunge:right] frame=12 dist=1.242 lunge=True
+[Lunge:right] frame=13 dist=1.236 lunge=True
+[Lunge:right] frame=14 dist=1.225 lunge=True
+[Lunge:right] frame=15 dist=1.061 lunge=True
+[Lunge:right] frame=16 dist=0.839 lunge=False
+[Lunge:right] frame=17 dist=0.588 lunge=False
+[Lunge:right] interval start frame=11
+[Lunge:right] interval candidate 11-15 accepted length=5
+[Lunge:right] interval 11-15 rejected end_frame within buffer
+
+============================================================
+HIT FRAME SUMMARY
+============================================================
+Left scores on Right (time/frame): [{'time': 1.091, 'frame': 16}]
+Right scores on Left (time/frame): [{'time': 1.294, 'frame': 19}]
+============================================================
 
 ============================================================
 DEBUG RESULT
 ============================================================
 {
   "winner": "right",
-  "reason": "Pauses overlap (>50%, <1s, ratio=0.50). No arm extensions detected. Right faster (speed: 0.000 vs 0.000)",
+  "reason": "Right has right-of-way (pause by left at 1.07s)",
   "left_pauses": [
     {
-      "start_frame": 13,
-      "end_frame": 26,
-      "start_time": 0.8666666666666667,
-      "end_time": 1.7333333333333334,
-      "duration": 0.8666666666666667,
+      "start_frame": 10,
+      "end_frame": 16,
+      "start_time": 0.6666666666666666,
+      "end_time": 1.0666666666666667,
+      "duration": 0.4,
       "is_retreat": true
     }
   ],
-  "right_pauses": [
-    {
-      "start_frame": 20,
-      "end_frame": 27,
-      "start_time": 1.3333333333333333,
-      "end_time": 1.8,
-      "duration": 0.4666666666666667,
-      "is_retreat": true
-    }
-  ],
+  "right_pauses": [],
   "left_slow_start": null,
   "right_slow_start": null,
   "blade_analysis": null,
   "blade_details": null,
-  "speed_comparison": {
-    "left_speed": 0,
-    "left_accel": 0,
-    "right_speed": 0,
-    "right_accel": 0
-  },
+  "speed_comparison": null,
   "lunge_detected": {
     "left": [],
-    "right": [
-      {
-        "start_frame": 13,
-        "end_frame": 15,
-        "start_time": 0.8666666666666667,
-        "end_time": 1.0
-      }
-    ],
-    "latest": {
-      "side": "right",
-      "start_frame": 13,
-      "end_frame": 15,
-      "start_time": 0.8666666666666667,
-      "end_time": 1.0
-    }
+    "right": [],
+    "latest": null
   },
-  "left_arm_extensions": [],
-  "right_arm_extensions": []
+  "left_arm_extensions": [
+    {
+      "start_frame": 14,
+      "end_frame": 16,
+      "start_time": 0.9333333333333333,
+      "end_time": 1.0666666666666667,
+      "duration": 0.13333333333333333,
+      "avg_distance": 0.5525815319280601,
+      "avg_angle": 119.29348874846886,
+      "effective_start_frame": 15,
+      "effective_start_time": 1.0,
+      "near_hit": true
+    }
+  ],
+  "right_arm_extensions": [
+    {
+      "start_frame": 16,
+      "end_frame": 17,
+      "start_time": 1.0666666666666667,
+      "end_time": 1.1333333333333333,
+      "duration": 0.06666666666666667,
+      "avg_distance": 0.7927986858711262,
+      "avg_angle": 115.39396198837277,
+      "effective_start_frame": 17,
+      "effective_start_time": 1.1333333333333333,
+      "near_hit": true
+    }
+  ]
 }
 ============================================================

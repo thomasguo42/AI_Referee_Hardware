@@ -1,0 +1,134 @@
+{
+  "normalisation_constant": 179.51736450195312,
+  "video_angle": "middle",
+  "winner": "left",
+  "reason": "Left has right-of-way (pause at 10.13s vs pause at 11.20s). Left maintained right-of-way (logistic momentum confirmed)",
+  "left_pauses": [
+    {
+      "start_frame": 24,
+      "end_frame": 31,
+      "start_time": 1.6,
+      "end_time": 2.066666666666667,
+      "duration": 0.4666666666666667,
+      "is_retreat": false
+    },
+    {
+      "start_frame": 75,
+      "end_frame": 78,
+      "start_time": 5.0,
+      "end_time": 5.2,
+      "duration": 0.2,
+      "is_retreat": false
+    },
+    {
+      "start_frame": 83,
+      "end_frame": 87,
+      "start_time": 5.533333333333333,
+      "end_time": 5.8,
+      "duration": 0.26666666666666666,
+      "is_retreat": false
+    },
+    {
+      "start_frame": 115,
+      "end_frame": 136,
+      "start_time": 7.666666666666667,
+      "end_time": 9.066666666666666,
+      "duration": 1.4,
+      "is_retreat": false
+    },
+    {
+      "start_frame": 149,
+      "end_frame": 152,
+      "start_time": 9.933333333333334,
+      "end_time": 10.133333333333333,
+      "duration": 0.2,
+      "is_retreat": false
+    }
+  ],
+  "right_pauses": [
+    {
+      "start_frame": 4,
+      "end_frame": 11,
+      "start_time": 0.26666666666666666,
+      "end_time": 0.7333333333333333,
+      "duration": 0.4666666666666667,
+      "is_retreat": false
+    },
+    {
+      "start_frame": 165,
+      "end_frame": 168,
+      "start_time": 11.0,
+      "end_time": 11.2,
+      "duration": 0.2,
+      "is_retreat": false
+    }
+  ],
+  "blade_analysis": "Blade contact at 5.76s - logistic momentum vote (p_left=0.96)",
+  "blade_details": {
+    "contact_frame": 86,
+    "left_features": {
+      "front_now": 6.511464914554796,
+      "front_progress": 3.595398156372583,
+      "front_velocity": 0.03366978754509642,
+      "back_now": 5.908055946314658,
+      "back_progress": 3.4049783550151513,
+      "back_velocity": 0.07976302290296555,
+      "front_knee_now": 6.507591002010225,
+      "front_knee_progress": 3.6286943564941323,
+      "front_knee_velocity": 0.5953718066953595,
+      "front_wrist_now": 6.551208387697251,
+      "front_wrist_progress": 3.7261515786431625,
+      "front_wrist_velocity": 0.23043557716418528,
+      "stance_now": 0.6034089682401378,
+      "stance_progress": 0.19041980135743186,
+      "com_progress": 3.6608984219943315,
+      "com_velocity": 0.5186878710735843,
+      "front_height_change": 0.08592143546241626,
+      "weapon_lead": 0.03974347314245552,
+      "weapon_lead_progress": 0.1307534222705793,
+      "weapon_vs_com": 0.3116495322932291,
+      "attack_start_frame": 35,
+      "attack_lead_time": 3.4,
+      "attack_progress_rate": 0.07049800306612908,
+      "front_velocity_mean_window": 0.39088131170393003,
+      "front_velocity_peak_window": 0.8435602663867314
+    },
+    "right_features": {
+      "front_now": 8.114970271614173,
+      "front_progress": -1.3521985235680853,
+      "front_velocity": -0.07071573373226059,
+      "back_now": 8.421727433838935,
+      "back_progress": -1.1459637139445045,
+      "back_velocity": -0.10168765432623683,
+      "front_knee_now": 8.137711913029065,
+      "front_knee_progress": -1.2516098037799042,
+      "front_knee_velocity": -0.11671207027714292,
+      "front_wrist_now": 8.01992919586735,
+      "front_wrist_progress": -1.2421388797987225,
+      "front_wrist_velocity": -0.047505918052506146,
+      "stance_now": -0.3067571622247627,
+      "stance_progress": -0.20623480962358087,
+      "com_progress": -1.178244074510089,
+      "com_velocity": -0.03699877176504884,
+      "front_height_change": 0.11880610462521846,
+      "weapon_lead": 0.0950410757468223,
+      "weapon_lead_progress": 0.11005964376936284,
+      "weapon_vs_com": 0.3081186755462255,
+      "attack_start_frame": 3,
+      "attack_lead_time": 5.533333333333333,
+      "attack_progress_rate": -0.01629154847672392,
+      "front_velocity_mean_window": -0.5024696447468502,
+      "front_velocity_peak_window": -0.05324334776900308
+    },
+    "logistic_available": true,
+    "rationale": "logistic momentum vote (p_left=0.96)"
+  },
+  "speed_comparison": null,
+  "lunge_detected": {
+    "left": [],
+    "right": [],
+    "latest": null
+  },
+  "left_arm_extensions": [],
+  "right_arm_extensions": []
+}

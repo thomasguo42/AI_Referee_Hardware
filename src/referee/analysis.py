@@ -11,6 +11,7 @@ import subprocess
 import sys
 import time
 from pathlib import Path
+from functools import lru_cache
 
 import cv2
 import matplotlib.pyplot as plt
@@ -28,6 +29,9 @@ logger = logging.getLogger(__name__)
 
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "AIzaSyDy_RRq8hd8rTYILt_mYtMH8GtM41GFp6I")
 GEMINI_MODEL = "models/gemini-2.5-flash-lite"
+
+REFERENCE_INIT_FOLDER = "20251106_210036_phrase74_20251121T062543Z"
+REFERENCE_INIT_EXCEL = "20251106_210036_phrase74_compressed_keypoints.xlsx"
 
 def valid_mask(kpts_xy: np.ndarray):
     return (kpts_xy[:, 0] > 0) & (kpts_xy[:, 1] > 0)
@@ -118,6 +122,217 @@ def composite_track_cost(
     kpt_cost = kpt_dist / scale if scale > 0 else kpt_dist
     return 0.5 * kpt_cost + 0.3 * bbox_cost + 0.2 * motion_cost
 
+
+def _repo_root() -> Path:
+    return Path(__file__).resolve().parents[2]
+
+
+def _resolve_reference_excel_path() -> Optional[Path]:
+    env_path = os.environ.get("REFEREE_INIT_REFERENCE_XLSX")
+    if env_path:
+        path = Path(env_path).expanduser()
+        if path.exists():
+            return path
+    root = _repo_root()
+    candidates = [
+        root / "data" / "training_data" / REFERENCE_INIT_FOLDER / REFERENCE_INIT_EXCEL,
+        root / "blade_touch_rule" / "training_data" / REFERENCE_INIT_FOLDER / REFERENCE_INIT_EXCEL,
+        root / "blade_touch_rule" / "non_blade_data" / REFERENCE_INIT_FOLDER / REFERENCE_INIT_EXCEL,
+    ]
+    for path in candidates:
+        if path.exists():
+            return path
+    return None
+
+
+def _read_keypoint_row(df_x: pd.DataFrame, df_y: pd.DataFrame, row_idx: int = 0) -> np.ndarray:
+    if row_idx >= len(df_x) or row_idx >= len(df_y):
+        raise ValueError(f"Reference sheet missing row {row_idx}")
+    kpts = np.full((17, 2), np.nan, dtype=float)
+
+    kp_cols = [f"kp_{i}" for i in range(17)]
+    if all(col in df_x.columns and col in df_y.columns for col in kp_cols):
+        for i in range(17):
+            kpts[i, 0] = float(df_x.iloc[row_idx][f"kp_{i}"])
+            kpts[i, 1] = float(df_y.iloc[row_idx][f"kp_{i}"])
+        return kpts
+
+    str_cols = [str(i) for i in range(17)]
+    if all(col in df_x.columns and col in df_y.columns for col in str_cols):
+        for i in range(17):
+            kpts[i, 0] = float(df_x.iloc[row_idx][str(i)])
+            kpts[i, 1] = float(df_y.iloc[row_idx][str(i)])
+        return kpts
+
+    int_cols = list(range(17))
+    if all(col in df_x.columns and col in df_y.columns for col in int_cols):
+        for i in range(17):
+            kpts[i, 0] = float(df_x.iloc[row_idx][i])
+            kpts[i, 1] = float(df_y.iloc[row_idx][i])
+        return kpts
+
+    cols_x = list(df_x.columns)[:17]
+    cols_y = list(df_y.columns)[:17]
+    for i, (cx, cy) in enumerate(zip(cols_x, cols_y)):
+        kpts[i, 0] = float(df_x.iloc[row_idx][cx])
+        kpts[i, 1] = float(df_y.iloc[row_idx][cy])
+    return kpts
+
+
+@lru_cache(maxsize=1)
+def _load_reference_first_frame_postures() -> Tuple[Optional[np.ndarray], Optional[np.ndarray]]:
+    path = _resolve_reference_excel_path()
+    if path is None:
+        logger.warning(
+            "Reference keypoint Excel not found for first-frame fencer initialization; "
+            "falling back to area/side initialization."
+        )
+        return None, None
+
+    xls = pd.ExcelFile(path)
+    sheet_map = {name.lower(): name for name in xls.sheet_names}
+
+    def _sheet(name: str) -> pd.DataFrame:
+        key = name.lower()
+        if key not in sheet_map:
+            raise ValueError(f"Missing sheet '{name}' in {path}; available: {xls.sheet_names}")
+        return pd.read_excel(xls, sheet_name=sheet_map[key])
+
+    try:
+        left_x = _sheet("left_x")
+        left_y = _sheet("left_y")
+        right_x = _sheet("right_x")
+        right_y = _sheet("right_y")
+        left_ref = _read_keypoint_row(left_x, left_y, row_idx=0)
+        right_ref = _read_keypoint_row(right_x, right_y, row_idx=0)
+    except Exception as exc:
+        logger.warning(
+            "Failed to load posture reference from %s (%s); "
+            "falling back to area/side initialization.",
+            path,
+            exc,
+        )
+        return None, None
+
+    logger.info("Loaded first-frame posture reference for tracker init from %s", path)
+    return left_ref, right_ref
+
+
+def _kpt_valid_at(kpts: np.ndarray, idx: int) -> bool:
+    if idx >= len(kpts):
+        return False
+    x, y = float(kpts[idx][0]), float(kpts[idx][1])
+    return np.isfinite(x) and np.isfinite(y) and x > 0 and y > 0
+
+
+def _segment_length(kpts: np.ndarray, i: int, j: int) -> Optional[float]:
+    if not (_kpt_valid_at(kpts, i) and _kpt_valid_at(kpts, j)):
+        return None
+    p = np.array(kpts[i], dtype=float)
+    q = np.array(kpts[j], dtype=float)
+    dist = float(np.linalg.norm(p - q))
+    if dist <= 1e-9:
+        return None
+    return dist
+
+
+def _joint_angle(kpts: np.ndarray, a: int, b: int, c: int) -> Optional[float]:
+    if not (_kpt_valid_at(kpts, a) and _kpt_valid_at(kpts, b) and _kpt_valid_at(kpts, c)):
+        return None
+    pa = np.array(kpts[a], dtype=float)
+    pb = np.array(kpts[b], dtype=float)
+    pc = np.array(kpts[c], dtype=float)
+    v1 = pa - pb
+    v2 = pc - pb
+    n1 = float(np.linalg.norm(v1))
+    n2 = float(np.linalg.norm(v2))
+    if n1 <= 1e-9 or n2 <= 1e-9:
+        return None
+    cos_theta = float(np.dot(v1, v2) / (n1 * n2))
+    cos_theta = float(np.clip(cos_theta, -1.0, 1.0))
+    return float(math.acos(cos_theta))
+
+
+def _pose_descriptor(kpts: np.ndarray) -> Dict[str, Dict[str, float]]:
+    angle_features: Dict[str, float] = {}
+    ratio_features: Dict[str, float] = {}
+
+    angle_specs = [
+        ("left_elbow_angle", 5, 7, 9),
+        ("right_elbow_angle", 6, 8, 10),
+        ("left_shoulder_angle", 7, 5, 11),
+        ("right_shoulder_angle", 8, 6, 12),
+        ("left_hip_angle", 5, 11, 13),
+        ("right_hip_angle", 6, 12, 14),
+        ("left_knee_angle", 11, 13, 15),
+        ("right_knee_angle", 12, 14, 16),
+        ("torso_left_chain_angle", 5, 11, 12),
+        ("torso_right_chain_angle", 6, 12, 11),
+    ]
+    for name, a, b, c in angle_specs:
+        value = _joint_angle(kpts, a, b, c)
+        if value is not None:
+            angle_features[name] = value
+
+    ratio_specs = [
+        ("left_upper_to_lower_arm", (5, 7), (7, 9)),
+        ("right_upper_to_lower_arm", (6, 8), (8, 10)),
+        ("left_thigh_to_shin", (11, 13), (13, 15)),
+        ("right_thigh_to_shin", (12, 14), (14, 16)),
+        ("left_torso_to_thigh", (5, 11), (11, 13)),
+        ("right_torso_to_thigh", (6, 12), (12, 14)),
+        ("shoulder_to_hip_width", (5, 6), (11, 12)),
+        ("stance_to_hip_width", (15, 16), (11, 12)),
+        ("left_arm_to_left_leg", (5, 9), (11, 15)),
+        ("right_arm_to_right_leg", (6, 10), (12, 16)),
+    ]
+    for name, (n1a, n1b), (n2a, n2b) in ratio_specs:
+        len1 = _segment_length(kpts, n1a, n1b)
+        len2 = _segment_length(kpts, n2a, n2b)
+        if len1 is None or len2 is None or len2 <= 1e-9:
+            continue
+        ratio_features[name] = float(len1 / len2)
+
+    return {"angles": angle_features, "ratios": ratio_features}
+
+
+def _angle_distance(a: float, b: float) -> float:
+    diff = abs(a - b)
+    diff = min(diff, (2.0 * math.pi) - diff)
+    return float(diff / math.pi)
+
+
+def _ratio_distance(a: float, b: float) -> float:
+    if a <= 0 or b <= 0:
+        return float("inf")
+    return float(abs(math.log(a / b)))
+
+
+def posture_distance_to_reference(det_kpts: np.ndarray, ref_kpts: Optional[np.ndarray]) -> float:
+    if ref_kpts is None:
+        return float("inf")
+    if det_kpts is None or len(det_kpts) < 17:
+        return float("inf")
+
+    det_desc = _pose_descriptor(det_kpts)
+    ref_desc = _pose_descriptor(ref_kpts)
+
+    angle_common = set(det_desc["angles"]).intersection(ref_desc["angles"])
+    ratio_common = set(det_desc["ratios"]).intersection(ref_desc["ratios"])
+
+    distances: List[float] = []
+    for name in angle_common:
+        distances.append(_angle_distance(det_desc["angles"][name], ref_desc["angles"][name]))
+    for name in ratio_common:
+        d = _ratio_distance(det_desc["ratios"][name], ref_desc["ratios"][name])
+        if np.isfinite(d):
+            distances.append(d)
+
+    # Require enough comparable geometric features for stable matching.
+    if len(distances) < 6:
+        return float("inf")
+    return float(np.mean(distances))
+
 class _TrackState:
     def __init__(self, tid: int, kpts: np.ndarray, frame_idx: int):
         self.id = tid
@@ -145,6 +360,7 @@ class TwoFencerTracker:
         top_margin_frac: float = 0.12,
         bottom_margin_frac: float = 0.20,
         hcenter_sigma_frac: float = 0.22,
+        center_deadzone_frac: float = 0.06,
     ):
         self.frame_w = frame_w
         self.frame_h = frame_h
@@ -154,10 +370,17 @@ class TwoFencerTracker:
         self.top_margin = int(frame_h * top_margin_frac)
         self.bottom_margin = int(frame_h * bottom_margin_frac)
         self.hcenter_sigma = frame_w * hcenter_sigma_frac
+        # Exclude detections close to the camera centerline; fencers should be on left/right.
+        self.center_deadzone = frame_w * center_deadzone_frac
         self.tracks: Dict[int, Optional[_TrackState]] = {0: None, 1: None}
         self.miss_count = {0: 0, 1: 0}
         self.frame_idx = 0
         self.initialized = False
+        self.left_ref_posture, self.right_ref_posture = _load_reference_first_frame_postures()
+
+    def _center_safe(self, center: Tuple[float, float]):
+        hcenter = self.frame_w / 2
+        return abs(center[0] - hcenter) >= self.center_deadzone
 
     def _edge_safe(self, center: Tuple[float, float]):
         x, y = center
@@ -167,9 +390,22 @@ class TwoFencerTracker:
             return False
         return True
 
+    def _bbox_edge_safe(self, bbox: Optional[Tuple[int, int, int, int]]) -> bool:
+        if bbox is None:
+            return False
+        x1, y1, x2, y2 = bbox
+        # Discard detections touching or very near frame boundaries.
+        if x1 <= self.edge_margin or x2 >= (self.frame_w - self.edge_margin):
+            return False
+        if y1 <= self.top_margin or y2 >= (self.frame_h - self.bottom_margin):
+            return False
+        return True
+
     def _init_score(self, kpts: np.ndarray, side: str):
         c = kpt_centroid(kpts)
         if not self._edge_safe(c):
+            return -1e9
+        if not self._center_safe(c):
             return -1e9
         hcenter = self.frame_w / 2
         dist_from_center = abs(c[0] - hcenter)
@@ -183,18 +419,62 @@ class TwoFencerTracker:
     def _pick_initial_tracks(self, detections: List[np.ndarray]):
         if len(detections) < 2:
             return None, None
-        scores_left = [(i, self._init_score(d, 'left')) for i, d in enumerate(detections)]
-        scores_right = [(i, self._init_score(d, 'right')) for i, d in enumerate(detections)]
-        scores_left.sort(key=lambda x: x[1], reverse=True)
-        scores_right.sort(key=lambda x: x[1], reverse=True)
-        best_left_idx = scores_left[0][0]
-        best_right_idx = scores_right[0][0]
-        if best_left_idx == best_right_idx:
-            if len(scores_left) > 1:
-                best_left_idx = scores_left[1][0]
+
+        hcenter = self.frame_w / 2.0
+        left_candidates = []
+        right_candidates = []
+
+        for det in detections:
+            bbox = bbox_from_keypoints(det)
+            if bbox is None or not self._bbox_edge_safe(bbox):
+                continue
+            cx, _ = bbox_center(bbox)
+            area = bbox_area(bbox)
+            candidate = (det, area)
+            if cx < hcenter:
+                left_candidates.append(candidate)
             else:
+                right_candidates.append(candidate)
+
+        left_candidates.sort(key=lambda item: item[1], reverse=True)
+        right_candidates.sort(key=lambda item: item[1], reverse=True)
+        left_candidates = left_candidates[:3]
+        right_candidates = right_candidates[:3]
+
+        def _pick_by_posture(candidates: List[Tuple[np.ndarray, float]], reference: Optional[np.ndarray]):
+            if not candidates:
+                return None
+            if reference is None:
+                # Fallback when reference is unavailable: largest area candidate.
+                return candidates[0][0]
+            ranked = []
+            for det_kpts, area in candidates:
+                dist = posture_distance_to_reference(det_kpts, reference)
+                ranked.append((dist, -area, det_kpts))
+            ranked.sort(key=lambda item: (item[0], item[1]))
+            return ranked[0][2]
+
+        left_pick = _pick_by_posture(left_candidates, self.left_ref_posture)
+        right_pick = _pick_by_posture(right_candidates, self.right_ref_posture)
+
+        if left_pick is None or right_pick is None:
+            # If one half has no valid candidates after edge filtering, fallback to previous scoring.
+            scores_left = [(i, self._init_score(d, 'left')) for i, d in enumerate(detections)]
+            scores_right = [(i, self._init_score(d, 'right')) for i, d in enumerate(detections)]
+            scores_left.sort(key=lambda x: x[1], reverse=True)
+            scores_right.sort(key=lambda x: x[1], reverse=True)
+            if not scores_left or not scores_right:
                 return None, None
-        return detections[best_left_idx], detections[best_right_idx]
+            best_left_idx = scores_left[0][0]
+            best_right_idx = scores_right[0][0]
+            if best_left_idx == best_right_idx:
+                if len(scores_left) > 1:
+                    best_left_idx = scores_left[1][0]
+                else:
+                    return None, None
+            return detections[best_left_idx], detections[best_right_idx]
+
+        return left_pick, right_pick
 
     def initialize(self, detections: List[np.ndarray]):
         left_kpts, right_kpts = self._pick_initial_tracks(detections)
@@ -736,6 +1016,15 @@ def _draw_keypoints_on_frame(
     
     return frame
 
+
+def _draw_frame_counter(frame: np.ndarray, frame_idx: int, total_frames: int):
+    label = f"Frame {frame_idx + 1}/{total_frames}"
+    origin = (12, 28)
+    cv2.putText(frame, label, origin, cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 0, 0), 3, cv2.LINE_AA)
+    cv2.putText(frame, label, origin, cv2.FONT_HERSHEY_SIMPLEX, 0.8, (255, 255, 255), 1, cv2.LINE_AA)
+    return frame
+
+
 def render_overlay_video(
     video_path: Path,
     output_path: Path,
@@ -746,6 +1035,7 @@ def render_overlay_video(
     normalisation_constant: float,
     draw_skeleton: bool = True,
     draw_labels: bool = False,
+    draw_frame_counter: bool = True,
     show_progress: bool = False,
 ):
     """Generate an overlay video with keypoints drawn on each frame."""
@@ -777,6 +1067,8 @@ def render_overlay_video(
             frame, left_xdata, left_ydata, right_xdata, right_ydata,
             frame_idx, normalisation_constant, draw_skeleton, draw_labels
         )
+        if draw_frame_counter:
+            frame = _draw_frame_counter(frame, frame_idx, frame_count)
         
         out.write(frame)
         frame_idx += 1

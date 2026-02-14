@@ -1,36 +1,31 @@
 {
-  "normalisation_constant": 50.313514709472656,
-  "video_angle": "left",
-  "winner": "left",
-  "reason": "Left has right-of-way (only right paused at 0.07s)",
-  "left_pauses": [
-    {
-      "start_frame": 20,
-      "end_frame": 31,
-      "start_time": 1.3333333333333333,
-      "end_time": 2.066666666666667,
-      "duration": 0.7333333333333333
-    }
-  ],
-  "right_pauses": [
-    {
-      "start_frame": 1,
-      "end_frame": 25,
-      "start_time": 0.06666666666666667,
-      "end_time": 1.6666666666666667,
-      "duration": 1.6
-    }
-  ],
-  "blade_analysis": "none",
-  "blade_details": {},
-  "speed_comparison": {
-    "left_speed": 0.16202905244951762,
-    "right_speed": 0.0958313034437586,
-    "left_accel": 0.08735355182172783,
-    "right_accel": 0.15358804414675753
-  },
+  "normalisation_constant": 105.71763610839844,
+  "video_angle": "middle",
+  "winner": "right",
+  "reason": "No pauses/blade contacts. Only right extended arm (at 1.53s)",
+  "left_pauses": [],
+  "right_pauses": [],
+  "blade_analysis": null,
+  "blade_details": null,
+  "speed_comparison": null,
   "lunge_detected": {
-    "left": true,
-    "right": false
-  }
+    "left": [],
+    "right": [],
+    "latest": null
+  },
+  "left_arm_extensions": [],
+  "right_arm_extensions": [
+    {
+      "start_frame": 23,
+      "end_frame": 30,
+      "start_time": 1.5333333333333334,
+      "end_time": 2.0,
+      "duration": 0.4666666666666667,
+      "avg_distance": 0.7428493873166842,
+      "avg_angle": 169.4222507689592,
+      "effective_start_frame": 23,
+      "effective_start_time": 1.5333333333333334,
+      "near_hit": true
+    }
+  ]
 }

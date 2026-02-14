@@ -1,35 +1,53 @@
 {
-  "normalisation_constant": 69.57060241699219,
-  "video_angle": "middle",
+  "normalisation_constant": 97.28976440429688,
+  "video_angle": "left",
   "winner": "left",
-  "reason": "Left has right-of-way (only right paused at 0.07s)",
+  "reason": "Left has right-of-way (pause by right at 1.33s)",
   "left_pauses": [],
   "right_pauses": [
     {
       "start_frame": 1,
-      "end_frame": 5,
-      "start_time": 0.06666666666666667,
-      "end_time": 0.3333333333333333,
-      "duration": 0.26666666666666666
-    },
-    {
-      "start_frame": 7,
       "end_frame": 20,
-      "start_time": 0.4666666666666667,
+      "start_time": 0.06666666666666667,
       "end_time": 1.3333333333333333,
-      "duration": 0.8666666666666667
+      "duration": 1.2666666666666666,
+      "is_retreat": false
     }
   ],
-  "blade_analysis": "none",
-  "blade_details": {},
-  "speed_comparison": {
-    "left_speed": 0.32864789395973504,
-    "right_speed": 0.1286781229987285,
-    "left_accel": 0.377651788778558,
-    "right_accel": 0.14285300665446132
-  },
+  "blade_analysis": null,
+  "blade_details": null,
+  "speed_comparison": null,
   "lunge_detected": {
-    "left": false,
-    "right": true
-  }
+    "left": [],
+    "right": [],
+    "latest": null
+  },
+  "left_arm_extensions": [
+    {
+      "start_frame": 0,
+      "end_frame": 28,
+      "start_time": 0.0,
+      "end_time": 1.8666666666666667,
+      "duration": 1.8666666666666667,
+      "avg_distance": 0.8500903987142294,
+      "avg_angle": 156.6858874375294,
+      "effective_start_frame": 0,
+      "effective_start_time": 0.0,
+      "near_hit": true
+    }
+  ],
+  "right_arm_extensions": [
+    {
+      "start_frame": 25,
+      "end_frame": 29,
+      "start_time": 1.6666666666666667,
+      "end_time": 1.9333333333333333,
+      "duration": 0.26666666666666666,
+      "avg_distance": 1.0595923129717206,
+      "avg_angle": 146.8851131635076,
+      "effective_start_frame": 25,
+      "effective_start_time": 1.6666666666666667,
+      "near_hit": true
+    }
+  ]
 }
