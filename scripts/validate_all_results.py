@@ -11,66 +11,12 @@ from typing import Optional
 sys.path.append(str(Path(__file__).parent))
 import debug_referee as debug_referee_module
 from debug_referee import (
+    extract_side_hit_events,
+    load_keypoints_from_excel,
     parse_txt_file,
     referee_decision,
     sanitize_for_json,
 )
-
-def load_keypoints_from_excel(excel_path: str):
-    """Load keypoint data from Excel file."""
-    import pandas as pd
-    
-    xl = pd.ExcelFile(excel_path)
-    sheet_names = xl.sheet_names
-    
-    # Handle both uppercase and lowercase sheet names
-    if 'Left_X' in sheet_names:
-        left_x = xl.parse('Left_X')
-        left_y = xl.parse('Left_Y')
-        right_x = xl.parse('Right_X')
-        right_y = xl.parse('Right_Y')
-    elif 'left_x' in sheet_names:
-        left_x = xl.parse('left_x')
-        left_y = xl.parse('left_y')
-        right_x = xl.parse('right_x')
-        right_y = xl.parse('right_y')
-    else:
-        raise ValueError(f"Unknown sheet format in {excel_path}. Sheets: {sheet_names}")
-    
-    # Handle both column naming formats: 'kp_0' or '0'
-    if 'kp_0' in left_x.columns:
-        left_xdata = {i: left_x[f'kp_{i}'].tolist() for i in range(17)}
-        left_ydata = {i: left_y[f'kp_{i}'].tolist() for i in range(17)}
-        right_xdata = {i: right_x[f'kp_{i}'].tolist() for i in range(17)}
-        right_ydata = {i: right_y[f'kp_{i}'].tolist() for i in range(17)}
-    elif '0' in left_x.columns:
-        left_xdata = {i: left_x[str(i)].tolist() for i in range(17)}
-        left_ydata = {i: left_y[str(i)].tolist() for i in range(17)}
-        right_xdata = {i: right_x[str(i)].tolist() for i in range(17)}
-        right_ydata = {i: right_y[str(i)].tolist() for i in range(17)}
-    elif 0 in left_x.columns:
-        left_xdata = {i: left_x[i].tolist() for i in range(17)}
-        left_ydata = {i: left_y[i].tolist() for i in range(17)}
-        right_xdata = {i: right_x[i].tolist() for i in range(17)}
-        right_ydata = {i: right_y[i].tolist() for i in range(17)}
-    else:
-        raise ValueError(f"Unknown column format in {excel_path}. Columns: {list(left_x.columns)[:5]}")
-    
-    if debug_referee_module.DROP_TAIL_FRAMES > 0:
-        left_xdata = debug_referee_module._trim_keypoint_data(
-            left_xdata, debug_referee_module.DROP_TAIL_FRAMES
-        )
-        left_ydata = debug_referee_module._trim_keypoint_data(
-            left_ydata, debug_referee_module.DROP_TAIL_FRAMES
-        )
-        right_xdata = debug_referee_module._trim_keypoint_data(
-            right_xdata, debug_referee_module.DROP_TAIL_FRAMES
-        )
-        right_ydata = debug_referee_module._trim_keypoint_data(
-            right_ydata, debug_referee_module.DROP_TAIL_FRAMES
-        )
-
-    return left_xdata, left_ydata, right_xdata, right_ydata
 
 WINNER_PRIORITIES = [
     "Confirmed result winner",
@@ -170,7 +116,8 @@ def main():
             break
         # Find necessary files
         txt_files = list(item.glob("*.txt"))
-        excel_files = list(item.glob("*keypoints.xlsx"))
+        # Match scripts/debug_referee.py discovery behavior.
+        excel_files = list(item.glob("*.xlsx"))
         json_path = item / "analysis_result.json"
         
         if not txt_files:
@@ -202,6 +149,7 @@ def main():
             if left_xdata and 16 in left_xdata:
                 max_frame = len(left_xdata[16]) - 1
                 debug_referee_module._trim_phrase_to_frames(phrase, max_frame)
+            side_hit_events = extract_side_hit_events(str(txt_path), fps=phrase.fps)
             blade_relevant = has_relevant_blade_contact(phrase)
             
             # Load normalization constant from JSON if available
@@ -219,7 +167,8 @@ def main():
                 phrase,
                 left_xdata, left_ydata,
                 right_xdata, right_ydata,
-                normalisation_constant=norm_constant
+                normalisation_constant=norm_constant,
+                side_hit_events=side_hit_events,
             )
             
             predicted_winner = decision.get("winner")

@@ -1,57 +1,450 @@
-Analyzing /workspace/data/training_data/20251111_212902_phrase24_20251121T063923Z...
-[PauseDetect:left] interval 10-16 avg_abs_vel=0.0437
+Analyzing /workspace/results/mismatched_results/no_blade_contact/20251111_205402_phrase27_20251121T063616Z...
+[PauseDetect:left] interval 1-6 avg_abs_vel=0.0187
+[PauseDetect:left] classified=PAUSE threshold=0.0350
+[PauseDetect:left] reject frame=4 back_foot_vel=0.0990 threshold=0.0500
+[PauseDetect:left] reject frame=5 back_foot_vel=0.1882 threshold=0.0500
+[PauseDetect:left] reject frame=6 back_foot_vel=0.1579 threshold=0.0500
+[PauseDetect:left] interval 11-21 avg_abs_vel=0.0404
 [PauseDetect:left] classified=RETREAT threshold=0.0350
-[PauseDetect:right] interval 2-6 avg_abs_vel=0.0162
+[PauseDetect:left] interval 26-37 avg_abs_vel=0.0214
+[PauseDetect:left] classified=PAUSE threshold=0.0350
+[PauseDetect:left] reject frame=37 back_foot_vel=0.1060 threshold=0.0500
+[PauseDetect:left] segment 26-36 y_var=0.000543 threshold=0.001000
+[PauseDetect:left] accept segment 26-36
+[PauseDetect:left] interval 46-50 avg_abs_vel=0.0144
+[PauseDetect:left] classified=PAUSE threshold=0.0350
+[PauseDetect:left] reject frame=49 back_foot_vel=0.0613 threshold=0.0500
+[PauseDetect:left] reject frame=50 back_foot_vel=0.0731 threshold=0.0500
+[PauseDetect:left] interval 52-64 avg_abs_vel=0.0174
+[PauseDetect:left] classified=PAUSE threshold=0.0350
+[PauseDetect:left] reject frame=62 back_foot_vel=0.0528 threshold=0.0500
+[PauseDetect:left] reject frame=63 back_foot_vel=0.0819 threshold=0.0500
+[PauseDetect:left] reject frame=64 back_foot_vel=0.0814 threshold=0.0500
+[PauseDetect:left] segment 52-61 y_var=0.000066 threshold=0.001000
+[PauseDetect:left] accept segment 52-61
+[PauseDetect:left] interval 67-70 avg_abs_vel=0.0248
+[PauseDetect:left] classified=PAUSE threshold=0.0350
+[PauseDetect:left] segment 67-70 y_var=0.001476 threshold=0.001000
+[PauseDetect:left] reject segment=high_y_variance
+[PauseDetect:left] interval 72-76 avg_abs_vel=0.0260
+[PauseDetect:left] classified=PAUSE threshold=0.0350
+[PauseDetect:left] reject frame=75 back_foot_vel=0.0516 threshold=0.0500
+[PauseDetect:left] reject frame=76 back_foot_vel=0.0557 threshold=0.0500
+[PauseDetect:left] interval 87-90 avg_abs_vel=0.0238
+[PauseDetect:left] classified=PAUSE threshold=0.0350
+[PauseDetect:left] reject frame=87 back_foot_vel=0.1255 threshold=0.0500
+[PauseDetect:left] reject frame=88 back_foot_vel=0.1760 threshold=0.0500
+[PauseDetect:left] reject frame=89 back_foot_vel=0.0887 threshold=0.0500
+[PauseDetect:left] interval 98-110 avg_abs_vel=0.0145
+[PauseDetect:left] classified=PAUSE threshold=0.0350
+[PauseDetect:left] reject frame=110 back_foot_vel=0.0647 threshold=0.0500
+[PauseDetect:left] segment 98-109 y_var=0.000651 threshold=0.001000
+[PauseDetect:left] accept segment 98-109
+[PauseDetect:left] interval 114-120 avg_abs_vel=0.0152
+[PauseDetect:left] classified=PAUSE threshold=0.0350
+[PauseDetect:left] segment 114-120 y_var=0.000641 threshold=0.001000
+[PauseDetect:left] accept segment 114-120
+[PauseDetect:left] interval 124-135 avg_abs_vel=0.0266
+[PauseDetect:left] classified=PAUSE threshold=0.0350
+[PauseDetect:left] reject frame=135 back_foot_vel=0.1971 threshold=0.0500
+[PauseDetect:left] segment 124-134 y_var=0.000231 threshold=0.001000
+[PauseDetect:left] accept segment 124-134
+[PauseDetect:left] interval 140-143 avg_abs_vel=0.0225
+[PauseDetect:left] classified=PAUSE threshold=0.0350
+[PauseDetect:left] reject frame=140 back_foot_vel=0.0547 threshold=0.0500
+[PauseDetect:left] reject frame=141 back_foot_vel=0.1649 threshold=0.0500
+[PauseDetect:left] reject frame=142 back_foot_vel=0.2143 threshold=0.0500
+[PauseDetect:left] reject frame=143 back_foot_vel=0.1966 threshold=0.0500
+[PauseDetect:left] interval 150-155 avg_abs_vel=0.0162
+[PauseDetect:left] classified=PAUSE threshold=0.0350
+[PauseDetect:left] reject frame=151 back_foot_vel=0.0742 threshold=0.0500
+[PauseDetect:left] reject frame=152 back_foot_vel=0.0753 threshold=0.0500
+[PauseDetect:left] reject frame=153 back_foot_vel=0.1089 threshold=0.0500
+[PauseDetect:left] interval 158-161 avg_abs_vel=0.0277
+[PauseDetect:left] classified=PAUSE threshold=0.0350
+[PauseDetect:left] reject frame=161 back_foot_vel=0.1054 threshold=0.0500
+[PauseDetect:right] interval 15-155 avg_abs_vel=0.0396
+[PauseDetect:right] classified=RETREAT threshold=0.0350
+[PauseDetect:right] interval 158-167 avg_abs_vel=0.0099
 [PauseDetect:right] classified=PAUSE threshold=0.0350
-[PauseDetect:right] reject frame=5 back_foot_vel=0.1931 threshold=0.0500
-[PauseDetect:right] reject frame=6 back_foot_vel=0.0938 threshold=0.0500
-[Lunge:left] start max_frame=17 threshold=1.0 min_consecutive=3 end_frame_buffer=4
-[Lunge:left] frame=0 dist=0.708 lunge=False
-[Lunge:left] frame=1 dist=0.812 lunge=False
-[Lunge:left] frame=2 dist=0.830 lunge=False
-[Lunge:left] frame=3 dist=0.832 lunge=False
-[Lunge:left] frame=4 dist=0.705 lunge=False
-[Lunge:left] frame=5 dist=0.629 lunge=False
-[Lunge:left] frame=6 dist=0.618 lunge=False
-[Lunge:left] frame=7 dist=0.448 lunge=False
-[Lunge:left] frame=8 dist=0.438 lunge=False
-[Lunge:left] frame=9 dist=0.658 lunge=False
-[Lunge:left] frame=10 dist=0.719 lunge=False
-[Lunge:left] frame=11 dist=0.720 lunge=False
-[Lunge:left] frame=12 dist=0.718 lunge=False
-[Lunge:left] frame=13 dist=0.708 lunge=False
-[Lunge:left] frame=14 dist=0.626 lunge=False
-[Lunge:left] frame=15 dist=0.720 lunge=False
-[Lunge:left] frame=16 dist=0.816 lunge=False
-[Lunge:left] frame=17 dist=0.881 lunge=False
-[Lunge:right] start max_frame=17 threshold=1.0 min_consecutive=3 end_frame_buffer=4
-[Lunge:right] frame=0 dist=0.629 lunge=False
-[Lunge:right] frame=1 dist=0.742 lunge=False
-[Lunge:right] frame=2 dist=0.773 lunge=False
-[Lunge:right] frame=3 dist=0.806 lunge=False
-[Lunge:right] frame=4 dist=0.766 lunge=False
-[Lunge:right] frame=5 dist=0.588 lunge=False
-[Lunge:right] frame=6 dist=0.493 lunge=False
-[Lunge:right] frame=7 dist=0.294 lunge=False
-[Lunge:right] frame=8 dist=0.282 lunge=False
-[Lunge:right] frame=9 dist=0.494 lunge=False
-[Lunge:right] frame=10 dist=0.804 lunge=False
-[Lunge:right] frame=11 dist=1.101 lunge=True
-[Lunge:right] frame=12 dist=1.242 lunge=True
-[Lunge:right] frame=13 dist=1.236 lunge=True
-[Lunge:right] frame=14 dist=1.225 lunge=True
-[Lunge:right] frame=15 dist=1.061 lunge=True
-[Lunge:right] frame=16 dist=0.839 lunge=False
-[Lunge:right] frame=17 dist=0.588 lunge=False
-[Lunge:right] interval start frame=11
-[Lunge:right] interval candidate 11-15 accepted length=5
-[Lunge:right] interval 11-15 rejected end_frame within buffer
+[PauseDetect:right] segment 158-167 y_var=0.000116 threshold=0.001000
+[PauseDetect:right] accept segment 158-167
+[Lunge:left] start max_frame=167 threshold=1.0 min_consecutive=3 hit_frames=[164]
+[Lunge:left] frame=0 dist=0.874 lunge=False
+[Lunge:left] frame=1 dist=0.852 lunge=False
+[Lunge:left] frame=2 dist=0.892 lunge=False
+[Lunge:left] frame=3 dist=0.854 lunge=False
+[Lunge:left] frame=4 dist=0.777 lunge=False
+[Lunge:left] frame=5 dist=0.583 lunge=False
+[Lunge:left] frame=6 dist=0.446 lunge=False
+[Lunge:left] frame=7 dist=0.590 lunge=False
+[Lunge:left] frame=8 dist=0.791 lunge=False
+[Lunge:left] frame=9 dist=0.995 lunge=False
+[Lunge:left] frame=10 dist=1.050 lunge=True
+[Lunge:left] frame=11 dist=1.067 lunge=True
+[Lunge:left] frame=12 dist=1.009 lunge=True
+[Lunge:left] frame=13 dist=1.002 lunge=True
+[Lunge:left] frame=14 dist=1.028 lunge=True
+[Lunge:left] frame=15 dist=1.051 lunge=True
+[Lunge:left] frame=16 dist=1.091 lunge=True
+[Lunge:left] frame=17 dist=1.080 lunge=True
+[Lunge:left] frame=18 dist=0.958 lunge=False
+[Lunge:left] frame=19 dist=0.804 lunge=False
+[Lunge:left] frame=20 dist=0.743 lunge=False
+[Lunge:left] frame=21 dist=0.696 lunge=False
+[Lunge:left] frame=22 dist=0.668 lunge=False
+[Lunge:left] frame=23 dist=0.687 lunge=False
+[Lunge:left] frame=24 dist=0.850 lunge=False
+[Lunge:left] frame=25 dist=0.886 lunge=False
+[Lunge:left] frame=26 dist=0.908 lunge=False
+[Lunge:left] frame=27 dist=0.886 lunge=False
+[Lunge:left] frame=28 dist=0.861 lunge=False
+[Lunge:left] frame=29 dist=0.881 lunge=False
+[Lunge:left] frame=30 dist=0.875 lunge=False
+[Lunge:left] frame=31 dist=0.852 lunge=False
+[Lunge:left] frame=32 dist=0.853 lunge=False
+[Lunge:left] frame=33 dist=0.778 lunge=False
+[Lunge:left] frame=34 dist=0.748 lunge=False
+[Lunge:left] frame=35 dist=0.745 lunge=False
+[Lunge:left] frame=36 dist=0.710 lunge=False
+[Lunge:left] frame=37 dist=0.616 lunge=False
+[Lunge:left] frame=38 dist=0.556 lunge=False
+[Lunge:left] frame=39 dist=0.593 lunge=False
+[Lunge:left] frame=40 dist=0.657 lunge=False
+[Lunge:left] frame=41 dist=0.634 lunge=False
+[Lunge:left] frame=42 dist=0.651 lunge=False
+[Lunge:left] frame=43 dist=0.788 lunge=False
+[Lunge:left] frame=44 dist=0.847 lunge=False
+[Lunge:left] frame=45 dist=0.917 lunge=False
+[Lunge:left] frame=46 dist=0.881 lunge=False
+[Lunge:left] frame=47 dist=0.876 lunge=False
+[Lunge:left] frame=48 dist=0.872 lunge=False
+[Lunge:left] frame=49 dist=0.827 lunge=False
+[Lunge:left] frame=50 dist=0.771 lunge=False
+[Lunge:left] frame=51 dist=0.736 lunge=False
+[Lunge:left] frame=52 dist=0.707 lunge=False
+[Lunge:left] frame=53 dist=0.735 lunge=False
+[Lunge:left] frame=54 dist=0.819 lunge=False
+[Lunge:left] frame=55 dist=0.868 lunge=False
+[Lunge:left] frame=56 dist=0.899 lunge=False
+[Lunge:left] frame=57 dist=0.857 lunge=False
+[Lunge:left] frame=58 dist=0.840 lunge=False
+[Lunge:left] frame=59 dist=0.811 lunge=False
+[Lunge:left] frame=60 dist=0.787 lunge=False
+[Lunge:left] frame=61 dist=0.767 lunge=False
+[Lunge:left] frame=62 dist=0.719 lunge=False
+[Lunge:left] frame=63 dist=0.642 lunge=False
+[Lunge:left] frame=64 dist=0.578 lunge=False
+[Lunge:left] frame=65 dist=0.581 lunge=False
+[Lunge:left] frame=66 dist=0.633 lunge=False
+[Lunge:left] frame=67 dist=0.615 lunge=False
+[Lunge:left] frame=68 dist=0.620 lunge=False
+[Lunge:left] frame=69 dist=0.642 lunge=False
+[Lunge:left] frame=70 dist=0.672 lunge=False
+[Lunge:left] frame=71 dist=0.771 lunge=False
+[Lunge:left] frame=72 dist=0.733 lunge=False
+[Lunge:left] frame=73 dist=0.710 lunge=False
+[Lunge:left] frame=74 dist=0.693 lunge=False
+[Lunge:left] frame=75 dist=0.662 lunge=False
+[Lunge:left] frame=76 dist=0.638 lunge=False
+[Lunge:left] frame=77 dist=0.656 lunge=False
+[Lunge:left] frame=78 dist=0.634 lunge=False
+[Lunge:left] frame=79 dist=0.643 lunge=False
+[Lunge:left] frame=80 dist=0.605 lunge=False
+[Lunge:left] frame=81 dist=0.599 lunge=False
+[Lunge:left] frame=82 dist=0.566 lunge=False
+[Lunge:left] frame=83 dist=0.798 lunge=False
+[Lunge:left] frame=84 dist=1.072 lunge=True
+[Lunge:left] frame=85 dist=1.180 lunge=True
+[Lunge:left] frame=86 dist=1.165 lunge=True
+[Lunge:left] frame=87 dist=1.009 lunge=True
+[Lunge:left] frame=88 dist=0.861 lunge=False
+[Lunge:left] frame=89 dist=0.777 lunge=False
+[Lunge:left] frame=90 dist=0.805 lunge=False
+[Lunge:left] frame=91 dist=0.886 lunge=False
+[Lunge:left] frame=92 dist=0.856 lunge=False
+[Lunge:left] frame=93 dist=0.736 lunge=False
+[Lunge:left] frame=94 dist=0.752 lunge=False
+[Lunge:left] frame=95 dist=0.713 lunge=False
+[Lunge:left] frame=96 dist=0.753 lunge=False
+[Lunge:left] frame=97 dist=0.895 lunge=False
+[Lunge:left] frame=98 dist=0.886 lunge=False
+[Lunge:left] frame=99 dist=0.892 lunge=False
+[Lunge:left] frame=100 dist=0.899 lunge=False
+[Lunge:left] frame=101 dist=0.923 lunge=False
+[Lunge:left] frame=102 dist=0.951 lunge=False
+[Lunge:left] frame=103 dist=0.938 lunge=False
+[Lunge:left] frame=104 dist=0.945 lunge=False
+[Lunge:left] frame=105 dist=0.880 lunge=False
+[Lunge:left] frame=106 dist=0.886 lunge=False
+[Lunge:left] frame=107 dist=0.869 lunge=False
+[Lunge:left] frame=108 dist=0.856 lunge=False
+[Lunge:left] frame=109 dist=0.842 lunge=False
+[Lunge:left] frame=110 dist=0.771 lunge=False
+[Lunge:left] frame=111 dist=0.668 lunge=False
+[Lunge:left] frame=112 dist=0.635 lunge=False
+[Lunge:left] frame=113 dist=0.631 lunge=False
+[Lunge:left] frame=114 dist=0.620 lunge=False
+[Lunge:left] frame=115 dist=0.621 lunge=False
+[Lunge:left] frame=116 dist=0.618 lunge=False
+[Lunge:left] frame=117 dist=0.652 lunge=False
+[Lunge:left] frame=118 dist=0.660 lunge=False
+[Lunge:left] frame=119 dist=0.650 lunge=False
+[Lunge:left] frame=120 dist=0.687 lunge=False
+[Lunge:left] frame=121 dist=0.746 lunge=False
+[Lunge:left] frame=122 dist=0.848 lunge=False
+[Lunge:left] frame=123 dist=0.970 lunge=False
+[Lunge:left] frame=124 dist=0.960 lunge=False
+[Lunge:left] frame=125 dist=0.927 lunge=False
+[Lunge:left] frame=126 dist=0.942 lunge=False
+[Lunge:left] frame=127 dist=0.995 lunge=False
+[Lunge:left] frame=128 dist=0.999 lunge=False
+[Lunge:left] frame=129 dist=0.936 lunge=False
+[Lunge:left] frame=130 dist=0.938 lunge=False
+[Lunge:left] frame=131 dist=0.913 lunge=False
+[Lunge:left] frame=132 dist=0.862 lunge=False
+[Lunge:left] frame=133 dist=0.793 lunge=False
+[Lunge:left] frame=134 dist=0.767 lunge=False
+[Lunge:left] frame=135 dist=0.606 lunge=False
+[Lunge:left] frame=136 dist=0.504 lunge=False
+[Lunge:left] frame=137 dist=0.675 lunge=False
+[Lunge:left] frame=138 dist=1.020 lunge=True
+[Lunge:left] frame=139 dist=1.289 lunge=True
+[Lunge:left] frame=140 dist=1.266 lunge=True
+[Lunge:left] frame=141 dist=1.121 lunge=True
+[Lunge:left] frame=142 dist=0.925 lunge=False
+[Lunge:left] frame=143 dist=0.748 lunge=False
+[Lunge:left] frame=144 dist=0.680 lunge=False
+[Lunge:left] frame=145 dist=0.753 lunge=False
+[Lunge:left] frame=146 dist=0.869 lunge=False
+[Lunge:left] frame=147 dist=0.951 lunge=False
+[Lunge:left] frame=148 dist=0.969 lunge=False
+[Lunge:left] frame=149 dist=1.011 lunge=True
+[Lunge:left] frame=150 dist=0.989 lunge=False
+[Lunge:left] frame=151 dist=0.907 lunge=False
+[Lunge:left] frame=152 dist=0.851 lunge=False
+[Lunge:left] frame=153 dist=0.746 lunge=False
+[Lunge:left] frame=154 dist=0.780 lunge=False
+[Lunge:left] frame=155 dist=0.803 lunge=False
+[Lunge:left] frame=156 dist=0.892 lunge=False
+[Lunge:left] frame=157 dist=0.960 lunge=False
+[Lunge:left] frame=158 dist=0.962 lunge=False
+[Lunge:left] frame=159 dist=0.847 lunge=False
+[Lunge:left] frame=160 dist=0.885 lunge=False
+[Lunge:left] frame=161 dist=0.787 lunge=False
+[Lunge:left] frame=162 dist=0.602 lunge=False
+[Lunge:left] frame=163 dist=0.509 lunge=False
+[Lunge:left] frame=164 dist=0.814 lunge=False
+[Lunge:left] frame=165 dist=1.084 lunge=True
+[Lunge:left] frame=166 dist=1.338 lunge=True
+[Lunge:left] frame=167 dist=1.230 lunge=True
+[Lunge:left] interval start frame=10
+[Lunge:left] interval candidate 10-17 accepted length=8
+[Lunge:left] interval start frame=84
+[Lunge:left] interval candidate 84-87 accepted length=4
+[Lunge:left] interval start frame=138
+[Lunge:left] interval candidate 138-141 accepted length=4
+[Lunge:left] interval start frame=149
+[Lunge:left] interval candidate 149-149 rejected length=1
+[Lunge:left] interval start frame=165
+[Lunge:left] interval candidate 165-167 accepted length=3
+[Lunge:left] interval 10-17 rejected backward frame=14 bf_vel=-0.0226
+[Lunge:left] interval 84-87 accepted
+[Lunge:left] interval 138-141 accepted
+[Lunge:left] interval 165-167 accepted
+[Lunge:right] start max_frame=167 threshold=1.0 min_consecutive=3 hit_frames=[167]
+[Lunge:right] frame=0 dist=0.653 lunge=False
+[Lunge:right] frame=1 dist=0.702 lunge=False
+[Lunge:right] frame=2 dist=0.735 lunge=False
+[Lunge:right] frame=3 dist=0.711 lunge=False
+[Lunge:right] frame=4 dist=0.551 lunge=False
+[Lunge:right] frame=5 dist=0.369 lunge=False
+[Lunge:right] frame=6 dist=0.191 lunge=False
+[Lunge:right] frame=7 dist=0.280 lunge=False
+[Lunge:right] frame=8 dist=0.417 lunge=False
+[Lunge:right] frame=9 dist=0.742 lunge=False
+[Lunge:right] frame=10 dist=1.042 lunge=True
+[Lunge:right] frame=11 dist=1.305 lunge=True
+[Lunge:right] frame=12 dist=1.484 lunge=True
+[Lunge:right] frame=13 dist=1.418 lunge=True
+[Lunge:right] frame=14 dist=1.375 lunge=True
+[Lunge:right] frame=15 dist=1.256 lunge=True
+[Lunge:right] frame=16 dist=1.139 lunge=True
+[Lunge:right] frame=17 dist=1.075 lunge=True
+[Lunge:right] frame=18 dist=0.978 lunge=False
+[Lunge:right] frame=19 dist=0.961 lunge=False
+[Lunge:right] frame=20 dist=1.042 lunge=True
+[Lunge:right] frame=21 dist=1.088 lunge=True
+[Lunge:right] frame=22 dist=0.929 lunge=False
+[Lunge:right] frame=23 dist=0.821 lunge=False
+[Lunge:right] frame=24 dist=0.826 lunge=False
+[Lunge:right] frame=25 dist=0.718 lunge=False
+[Lunge:right] frame=26 dist=0.610 lunge=False
+[Lunge:right] frame=27 dist=0.678 lunge=False
+[Lunge:right] frame=28 dist=0.786 lunge=False
+[Lunge:right] frame=29 dist=0.991 lunge=False
+[Lunge:right] frame=30 dist=1.036 lunge=True
+[Lunge:right] frame=31 dist=0.960 lunge=False
+[Lunge:right] frame=32 dist=0.817 lunge=False
+[Lunge:right] frame=33 dist=0.716 lunge=False
+[Lunge:right] frame=34 dist=0.768 lunge=False
+[Lunge:right] frame=35 dist=0.850 lunge=False
+[Lunge:right] frame=36 dist=0.878 lunge=False
+[Lunge:right] frame=37 dist=0.871 lunge=False
+[Lunge:right] frame=38 dist=0.889 lunge=False
+[Lunge:right] frame=39 dist=0.886 lunge=False
+[Lunge:right] frame=40 dist=0.892 lunge=False
+[Lunge:right] frame=41 dist=0.895 lunge=False
+[Lunge:right] frame=42 dist=0.887 lunge=False
+[Lunge:right] frame=43 dist=0.952 lunge=False
+[Lunge:right] frame=44 dist=1.011 lunge=True
+[Lunge:right] frame=45 dist=1.021 lunge=True
+[Lunge:right] frame=46 dist=1.024 lunge=True
+[Lunge:right] frame=47 dist=1.013 lunge=True
+[Lunge:right] frame=48 dist=1.015 lunge=True
+[Lunge:right] frame=49 dist=1.017 lunge=True
+[Lunge:right] frame=50 dist=1.011 lunge=True
+[Lunge:right] frame=51 dist=1.006 lunge=True
+[Lunge:right] frame=52 dist=1.000 lunge=False
+[Lunge:right] frame=53 dist=1.084 lunge=True
+[Lunge:right] frame=54 dist=1.150 lunge=True
+[Lunge:right] frame=55 dist=1.190 lunge=True
+[Lunge:right] frame=56 dist=1.268 lunge=True
+[Lunge:right] frame=57 dist=1.080 lunge=True
+[Lunge:right] frame=58 dist=0.934 lunge=False
+[Lunge:right] frame=59 dist=0.932 lunge=False
+[Lunge:right] frame=60 dist=0.987 lunge=False
+[Lunge:right] frame=61 dist=1.028 lunge=True
+[Lunge:right] frame=62 dist=1.039 lunge=True
+[Lunge:right] frame=63 dist=1.035 lunge=True
+[Lunge:right] frame=64 dist=1.028 lunge=True
+[Lunge:right] frame=65 dist=1.031 lunge=True
+[Lunge:right] frame=66 dist=1.038 lunge=True
+[Lunge:right] frame=67 dist=1.036 lunge=True
+[Lunge:right] frame=68 dist=1.045 lunge=True
+[Lunge:right] frame=69 dist=1.035 lunge=True
+[Lunge:right] frame=70 dist=1.040 lunge=True
+[Lunge:right] frame=71 dist=1.047 lunge=True
+[Lunge:right] frame=72 dist=1.033 lunge=True
+[Lunge:right] frame=73 dist=1.053 lunge=True
+[Lunge:right] frame=74 dist=1.058 lunge=True
+[Lunge:right] frame=75 dist=1.058 lunge=True
+[Lunge:right] frame=76 dist=1.044 lunge=True
+[Lunge:right] frame=77 dist=1.029 lunge=True
+[Lunge:right] frame=78 dist=0.981 lunge=False
+[Lunge:right] frame=79 dist=1.015 lunge=True
+[Lunge:right] frame=80 dist=1.079 lunge=True
+[Lunge:right] frame=81 dist=0.999 lunge=False
+[Lunge:right] frame=82 dist=0.908 lunge=False
+[Lunge:right] frame=83 dist=0.830 lunge=False
+[Lunge:right] frame=84 dist=0.755 lunge=False
+[Lunge:right] frame=85 dist=0.522 lunge=False
+[Lunge:right] frame=86 dist=0.317 lunge=False
+[Lunge:right] frame=87 dist=0.619 lunge=False
+[Lunge:right] frame=88 dist=0.904 lunge=False
+[Lunge:right] frame=89 dist=0.923 lunge=False
+[Lunge:right] frame=90 dist=0.669 lunge=False
+[Lunge:right] frame=91 dist=0.294 lunge=False
+[Lunge:right] frame=92 dist=0.275 lunge=False
+[Lunge:right] frame=93 dist=0.476 lunge=False
+[Lunge:right] frame=94 dist=0.723 lunge=False
+[Lunge:right] frame=95 dist=0.727 lunge=False
+[Lunge:right] frame=96 dist=0.708 lunge=False
+[Lunge:right] frame=97 dist=0.738 lunge=False
+[Lunge:right] frame=98 dist=0.752 lunge=False
+[Lunge:right] frame=99 dist=0.769 lunge=False
+[Lunge:right] frame=100 dist=0.793 lunge=False
+[Lunge:right] frame=101 dist=0.768 lunge=False
+[Lunge:right] frame=102 dist=0.785 lunge=False
+[Lunge:right] frame=103 dist=0.775 lunge=False
+[Lunge:right] frame=104 dist=0.773 lunge=False
+[Lunge:right] frame=105 dist=0.784 lunge=False
+[Lunge:right] frame=106 dist=0.785 lunge=False
+[Lunge:right] frame=107 dist=0.777 lunge=False
+[Lunge:right] frame=108 dist=0.777 lunge=False
+[Lunge:right] frame=109 dist=0.777 lunge=False
+[Lunge:right] frame=110 dist=0.756 lunge=False
+[Lunge:right] frame=111 dist=0.760 lunge=False
+[Lunge:right] frame=112 dist=0.767 lunge=False
+[Lunge:right] frame=113 dist=0.821 lunge=False
+[Lunge:right] frame=114 dist=0.805 lunge=False
+[Lunge:right] frame=115 dist=0.811 lunge=False
+[Lunge:right] frame=116 dist=0.788 lunge=False
+[Lunge:right] frame=117 dist=0.781 lunge=False
+[Lunge:right] frame=118 dist=0.790 lunge=False
+[Lunge:right] frame=119 dist=0.793 lunge=False
+[Lunge:right] frame=120 dist=0.794 lunge=False
+[Lunge:right] frame=121 dist=0.789 lunge=False
+[Lunge:right] frame=122 dist=0.784 lunge=False
+[Lunge:right] frame=123 dist=0.790 lunge=False
+[Lunge:right] frame=124 dist=0.802 lunge=False
+[Lunge:right] frame=125 dist=0.814 lunge=False
+[Lunge:right] frame=126 dist=0.837 lunge=False
+[Lunge:right] frame=127 dist=0.832 lunge=False
+[Lunge:right] frame=128 dist=0.823 lunge=False
+[Lunge:right] frame=129 dist=0.826 lunge=False
+[Lunge:right] frame=130 dist=0.814 lunge=False
+[Lunge:right] frame=131 dist=0.816 lunge=False
+[Lunge:right] frame=132 dist=0.801 lunge=False
+[Lunge:right] frame=133 dist=0.800 lunge=False
+[Lunge:right] frame=134 dist=0.808 lunge=False
+[Lunge:right] frame=135 dist=0.832 lunge=False
+[Lunge:right] frame=136 dist=0.834 lunge=False
+[Lunge:right] frame=137 dist=0.851 lunge=False
+[Lunge:right] frame=138 dist=0.837 lunge=False
+[Lunge:right] frame=139 dist=0.828 lunge=False
+[Lunge:right] frame=140 dist=0.728 lunge=False
+[Lunge:right] frame=141 dist=0.596 lunge=False
+[Lunge:right] frame=142 dist=0.457 lunge=False
+[Lunge:right] frame=143 dist=0.146 lunge=False
+[Lunge:right] frame=144 dist=0.199 lunge=False
+[Lunge:right] frame=145 dist=0.272 lunge=False
+[Lunge:right] frame=146 dist=0.013 lunge=False
+[Lunge:right] frame=147 dist=0.200 lunge=False
+[Lunge:right] frame=148 dist=0.446 lunge=False
+[Lunge:right] frame=149 dist=0.600 lunge=False
+[Lunge:right] frame=150 dist=0.510 lunge=False
+[Lunge:right] frame=151 dist=0.441 lunge=False
+[Lunge:right] frame=152 dist=0.445 lunge=False
+[Lunge:right] frame=153 dist=0.472 lunge=False
+[Lunge:right] frame=154 dist=0.473 lunge=False
+[Lunge:right] frame=155 dist=0.509 lunge=False
+[Lunge:right] frame=156 dist=0.561 lunge=False
+[Lunge:right] frame=157 dist=0.596 lunge=False
+[Lunge:right] frame=158 dist=0.629 lunge=False
+[Lunge:right] frame=159 dist=0.626 lunge=False
+[Lunge:right] frame=160 dist=0.648 lunge=False
+[Lunge:right] frame=161 dist=0.641 lunge=False
+[Lunge:right] frame=162 dist=0.618 lunge=False
+[Lunge:right] frame=163 dist=0.609 lunge=False
+[Lunge:right] frame=164 dist=0.625 lunge=False
+[Lunge:right] frame=165 dist=0.607 lunge=False
+[Lunge:right] frame=166 dist=0.653 lunge=False
+[Lunge:right] frame=167 dist=0.661 lunge=False
+[Lunge:right] interval start frame=10
+[Lunge:right] interval candidate 10-17 accepted length=8
+[Lunge:right] interval start frame=20
+[Lunge:right] interval candidate 20-21 rejected length=2
+[Lunge:right] interval start frame=30
+[Lunge:right] interval candidate 30-30 rejected length=1
+[Lunge:right] interval start frame=44
+[Lunge:right] interval candidate 44-51 accepted length=8
+[Lunge:right] interval start frame=53
+[Lunge:right] interval candidate 53-57 accepted length=5
+[Lunge:right] interval start frame=61
+[Lunge:right] interval candidate 61-77 accepted length=17
+[Lunge:right] interval start frame=79
+[Lunge:right] interval candidate 79-80 rejected length=2
+[Lunge:right] interval 10-17 accepted
+[Lunge:right] interval 44-51 rejected backward frame=45 bf_vel=-0.0118
+[Lunge:right] interval 53-57 rejected backward frame=54 bf_vel=-0.0634
+[Lunge:right] interval 61-77 rejected backward frame=73 bf_vel=-0.0135
 
 ============================================================
 HIT FRAME SUMMARY
 ============================================================
-Left scores on Right (time/frame): [{'time': 1.091, 'frame': 16}]
-Right scores on Left (time/frame): [{'time': 1.294, 'frame': 19}]
+Left scores on Right (time/frame): [{'time': 10.981, 'frame': 164}]
+Right scores on Left (time/frame): [{'time': 11.169, 'frame': 167}]
 ============================================================
 
 ============================================================
@@ -59,55 +452,116 @@ DEBUG RESULT
 ============================================================
 {
   "winner": "right",
-  "reason": "Right has right-of-way (pause by left at 1.07s)",
+  "reason": "Right wins: pause end before lunge window end (171) after left lunge",
   "left_pauses": [
     {
-      "start_frame": 10,
-      "end_frame": 16,
-      "start_time": 0.6666666666666666,
-      "end_time": 1.0666666666666667,
-      "duration": 0.4,
+      "start_frame": 11,
+      "end_frame": 21,
+      "start_time": 0.7333333333333333,
+      "end_time": 1.4,
+      "duration": 0.6666666666666666,
       "is_retreat": true
+    },
+    {
+      "start_frame": 26,
+      "end_frame": 36,
+      "start_time": 1.7333333333333334,
+      "end_time": 2.4,
+      "duration": 0.6666666666666666,
+      "is_retreat": false
+    },
+    {
+      "start_frame": 52,
+      "end_frame": 61,
+      "start_time": 3.466666666666667,
+      "end_time": 4.066666666666666,
+      "duration": 0.6,
+      "is_retreat": false
+    },
+    {
+      "start_frame": 98,
+      "end_frame": 109,
+      "start_time": 6.533333333333333,
+      "end_time": 7.266666666666667,
+      "duration": 0.7333333333333333,
+      "is_retreat": false
+    },
+    {
+      "start_frame": 114,
+      "end_frame": 120,
+      "start_time": 7.6,
+      "end_time": 8.0,
+      "duration": 0.4,
+      "is_retreat": false
+    },
+    {
+      "start_frame": 124,
+      "end_frame": 134,
+      "start_time": 8.266666666666667,
+      "end_time": 8.933333333333334,
+      "duration": 0.6666666666666666,
+      "is_retreat": false
     }
   ],
-  "right_pauses": [],
+  "right_pauses": [
+    {
+      "start_frame": 15,
+      "end_frame": 155,
+      "start_time": 1.0,
+      "end_time": 10.333333333333334,
+      "duration": 9.333333333333334,
+      "is_retreat": true
+    },
+    {
+      "start_frame": 158,
+      "end_frame": 167,
+      "start_time": 10.533333333333333,
+      "end_time": 11.133333333333333,
+      "duration": 0.6,
+      "is_retreat": false
+    }
+  ],
   "left_slow_start": null,
   "right_slow_start": null,
   "blade_analysis": null,
   "blade_details": null,
   "speed_comparison": null,
   "lunge_detected": {
-    "left": [],
-    "right": [],
-    "latest": null
-  },
-  "left_arm_extensions": [
-    {
-      "start_frame": 14,
-      "end_frame": 16,
-      "start_time": 0.9333333333333333,
-      "end_time": 1.0666666666666667,
-      "duration": 0.13333333333333333,
-      "avg_distance": 0.5525815319280601,
-      "avg_angle": 119.29348874846886,
-      "effective_start_frame": 15,
-      "effective_start_time": 1.0,
-      "near_hit": true
+    "left": [
+      {
+        "start_frame": 84,
+        "end_frame": 87,
+        "start_time": 5.6,
+        "end_time": 5.8
+      },
+      {
+        "start_frame": 138,
+        "end_frame": 141,
+        "start_time": 9.2,
+        "end_time": 9.4
+      },
+      {
+        "start_frame": 165,
+        "end_frame": 167,
+        "start_time": 11.0,
+        "end_time": 11.133333333333333
+      }
+    ],
+    "right": [
+      {
+        "start_frame": 10,
+        "end_frame": 17,
+        "start_time": 0.6666666666666666,
+        "end_time": 1.1333333333333333
+      }
+    ],
+    "latest": {
+      "side": "left",
+      "start_frame": 165,
+      "end_frame": 167,
+      "start_time": 11.0,
+      "end_time": 11.133333333333333
     }
-  ],
-  "right_arm_extensions": [
-    {
-      "start_frame": 16,
-      "end_frame": 17,
-      "start_time": 1.0666666666666667,
-      "end_time": 1.1333333333333333,
-      "duration": 0.06666666666666667,
-      "avg_distance": 0.7927986858711262,
-      "avg_angle": 115.39396198837277,
-      "effective_start_frame": 17,
-      "effective_start_time": 1.1333333333333333,
-      "near_hit": true
-    }
-  ]
+  }
 }
 ============================================================

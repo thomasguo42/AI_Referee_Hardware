@@ -564,7 +564,7 @@ def detect_lunge_intervals(
     fps: float = 15.0,
     threshold: float = 1.0,
     min_consecutive: int = 3,
-    end_frame_buffer: int = 4,
+    hit_frames: Optional[List[int]] = None,
 ) -> List[LungeInterval]:
     """Detect lunge intervals based on front/back foot distance."""
     max_frame = len(xdata[16]) - 1
@@ -575,7 +575,7 @@ def detect_lunge_intervals(
     side = "left" if is_left_fencer else "right"
     _debug(
         f"[Lunge:{side}] start max_frame={max_frame} threshold={threshold} "
-        f"min_consecutive={min_consecutive} end_frame_buffer={end_frame_buffer}"
+        f"min_consecutive={min_consecutive} hit_frames={sorted(set(hit_frames or []))}"
     )
 
     lunge_frames = []
@@ -635,11 +635,15 @@ def detect_lunge_intervals(
             _debug(f"[Lunge:{side}] interval candidate {start}-{end} rejected length={end - start + 1}")
 
     valid_intervals = []
+    hit_frame_set = set(hit_frames or [])
     for interval in intervals:
-        if interval.end_frame > (max_frame - end_frame_buffer):
+        overlapping_hits = sorted(
+            hf for hf in hit_frame_set if interval.start_frame <= hf <= interval.end_frame
+        )
+        if overlapping_hits:
             _debug(
                 f"[Lunge:{side}] interval {interval.start_frame}-{interval.end_frame} "
-                f"rejected end_frame within buffer"
+                f"rejected hit_overlap={overlapping_hits}"
             )
             continue
         has_backward = False
@@ -1082,7 +1086,8 @@ def analyze_blade_contact(left_xdata: Dict, left_ydata: Dict, right_xdata: Dict,
 
 def referee_decision(phrase: FencingPhrase, left_xdata: Dict, left_ydata: Dict,
                     right_xdata: Dict, right_ydata: Dict,
-                    normalisation_constant: Optional[float] = None) -> Dict:
+                    normalisation_constant: Optional[float] = None,
+                    side_hit_events: Optional[Dict[str, List[Dict[str, float]]]] = None) -> Dict:
     """Main refereeing logic"""
     result = {
         'winner': None,
@@ -1121,8 +1126,39 @@ def referee_decision(phrase: FencingPhrase, left_xdata: Dict, left_ydata: Dict,
     left_last_pause_end_frame = max([p.end_frame for p in left_pauses]) if left_pauses else None
     right_last_pause_end_frame = max([p.end_frame for p in right_pauses]) if right_pauses else None
 
-    left_lunges = detect_lunge_intervals(left_xdata, left_ydata, is_left_fencer=True, fps=phrase.fps)
-    right_lunges = detect_lunge_intervals(right_xdata, right_ydata, is_left_fencer=False, fps=phrase.fps)
+    left_hit_frames: List[int] = []
+    right_hit_frames: List[int] = []
+    if side_hit_events:
+        for event in side_hit_events.get("left_scores_on_right", []):
+            frame = event.get("frame")
+            if frame is not None:
+                left_hit_frames.append(int(frame))
+        for event in side_hit_events.get("right_scores_on_left", []):
+            frame = event.get("frame")
+            if frame is not None:
+                right_hit_frames.append(int(frame))
+    if phrase.simultaneous_hit_frame is not None:
+        # Simultaneous valid hits apply to both fencers.
+        left_hit_frames.append(phrase.simultaneous_hit_frame)
+        right_hit_frames.append(phrase.simultaneous_hit_frame)
+
+    left_hit_frames = sorted(set(left_hit_frames))
+    right_hit_frames = sorted(set(right_hit_frames))
+
+    left_lunges = detect_lunge_intervals(
+        left_xdata,
+        left_ydata,
+        is_left_fencer=True,
+        fps=phrase.fps,
+        hit_frames=left_hit_frames,
+    )
+    right_lunges = detect_lunge_intervals(
+        right_xdata,
+        right_ydata,
+        is_left_fencer=False,
+        fps=phrase.fps,
+        hit_frames=right_hit_frames,
+    )
     result['lunge_detected'] = {
         'left': [asdict(l) for l in left_lunges],
         'right': [asdict(l) for l in right_lunges],
@@ -1328,7 +1364,7 @@ def main():
     parser.add_argument("subfolder", help="Name of the subfolder to analyze")
     args = parser.parse_args()
     
-    base_dir = Path("/workspace/data/training_data")
+    base_dir = Path("/workspace/results/mismatched_results/no_blade_contact")
     target_dir = base_dir / args.subfolder
     
     if not target_dir.exists():
@@ -1371,7 +1407,8 @@ def main():
             phrase, 
             left_x, left_y, 
             right_x, right_y, 
-            normalisation_constant=norm_constant
+            normalisation_constant=norm_constant,
+            side_hit_events=side_hit_events,
         )
 
         print("\n" + "="*60)
