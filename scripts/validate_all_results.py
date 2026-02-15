@@ -36,6 +36,10 @@ def has_relevant_blade_contact(phrase) -> bool:
                 return True
     return False
 
+def uses_blade_contact_for_judging(decision: dict) -> bool:
+    """True only when blade contact analysis actually influenced the decision path."""
+    return decision.get("blade_details") is not None
+
 
 def _extract_winner(content: str, label: str) -> Optional[str]:
     pattern = rf"{re.escape(label)}:\s*(?P<winner>Right|Left|Abstain)(?:\\s+Fencer)?(?:\\s*\\([^)]*\\))?"
@@ -150,8 +154,6 @@ def main():
                 max_frame = len(left_xdata[16]) - 1
                 debug_referee_module._trim_phrase_to_frames(phrase, max_frame)
             side_hit_events = extract_side_hit_events(str(txt_path), fps=phrase.fps)
-            blade_relevant = has_relevant_blade_contact(phrase)
-            
             # Load normalization constant from JSON if available
             norm_constant = None
             if json_path.exists():
@@ -170,6 +172,7 @@ def main():
                 normalisation_constant=norm_constant,
                 side_hit_events=side_hit_events,
             )
+            blade_relevant = uses_blade_contact_for_judging(decision)
             
             predicted_winner = decision.get("winner")
             
